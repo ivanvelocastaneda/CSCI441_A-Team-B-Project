@@ -1,13 +1,31 @@
-const BASE_URL = "http://ec2-54-166-100-85.compute-1.amazonaws.com:3100";
+const BASE_URL = "https://csci441-teamb.onrender.com";
 
-export function fetchAccount(accountType) {
-    return fetch(`${BASE_URL}/account/${accountType}`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json().then(data => {
-            console.log(data);
-        });
+export const fetch = async (url) => {
+    return await fetch(url);
+};
+
+export const post = async (url, data) => {
+    return await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     });
-}
+};
+
+export const put = async (url, data) => {
+    return await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+};
+
+export const deleting = async (url) => {
+    return await fetch(url, {
+        method: 'DELETE'
+    });
+};
