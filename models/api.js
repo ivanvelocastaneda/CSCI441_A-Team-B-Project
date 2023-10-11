@@ -1,31 +1,48 @@
 const BASE_URL = "https://csci441-teamb.onrender.com";
 
-export const fetch = async (url) => {
-    return await fetch(url);
-};
+export async function fetchMenuItems() {
+    const response = await fetch(`${BASE_URL}/menu_item`);
+    if (!response.ok) {
+        throw new Error(`Error fetching menu items: ${response.statusText}`);
+    }
+    return await response.json();
+}
 
-export const post = async (url, data) => {
-    return await fetch(url, {
+export async function createMenuItem(data) {
+    const response = await fetch(`${BASE_URL}/menu_item/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     });
-};
+    console.log(JSON.stringify(data));
+    if (!response.ok) {
+        throw new Error(`Error creating menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}
 
-export const put = async (url, data) => {
-    return await fetch(url, {
+export async function updateMenuItem(id, data) {
+    const response = await fetch(`${BASE_URL}/menu_item/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     });
-};
+    if (!response.ok) {
+        throw new Error(`Error updating menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}
 
-export const deleting = async (url) => {
-    return await fetch(url, {
+export async function deleteMenuItem(id) {
+    const response = await fetch(`${BASE_URL}/menu_item/${id}`, {
         method: 'DELETE'
     });
-};
+    if (!response.ok) {
+        throw new Error(`Error deleting menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}

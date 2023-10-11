@@ -1,32 +1,33 @@
-import * as MenuItemService from '../services/menuItemService.js';
+import { fetchMenuItems, createMenuItem, updateMenuItem, deleteMenuItem } from '../models/api.js';
 
-export const getMenuItems = async (req, res) => {
-    const id = req.params.id;
-    const menuItem = await MenuItemService.getMenuItems();
-    res.json(menuItem);
-};
+export class MenuItemController {
+    constructor(view, model) {
+        this.view = view;
+        this.model = model;
+        this.init();
+    }
 
-export const getMenuItem = async (req, res) => {
-    const id = req.params.id;
-    const menuItem = await MenuItemService.getMenuItemById(id);
-    res.json(menuItem);
-};
+    async init() {
+        const data = await fetchMenuItems();
+        data.forEach(item => {
+            const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price);
+            this.view.addMenuItem(menuItem);
+        });
+    }
 
-export const createNewMenuItem = async (req, res) => {
-    const newMenuItem = req.body;
-    const createdMenuItem = await MenuItemService.createMenuItem(newMenuItem);
-    res.json(createdMenuItem);
-};
+    async addMenuItem(data) {
+        const newItem = await createMenuItem(data);
+        const menuItem = new this.model(newItem.itemID, newItem.itemName, newItem.description, newItem.price);
+        this.view.addMenuItem(menuItem);
+    }
 
-export const updateExistingMenuItem = async (req, res) => {
-    const id = req.params.id;
-    const updatedData = req.body;
-    const updatedMenuItem = await MenuItemService.updateMenuItem(id, updatedData);
-    res.json(updatedMenuItem);
-};
+    async editMenuItem(id, data) {
+        const updatedItem = await updateMenuItem(id, data);
+        this.view.updateMenuItem(id, updatedItem);
+    }
 
-export const removeMenuItem = async (req, res) => {
-    const id = req.params.id;
-    const deletedMenuItem = await MenuItemService.deleteMenuItem(id);
-    res.json(deletedMenuItem);
-};
+    async removeMenuItem(id) {
+        await deleteMenuItem(id);
+        this.view.removeMenuItem(id);
+    }
+}
