@@ -7,3 +7,42 @@ export async function fetchMenuItems() {
     }
     return await response.json();
 }
+
+export async function createMenuItem(data) {
+    const response = await fetch(`${BASE_URL}/menu_item/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    console.log(JSON.stringify(data));
+    if (!response.ok) {
+        throw new Error(`Error creating menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function updateMenuItem(id, data) {
+    const response = await fetch(`${BASE_URL}/menu_item/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error updating menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function deleteMenuItem(id) {
+    const response = await fetch(`${BASE_URL}/menu_item/${id}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error(`Error deleting menu item: ${response.statusText}`);
+    }
+    return await response.json();
+}
