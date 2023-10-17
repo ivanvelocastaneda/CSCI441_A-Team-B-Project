@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm to Table Restaurant</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- <div class="logo">Farm to Table</div> -->
+            <img src="assets/logo.png" alt="Farm to Table Logo">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Reservations</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="user-options">
+                <button id="login-btn">Log In</button>
+                <button id="employee-btn" href="employee.html">Employee</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Farm to Table</h1>
+        <p>Experience the freshest farm-to-table dining in town.</p>
+        <a href="#menu" class="btn-primary">View Menu</a>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Featured Menu Items</h2>
+        <div class="menu-item">
+            <img src="assets/seasonalSalad.webp" alt="Menu Item 1">
+            <h3>Seasonal Salad</h3>
+            <p>Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
+            <span class="price">$12.99</span>
+        </div>
+        <div class="menu-item">
+            <img src="assets/grilledSalmon.webp" alt="Menu Item 2">
+            <h3>Grilled Salmon</h3>
+            <p>Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
+            <span class="price">$24.99</span>
+        </div>
+        <div class="menu-item">
+            <img src="assets/herbChicken.webp" alt="Menu Item 3">
+            <h3>Herb-Crusted Chicken</h3>
+            <p>Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
+            <span class="price">$16.99</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Farm to Table Restaurant</p>
+    </footer>
+
+    <script>
+        document.getElementById("employee-btn").onclick = function () {
+            location.href = "employee.html";
+        };
+    </script>
+</body>
+</html>
