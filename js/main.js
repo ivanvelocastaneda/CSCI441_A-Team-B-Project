@@ -2,11 +2,30 @@ import { MenuItemController } from '../controllers/menuItemController.js';
 import { MenuItem } from '../models/menuItem.js';
 
 class View {
+    // addFeaturedItems(menuItem) {
+    //     const section = document.getElementById('featured-menu');
+    //     const div = document.createElement('div');
+    //     div.id = `featured-item-${menuItem.itemID}`;
+
+    //     const img = document.createElement('img');
+    //     img.alt = menuItem.itemName;
+    //     img.textContent = menuItem.imageUrl;
+
+    //     const h3 = document.createElement('h3');
+    //     h3.textContent = menuItem.itemName;
+
+    //     const p = document.createElement('p');
+    //     p.textContent = menuItem.description;
+
+    //     div.appendChild(img,h3,p);
+    //     section.appendChild(div); 
+    // }
+
     addMenuItem(menuItem) {
         const ul = document.getElementById('menu-items-list');
         const li = document.createElement('li');
         li.id = `item-${menuItem.itemID}`;
-        li.textContent = `${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
+        li.textContent = `${menuItem.itemID}: ${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
         
         // Add delete button
         const deleteButton = document.createElement('button');
