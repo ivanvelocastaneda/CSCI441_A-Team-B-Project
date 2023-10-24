@@ -1,65 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm to Table Restaurant</title>
-    <link rel="stylesheet" href="css/styles.css">
+<title>Farm To Table</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/customer.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.4.2/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<script src="https://kit.fontawesome.com/064cee087c.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- <div class="logo">Farm to Table</div> -->
-            <img src="assets/logo.png" alt="Farm to Table Logo">
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Reservations</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div class="user-options">
-                <button id="login-btn">Log In</button>
-                <button id="employee-btn" href="employee.html">Employee</button>
-            </div>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Welcome to Farm to Table</h1>
-        <p>Experience the freshest farm-to-table dining in town.</p>
-        <a href="#menu" class="btn-primary">View Menu</a>
-    </section>
-
-    <section id="menu" class="menu">
-        <h2>Featured Menu Items</h2>
-        <div class="menu-item">
-            <img src="assets/seasonalSalad.webp" alt="Menu Item 1">
-            <h3>Seasonal Salad</h3>
-            <p>Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
-            <span class="price">$12.99</span>
+<div class="navbar">
+    <nav>
+        <div class="logo">
+            <h1></h1>
+            <img src="assets/logo.png" alt ="Farm logo">
         </div>
-        <div class="menu-item">
-            <img src="assets/grilledSalmon.webp" alt="Menu Item 2">
-            <h3>Grilled Salmon</h3>
-            <p>Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
-            <span class="price">$24.99</span>
+        
+        <ul>
+        <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#food"><i class="fa-solid fa-book"></i> Menu</i></a></li>
+        <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
+        <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
+        <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
+        </ul>
+        <div class="icons">
+            <button id="bar"><i class="fa-solid fa-bars"></i></button>
+            <button id="employee-btn" href="employee.html"><i class = "fa-solid fa-people-group"></i>Employee</button>
+            <button id="user"><i class = "fa-solid fa-user"></i>Log In</button>
         </div>
-        <div class="menu-item">
-            <img src="assets/herbChicken.webp" alt="Menu Item 3">
-            <h3>Herb-Crusted Chicken</h3>
-            <p>Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
-            <span class="price">$16.99</span>
+    </nav>
+</div>
+
+<div class="main" id="home">
+    <div class ="mainText">
+        <h1>Fresh Flavor, <span>Honest Harvest</span></h1>
+        <h3>Tastes <span>Great</span></h3>
+        <p>Welcome to Farm To Table, where we are committed to serving you the freshest and most delicious meals made from locally sourced, organic ingredients. 
+            Our mission is to promote a sustainable and healthy lifestyle by supporting local farmers and prioritizing the well-being of our community.</p>
+        <button id="more-btn"><i class ="fa-solid fa fa-bars"></i> Show More</button>
+    </div>
+    <div>
+        <img src="assets/wooden.jpg" alt="farm" width="500" height="500">
+    </div>
+</div>
+
+<div class="food" id="food">
+    <div class="head">
+        <h1>Featured <span> Menu Items</span></h1>
+    </div>
+    <div class="cards">
+        <div class="foodcard">
+            <img src="assets/seasonalSalad.webp" alt="salad">
+        <h3 class="name">Seasonal Salad</h3>
+        <p class="description">Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
+        <span class="price"><i class="fa-solid fa-dollar-sign"></i>12.99</span>
         </div>
-    </section>
+        <div class="foodcard">
+            <img src="assets/grilledSalmon.webp" alt="salmon">
+        <h3 class="name">Grilled Salmon</h3>
+        <p class="description">Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
+        <span class="price"><i class="fa-solid fa-dollar-sign"></i>24.99</span>
+        </div>
+        <div class="foodcard">
+            <img src="assets/herbChicken.webp" alt="salmon">
+        <h3 class="name">Herb-Crusted Chicken</h3>
+        <p class="description">Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
+        <span class="price"><i class="fa-solid fa-dollar-sign"></i>16.99</span>
+        </div>
+    </div>
+</div>
 
-    <footer>
-        <p>&copy; 2023 Farm to Table Restaurant</p>
-    </footer>
+<div class="customer" id="review">
+    <div class="head">
+        <h1>Reviews</h1>
+    </div>
+    <div class="reviews">
+        <div class="crd">
+            <img src="assets/crd.jpg" alt="reviewer">
+            <p>"Farm to Table is a haven for those seeking a genuine farm-to-fork dining adventure. The dedication to fresh, sustainable, and delicious cuisine is evident in every aspect of this culinary establishment. 
+                Dining here is not only a pleasure for your taste buds but also a wonderful way to support local farmers and embrace the beauty of seasonal, organic eating."</p>
+        </div>
+        <div class="crd">
+            <img src="assets/crd2.jpg" alt="reviewer2">
+            <p>"The menu at Farm to Table is a true testament to their commitment to sustainability and the farm-to-fork concept. 
+                Each dish is carefully crafted, highlighting the flavors of the season. 
+                The chefs pay homage to the ingredients by allowing their natural taste and quality to shine through in every bite."</p>
+        </div>
+        <div class="crd">
+            <img src="assets/crd3.jpg" alt="reviewer3">
+            <p>"From the moment you step into Farm to Table, you are enveloped in a rustic yet modern ambiance, 
+                exuding warmth and authenticity. The interior is tastefully designed with wooden accents and lush greenery, 
+                mirroring the essence of the organic fare they serve."</p>
+        </div>
+        <div class="crd">
+            <img src="assets/crd4.jpg" alt="reviewer4">
+            <p>"Farm to Table is a culinary gem that captivates both the palate and the soul. 
+                Nestled in the heart of a charming countryside, 
+                this restaurant offers a dining experience that celebrates the beauty of locally sourced, organic ingredients."</p>
+        </div>
+        <div class="crd">
+            <img src="assets/crd5.jpg" alt="reviewer5">
+            <p>"The attentive and knowledgeable staff at Farm to Table add to the overall exceptional dining experience. 
+                They are more than happy to provide recommendations and explain the origins of the ingredients, 
+                adding an educational element to the meal."</p>
+        </div>
+    </div>
+</div>
 
-    <script>
-        document.getElementById("employee-btn").onclick = function () {
-            location.href = "employee.html";
-        };
-    </script>
+<div class="read">
+    <div class="head">
+        <h1>Apply Now</h1>
+    </div>
+    <!-- <div class="info-section">
+        <p><i class="fa fa-map-marker"></i> Hays, Ks</p>
+        <p><i class="fa fa-mobile"></i> Phone: 123-456-7890 </p>
+        <p><i class="fa fa-envelope"></i> Email: farmtotable@gmail.com</p>
+      </div><br> -->
+    <form action="/action_page.html" target="blank">
+    <div class="form-group" id="apply">
+        <p>Looking for a job? Apply Now!</p>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Position:</label>
+        <textarea id="position" name="position" placeholder="Your desired position"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit"><i class="fa fa-paper-plane"></i> Submit</button>
+      </div>
+    </form>
+      <br>
+</div>
+
+<div class="footer">
+    <div class="text">
+        <h2>About us</h2>
+        <p><i class="fa fa-map-marker"></i> Hays, Ks</p>
+        <p><i class="fa fa-mobile"></i> Phone: 123-456-7890 </p>
+        <p><i class="fa fa-envelope"></i> Email: farmtotable@gmail.com</p>
+        <p>&copy; 2023 Farm To Table. All rights reserved.</p>
+    </div>
+    <div class="text">
+        <h2>Stay Connected</h2>
+        <p><i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i> <i class="fa fa-snapchat-square" aria-hidden="true"></i> <i class="fa fa-pinterest-square" aria-hidden="true"></i> 
+            <i class="fa fa-twitter-square" aria-hidden="true"></i> <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </p>
+    </div>
+    <!-- <i class="fa fa-facebook" aria-hidden="true"></i>
+    <i class="fa fa-instagram" aria-hidden="true"></i>
+    <i class="fa fa-snapchat-square" aria-hidden="true"></i>
+    <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    <i class="fa fa-linkedin-square" aria-hidden="true"></i> -->
+</div>
+
+<!--loginPage -->
+<div class="loginPage">
+    <input type="text" placeholder="Enter email" value="" id="email"><br>
+    <input type="pass" placeholder="Enter password" value="" id="pass"><br>
+    <button id="logBtn">Log in</button>
+
+
+</div>
+
+
+<script src="customer.js"></script>
 </body>
 </html>
