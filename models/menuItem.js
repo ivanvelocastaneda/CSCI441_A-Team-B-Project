@@ -1,9 +1,10 @@
 export class MenuItem {
-    constructor(itemID, itemName, description, price) {
+    constructor(itemID, itemName, description, price, itemImage) {
         this.itemID = itemID;
         this.itemName = itemName;
         this.description = description;
         this.price = price;
+        this.itemImage = itemImage;
     }
 
     update(data) {
@@ -11,6 +12,7 @@ export class MenuItem {
         this.itemName = data.itemName || this.itemName;
         this.description = data.description || this.description;
         this.price = data.price || this.price;
+        this.itemImage = data.itemImage || this.itemImage;
     }
 
     getPrice() {
@@ -23,5 +25,9 @@ export class MenuItem {
 
     updatePrice(newPrice) {
         this.price = newPrice;
+    }
+
+    getImageUrl() {
+        return this.itemImage;
     }
 }
