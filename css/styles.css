@@ -17,22 +17,22 @@ nav {
     width: 100%;
 
 }
-ul {
+.navbar ul {
     display: flex;
     align-items: center;
     
 }
-ul li {
+.navbar ul li {
     list-style: none;
 
 }
-ul li a {
+.navbar ul li a {
     text-decoration: none;
     margin-inline: 20px;
     font-size: 20px;
     color: #85090e;
 }
-ul li a:hover {
+.navbar ul li a:hover {
     color: red;
     border-bottom: 2px solid red;
 }
