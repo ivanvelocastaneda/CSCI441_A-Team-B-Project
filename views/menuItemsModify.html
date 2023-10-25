@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Farm to Table</title>
+    <title>Menu Items Interface</title>
 </head>
 <body>
-    <h1>Farm to Table</h1>
-
-    <h2>Menu Items</h2>
-    <ul id="menu-items-list"></ul>
-
-    <h2>Manage Menu Items</h2>
-    <label for="menu-item-dropdown">Select Menu Item:</label>
-    <select id="menu-item-dropdown">
-        <option value="">Create new item</option>
-        <!-- Menu items will be dynamically added here -->
-    </select>
+    <div id="all-items-list" class="all-items-list">
+        <h2>Menu Items</h2>
+        <ul id="menu-items-list"></ul>
+    </div>
+    <br>
+    <div id="manage-menu-items" class="manage-menu-items">
+        <h3>Manage Menu Items</h3>
+        <label for="menu-item-dropdown">Select Menu Item:</label>
+        <select id="menu-item-dropdown">
+            <option value="">Create new item</option>
+            <!-- Menu items will be dynamically added here -->
+        </select>
+    </div>
 
     <div>
         <label for="item-name-input">Item Name:</label>

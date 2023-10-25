@@ -64,34 +64,27 @@ class View {
 
 const view = new View();
 const controller = new MenuItemController(view, MenuItem);
-let selectedItem = new MenuItem;
+let selectedItem = new MenuItem();
 
 document.getElementById('menu-item-dropdown').addEventListener('change', (event) => {
     const selectedItemID = event.target.value;
     const li = document.getElementById(`item-${selectedItemID}`);
     if (li) {
         selectedItem = JSON.parse(li.dataset.menuItem);
-        console.log(JSON.stringify(selectedItem));
-        // const parts = li.textContent.split(' - ');
-        // const menuItem = new MenuItem(selectedItemID, parts[0], parts[1], parseFloat(parts[2].substring(1)));
         view.populateInputs(selectedItem);
     }
 });
 
 document.getElementById('create-button').addEventListener('click', () => {
     const data = {
-        // itemName: selectedItem.itemName,
-        // description: selectedItem.description,
-        // price: parseFloat(selectedItem.price),
-        // itemImage: selectedItem.itemImage
         itemName: document.getElementById('item-name-input').value,
         description: document.getElementById('description-input').value,
         price: parseFloat(document.getElementById('price-input').value),
         itemImage: document.getElementById('image-input').value
     };
     controller.addMenuItem(data);
-    // selectedItem = new MenuItem(data.itemName, data.description, data.price, data.itemImage);
 });
+
 
 document.getElementById('update-button').addEventListener('click', async () => {
     const id = document.getElementById('menu-item-dropdown').value;
@@ -104,18 +97,6 @@ document.getElementById('update-button').addEventListener('click', async () => {
     await controller.editMenuItem(id, data);  // Wait for the update to complete
     window.location.reload();
 });
-
-// document.getElementById('update-button').addEventListener('click', async () => {
-//     const id = selectedItem.itemID;
-//     const data = {
-//         itemName: selectedItem.itemName,
-//         description: selectedItem.description,
-//         price: parseFloat(selectedItem.price),
-//         itemImage: selectedItem.itemImage
-//     };
-//     await controller.editMenuItem(id, data);  // Wait for the update to complete
-//     window.location.reload();
-// });
 
 
 // Assuming you still want the delete functionality
