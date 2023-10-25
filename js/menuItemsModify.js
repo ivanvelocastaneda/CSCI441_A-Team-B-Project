@@ -75,14 +75,16 @@ document.getElementById('menu-item-dropdown').addEventListener('change', (event)
     }
 });
 
-document.getElementById('create-button').addEventListener('click', () => {
+document.getElementById('create-button').addEventListener('click', async () => {
     const data = {
         itemName: document.getElementById('item-name-input').value,
         description: document.getElementById('description-input').value,
         price: parseFloat(document.getElementById('price-input').value),
         itemImage: document.getElementById('image-input').value
     };
-    controller.addMenuItem(data);
+    await controller.addMenuItem(data);
+    window.location.reload();
+    // controller.addMenuItem(data);
 });
 
 
@@ -100,8 +102,8 @@ document.getElementById('update-button').addEventListener('click', async () => {
 
 
 // Assuming you still want the delete functionality
-document.getElementById('delete-button').addEventListener('click', () => {
+document.getElementById('delete-button').addEventListener('click', async () => {
     const id = document.getElementById('menu-item-dropdown').value;
-    controller.removeMenuItem(id);
+    await controller.removeMenuItem(id);
     window.location.reload();
 });
