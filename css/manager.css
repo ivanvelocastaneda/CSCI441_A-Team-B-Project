@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+
+
+header {
+    background-color: #f4e4bc;
+    color: #85090e;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav img {
+    max-height: 150px;
+}
+
+ul.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+ul.nav-links li {
+    margin-right: 20px;
+}
+
+ul.nav-links a {
+    text-decoration: none;
+    color: #85090e;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+ul.nav-links a:hover {
+    color: #b36b5c;
+}
+
+div.user-options button {
+    background-color: #b36b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+div.user-options button:hover {
+    background-color: #85090e;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #b36b5c; /* Background color for the Welcome section */
+    color: #85090e; /* Text color for the Welcome section */
+}
+
+.welcome-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.welcome-section img {
+    max-width: 100%; /* Make sure the image fits the container width */
+}
+
+footer {
+    background-color: #f4e4bc;
+    color: #85090e;
+    text-align: center;
+    padding: 10px 0;
+}
