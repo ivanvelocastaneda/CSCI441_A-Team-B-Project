@@ -1,0 +1,113 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+	text-align: center; 
+}
+
+/* Header styles */
+header {
+    background-color: #f4e4bc;
+    color: #85090e;
+    padding: 10px 0;
+}
+header img {
+    max-width: 125px; 
+    height: auto; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+	font-weight: bold;
+	
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #85090e;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b36b5c;
+}
+
+.user-options button {
+    background-color: #b36b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-options button:hover {
+    background-color: #85090e;
+}
+
+/* Employee-specific styles */
+.employee-schedule {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.employee-schedule h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+	background-color: #f4e4bc;
+}
+
+.employee-schedule button {
+    background-color: #b36b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.employee-schedule button:hover {
+    background-color: #85090e;
+}
+
+.my-week {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+	background-color: #f4e4bc;
+}
+
+.my-week h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.my-week span {
+    font-weight: bold;
+    color: #b36b5c;
+}
