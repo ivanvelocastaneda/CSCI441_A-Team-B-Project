@@ -1,11 +1,15 @@
+/* Reset default margin, padding, and text color */
 body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
+/* Global body styles */
 body {
     font-family: Arial, sans-serif;
-	text-align: center; 
+    text-align: center;
+    background-color: #85090e;
 }
 
 /* Header styles */
@@ -14,11 +18,13 @@ header {
     color: #85090e;
     padding: 10px 0;
 }
+
 header img {
-    max-width: 125px; 
-    height: auto; 
+    max-width: 125px;
+    height: auto;
 }
 
+/* Navigation styles */
 nav {
     display: flex;
     justify-content: space-between;
@@ -26,12 +32,6 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.logo {
-    font-size: 24px;
-	font-weight: bold;
-	
 }
 
 .nav-links {
@@ -54,6 +54,7 @@ nav {
     color: #b36b5c;
 }
 
+/* User options button styles */
 .user-options button {
     background-color: #b36b5c;
     color: white;
@@ -68,46 +69,124 @@ nav {
     background-color: #85090e;
 }
 
+/* Content container */
+.content-container {
+    display: flex;
+}
+
+/* Left content styles */
+.content-left {
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
+}
+
 /* Employee-specific styles */
 .employee-schedule {
+    background-color: #85090e;
+    color: white;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
 }
 
-.employee-schedule h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-	background-color: #f4e4bc;
-}
-
-.employee-schedule button {
-    background-color: #b36b5c;
+#current-date {
     color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.employee-schedule button:hover {
-    background-color: #85090e;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
 }
 
 .my-week {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-	background-color: #f4e4bc;
+    max-width: 2000px;
+    margin-top: -15px;
+    padding: 20px;
 }
 
-.my-week h2 {
+.my-week h3 {
     font-size: 24px;
-    margin-bottom: 20px;
 }
 
 .my-week span {
     font-weight: bold;
-    color: #b36b5c;
+    color: #85090e;
 }
+
+
+
+/* Box styles */
+.box {
+    background-color: #b36b5c;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#clock-button {
+    background-color: #b36b5c;
+    color: white;
+
+    padding: 10px; 
+    font-size: 20px; 
+}
+
+#break-button {
+   
+    background-color: #b36b5c;
+    color: white;
+
+    padding: 10px; 
+    font-size: 20px; 
+}
+
+#break-button:hover {
+    background-color: #85090e;
+}
+
+
+
+/* PIN entry styles */
+
+.pin-entry h3 {
+    font-size: 24px; 
+}
+
+.pin-input {
+    width: 150px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.pin-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.pin-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #b36b5c;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pin-cell:hover {
+    background-color: #b36b5c;
+    color: #fff;
+}
+
+
