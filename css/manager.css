@@ -1,16 +1,69 @@
-body {
-    font-family: Arial, sans-serif;
-    
+/* Reset default margin, padding, and text color */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    color: white;
 }
 
 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+    background-image: url('welcome.png');
+    opacity: 0.8;
+} 
 
+
+
+/* Header styles */
 header {
     background-color: #f4e4bc;
     color: #85090e;
-    padding: 0;
+    padding: 10px 0;
 }
 
+header img {
+    max-width: 125px;
+    height: auto;
+}
+
+.\logout-button {
+    text-decoration: none;
+    background-color: #85090e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-button:hover {
+    background-color: #b36b5c;
+}
+
+
+.welcome-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.Options h2 {
+    font-size: 32px; /* You can adjust the size as needed */
+    margin-top: 30px; 
+    font-weight:bolt;
+}
+
+img#welcome-image{
+    margin-top:10px;
+    width: 800px;
+    height:400px /* Adjust the width as needed */
+}
+
+/* Navigation styles */
 nav {
     display: flex;
     justify-content: space-between;
@@ -20,63 +73,170 @@ nav {
     padding: 0 20px;
 }
 
-nav img {
-    max-height: 150px;
-}
-
-ul.nav-links {
+.nav-links {
     list-style: none;
     display: flex;
 }
 
-ul.nav-links li {
+.nav-links li {
     margin-right: 20px;
 }
 
-ul.nav-links a {
+.nav-links a {
     text-decoration: none;
     color: #85090e;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-ul.nav-links a:hover {
+.nav-links a:hover {
     color: #b36b5c;
 }
 
-div.user-options button {
-    background-color: #b36b5c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Add this CSS to style the navigation bar */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display list items horizontally */
 }
+
+
+
+
+.nav-container {
+    display: flex;
+    justify-content: center; /* Center the child element horizontally */
+    margin-top: 50px; /* Add space between the image and the navigation bar */
+}
+
+ul.home-page-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.home-page-ul li {
+    margin: 40px 50px;
+}
+
+ul.home-page-ul li a {
+    display: block;
+    background-color:#85090e; 
+    color: white;
+    text-decoration: none;
+    padding: 50px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 28px;
+}
+
+
+ul.home-page-ul li a i {
+    font-size: 36px !important; /* Increase the font size to make the icons bigger */
+}
+
+ul.home-page-ul li a:hover {
+    background-color: #85090e;
+}
+
 
 div.user-options button:hover {
     background-color: #85090e;
 }
 
-.welcome-section {
-    text-align: center;
-    padding: 20px;
-    background-color: #b36b5c; /* Background color for the Welcome section */
-    color: #85090e; /* Text color for the Welcome section */
+/* Menu Management styles */
+.menu-management {
+    background-color: #85090e;
+    color: white;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.welcome-section h2 {
+.menu-management h2 {
     font-size: 24px;
-    margin-bottom: 10px;
 }
 
-.welcome-section img {
-    max-width: 100%; /* Make sure the image fits the container width */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-footer {
+table th {
+    background-color: #b36b5c;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #b36b5c;
+}
+
+/* Employee Management styles */
+.employee-management {
+    background-color: #85090e;
+    color: white;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.employee-management h2 {
+    font-size: 24px;
+}
+
+.employee-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.employee-management table th {
+    background-color: #b36b5c;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+.employee-management table td {
+    padding: 10px;
+    border-bottom: 1px solid #b36b5c;
+}
+
+/* Additional styles for various elements can be added here as needed */
+
+/* Add this style for the search bar */
+.search-bar {
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     background-color: #f4e4bc;
+}
+
+/* Style the icons */
+.edit-icon, .remove-icon {
+    margin: 0 10px;
+    cursor: pointer;
     color: #85090e;
-    text-align: center;
-    padding: 10px 0;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.edit-icon:hover, .remove-icon:hover {
+    color: #b36b5c;
 }
