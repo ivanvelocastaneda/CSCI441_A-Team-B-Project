@@ -79,7 +79,7 @@ menuTable.addEventListener('click', (event) => {
         });
     });
 
-    // Implement the code for removing items when the "Remove" button is clicked.
+    
 });
 
 
