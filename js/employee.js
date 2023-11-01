@@ -341,3 +341,188 @@ const logoutButton = document.getElementById("logout-button");
 logoutButton.addEventListener("click", () => {
     
 });
+
+
+
+const employeeSchedulesData = [
+    {
+        name: "John Doe",
+        schedule: "Monday"
+    },
+    {
+        name: "Jane Smith",
+        schedule: "Tuesday"
+    },
+    {
+        name: "Michael Johnson",
+        schedule: "Wednesday"
+    },
+    {
+        name: "Susan Williams",
+        schedule: "Thursday"
+    },
+    {
+        name: "Robert Lee",
+        schedule: "Friday"
+    },
+    {
+        name: "Linda Martin",
+        schedule: "Saturday"
+    },
+    {
+        name: "David Wilson",
+        schedule: "Sunday"
+    },
+    {
+        name: "Mary Taylor",
+        schedule: "Monday"
+    },
+    {
+        name: "James Anderson",
+        schedule: "Tuesday"
+    },
+    {
+        name: "Jennifer Brown",
+        schedule: "Wednesday"
+    }
+];
+
+const dailyReportData = [
+    {
+        name: "John Doe",
+        date: "2023-10-30",
+        start: "08:00 AM",
+        end: "04:00 PM",
+        break: "30 minutes",
+        work: "7 hours 30 minutes",
+        overtime: "2 hours 30 minutes"
+    },
+    {
+        name: "Jane Smith",
+        date: "2023-10-30",
+        start: "09:15 AM",
+        end: "05:15 PM",
+        break: "30 minutes",
+        work: "7 hours",
+        overtime: "2 hours 30 minutes"
+    },
+    {
+        name: "Michael Johnson",
+        date: "2023-10-30",
+        start: "10:10 AM",
+        end: "06:15 PM",
+        break: "30 minutes",
+        work: "7 hours 35 minutes",
+        overtime: ""
+    },
+    {
+        name: "Susan Williams",
+        date: "2023-10-30",
+        start: "09:20 AM",
+        end: "05:10 PM",
+        break: "30 minutes",
+        work: "7 hours 20 minutes",
+        overtime: ""
+    },
+    {
+        name: "Robert Lee",
+        date: "2023-10-30",
+        start: "08:05 AM",
+        end: "04:10 PM",
+        break: "30 minutes",
+        work: "7 hours 25 minutes",
+        overtime: ""
+    },
+    {
+        name: "Linda Martin",
+        date: "2023-10-30",
+        start: "10:25 AM",
+        end: "06:05 PM",
+        break: "30 minutes",
+        work: "7 hours 10 minutes",
+        overtime: ""
+    },
+    {
+        name: "David Wilson",
+        date: "2023-10-30",
+        start: "11:10 AM",
+        end: "07:15 PM",
+        break: "30 minutes",
+        work: "7 hours 5 minutes",
+        overtime: ""
+    },
+    {
+        name: "Mary Taylor",
+        date: "2023-10-30",
+        start: "08:15 AM",
+        end: "04:15 PM",
+        break: "30 minutes",
+        work: "7 hours 30 minutes",
+        overtime: ""
+    },
+    {
+        name: "James Anderson",
+        date: "2023-10-30",
+        start: "12:10 PM",
+        end: "08:10 PM",
+        break: "30 minutes",
+        work: "7 hours",
+        overtime: "1 hour"
+    },
+    {
+        name: "Jennifer Brown",
+        date: "2023-10-30",
+        start: "09:30 AM",
+        end: "05:20 PM",
+        break: "30 minutes",
+        work: "7 hours 20 minutes",
+        overtime: "1 hour"
+    }
+];
+
+const employeeSchedulesTable = document.getElementById("employee-schedules");
+const dailyReportTable = document.getElementById("daily-report");
+
+function populateEmployeeSchedules() {
+    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    
+    for (const employee of employeeSchedulesData) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${employee.name}</td>`;
+        
+        for (const day of daysOfWeek) {
+            const hasSchedule = employee.schedule.includes(day);
+            row.innerHTML += `<td>${hasSchedule ? "-" : ""}</td>`;
+        }
+
+        employeeSchedulesTable.querySelector("tbody").appendChild(row);
+    }
+}
+
+function populateDailyReport() {
+    for (const entry of dailyReportData) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${entry.name}</td>
+            <td>${getCurrentDate()}</td>
+            <td>${entry.start}</td>
+            <td>${entry.end}</td>
+            <td>${entry.break}</td>
+            <td>${entry.work}</td>
+            <td>${entry.name === "James Anderson" || entry.name === "Jennifer Brown" ? entry.overtime : ""}</td>
+        `;
+
+        dailyReportTable.querySelector("tbody").appendChild(row);
+    }
+}
+
+function getCurrentDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+populateEmployeeSchedules();
+populateDailyReport();
