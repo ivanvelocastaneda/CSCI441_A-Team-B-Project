@@ -1,9 +1,9 @@
-import { MenuItemController } from '../controllers/menuItemController.js';
+import { FeaturedMenuItemController } from '../controllers/featuredItemsController.js';
 import { MenuItem } from '../models/menuItem.js';
 
 class View {
 
-    addMenuItem(menuItem) {
+    addFeaturedItem(menuItem) {
         const cards = document.getElementById('cards');
         const foodcard = document.createElement('div');
         foodcard.id = `featured-item-${menuItem.itemID}`;
@@ -33,9 +33,19 @@ class View {
         console.log(menuItem);
     }
 
+    showSpinner() {
+        const spinner = document.getElementById('spinner');
+        spinner.style.display = 'block';
+    }
+
+    hideSpinner() {
+        const spinner = document.getElementById('spinner');
+        spinner.style.display = 'none';
+    }
+
 }
 
 const view = new View();
-const controller = new MenuItemController(view, MenuItem);
+const controller = new FeaturedMenuItemController(view, MenuItem);
 
 
