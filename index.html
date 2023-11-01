@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.4.2/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/064cee087c.js" crossorigin="anonymous"></script>
-
-
-
-
 </head>
 
 <body>
@@ -54,31 +51,33 @@
             <img src="assets/wooden.jpg" alt="farm" width="500" height="500">
         </div>
     </div>
-<div class="featured-menu" id="featured-menu">
-    <div class="head">
-        <h1>Featured <span> Menu Items</span></h1>
-    </div>
-    <div class="cards" id="cards">
-        <!-- Featured menu items will be dynamically added here. -->
 
-        <!-- <div class="foodcard">
-            <img src="assets/seasonalSalad.webp" alt="salad">
-        <h3 class="name">Seasonal Salad</h3>
-        <p class="description">Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>12.99</span>
+    <div class="featured-menu" id="featured-menu">
+        <div class="head">
+            <h1>Featured <span> Menu Items</span></h1>
         </div>
-        <div class="foodcard">
-            <img src="assets/grilledSalmon.webp" alt="salmon">
-        <h3 class="name">Grilled Salmon</h3>
-        <p class="description">Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>24.99</span>
+        <div class="cards" id="cards">
+            <!-- Featured menu items will be dynamically added here. -->
+
+            <!-- <div class="foodcard">
+                <img src="assets/seasonalSalad.webp" alt="salad">
+            <h3 class="name">Seasonal Salad</h3>
+            <p class="description">Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
+            <span class="price"><i class="fa-solid fa-dollar-sign"></i>12.99</span>
+            </div>
+            <div class="foodcard">
+                <img src="assets/grilledSalmon.webp" alt="salmon">
+            <h3 class="name">Grilled Salmon</h3>
+            <p class="description">Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
+            <span class="price"><i class="fa-solid fa-dollar-sign"></i>24.99</span>
+            </div>
+            <div class="foodcard">
+                <img src="assets/herbChicken.webp" alt="salmon">
+            <h3 class="name">Herb-Crusted Chicken</h3>
+            <p class="description">Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
+            <span class="price"><i class="fa-solid fa-dollar-sign"></i>16.99</span>
+            </div> -->
         </div>
-        <div class="foodcard">
-            <img src="assets/herbChicken.webp" alt="salmon">
-        <h3 class="name">Herb-Crusted Chicken</h3>
-        <p class="description">Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>16.99</span>
-        </div> -->
     </div>
 
     <div class="food" id="food">
@@ -242,12 +241,35 @@
 
     <!--loginPage -->
     <div class="loginPage">
-        <input type="text" placeholder="Enter email" value="" id="email"><br>
-        <input type="pass" placeholder="Enter password" value="" id="pass"><br>
-        <button id="logBtn">Log in</button>
-
-
+        <div class="form-content">
+            <form action="#">
+                <div class ="field-input-field">
+                    <input type="email" placeholder="Email" value="" class="input" id="email"><br>
+                </div>
+                <div class ="field-input-field">
+                    <input type="password" placeholder="Enter password" value="" class="password" id="password">
+                    <i class ='bx bx-hide eye-icon'></i>
+                </div>
+                <div class="form-link">
+                    <a href="#" class="forgot-pass">Forgot password?</a>
+                </div>
+                <div class ="field-input-field">
+                    <button id="logBtn">Log in</button>
+                </div>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="#" class="signup-link">Sign up!</a></span>
+                </div>
+            </form>
+        </div>
+        <div class="line"></div>
+        <div class="media-options">
+            <a href="#" class="field google">
+                <i class="bx bxl-google google-icon"></i>
+                <span>Login with Google</span>
+            </a>
+        </div>
     </div>
+
 
     <script type="module" src="js/featuredMenuItems.js"></script>
     <script src="js/customer.js"></script>
