@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: #b36b5c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form {
+    border-radius: 6px;
+    background: white;
+    padding: 30px;
+    max-width: 430px;
+    width: 100%;
+}
+header {
+    font-size: 28px;
+    font-weight: 600;
+    color: #85090e;
+    text-align: center;
+}
+form {
+    margin-top: 30px;
+}
+.form .field {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field button, 
+.field input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field button {
+    color: white;
+    background-color: #85090e;
+}
+.field button:hover {
+    color: white;
+    background-color:#b36b5c;
+    transition: all 0.3s ease;
+}
+.field input {
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid #85090e;
+}
+.field input:focus {
+    border-bottom-width: 2px;
+}
+.form-link {
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span, 
+.form-link a {
+    font-size: 14px;
+    font-weight: 400;
+}
+.form a {
+    color: #85090e;
+    text-decoration: none;
+}
+.form a::hover {
+    text-decoration: underline;
+}
+.eye-icon {
+    position: absolute;
+    font-size: 18px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #85090e;
+    cursor: pointer;
+    padding: 5px;
+}
+.line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+}
+.line::before {
+    content: "Or";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #85090e;
+    padding: 0 15px;
+}
+.media-options a {
+    display: flex;
+    color: white;
+    background-color: #85090e;
+    align-items: center;
+    justify-content: center;
+}
+.media-options a:hover {
+    background-color: #b36b5c;
+    transition: all 0.3s ease;
+}
+a.google {
+    border: 1px solid #cacaca;
+}
+
+a.google .google-icon{
+    height: 28px;
+    width: 28px;
+    color: #85090e;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.google-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+
