@@ -20,19 +20,24 @@
                 <h1></h1>
                 <img src="assets/logo.png" alt="Farm logo">
             </div>
-
             <ul>
                 <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#food"><i class="fa-solid fa-book"></i> Menu</i></a></li>
-                <li><a href="#reserve"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
-                <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
-                <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
+                <li><a href="#featured-menu"><i class="fa-solid fa-book"></i> Menu</i></a></li>
+                <li><a href="#featured-menu"><i class="fa solid fa-cutlery"></i> Order</i></a></li>
             </ul>
             <div class="icons">
-                <button id="bar"><i class="fa-solid fa-bars"></i></button>
-                <button id="employee-btn" onclick="window.location.href='views/employeeHomePage.html';"><i
-                        class="fa-solid fa-people-group"></i>Employee</button>
-                <button id="user"><i class="fa-solid fa-user"></i>Log In</button>
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="dropdown-content">
+                        <ul>
+                        <li><a href="#reserve"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
+                        <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
+                        <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                <button id="employee-btn" onclick="window.location.href='views/employeeHomePage.html';"><i class="fa-solid fa-people-group"></i>Employee</button>
+                <button id="user" onclick="window.location.href='views/customerLogin.html';"><i class="fa-solid fa-user"></i>Log In</button>
             </div>
         </nav>
     </div>
@@ -51,53 +56,24 @@
             <img src="assets/wooden.jpg" alt="farm" width="500" height="500">
         </div>
     </div>
-<div class="featured-menu" id="featured-menu">
-    <div class="head">
-        <h1>Featured <span> Menu Items</span></h1>
-    </div>
-    <div class="cards" id="cards">
-        <!-- Featured menu items will be dynamically added here. -->
-
-        <!-- <div class="foodcard">
-            <img src="assets/seasonalSalad.webp" alt="salad">
-        <h3 class="name">Seasonal Salad</h3>
-        <p class="description">Fresh greens, heirloom tomatoes, and house-made vinaigrette.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>12.99</span>
-        </div>
-        <div class="foodcard">
-            <img src="assets/grilledSalmon.webp" alt="salmon">
-        <h3 class="name">Grilled Salmon</h3>
-        <p class="description">Wild-caught salmon served with roasted vegetables and lemon butter sauce.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>24.99</span>
-        </div>
-        <div class="foodcard">
-            <img src="assets/herbChicken.webp" alt="salmon">
-        <h3 class="name">Herb-Crusted Chicken</h3>
-        <p class="description">Tender chicken breast with a savory herb crust, served with mashed potatoes.</p>
-        <span class="price"><i class="fa-solid fa-dollar-sign"></i>16.99</span>
-        </div> -->
-    </div>
-
-    <div class="food" id="food">
+    <div class="featured-menu" id="featured-menu">
         <div class="head">
             <h1>Featured <span> Menu Items</span></h1>
         </div>
-
+    <!-- <div class="cards" id="cards"> -->
+        <!-- Featured menu items will be dynamically added here. -->
         <!-- ---------------------------- -->
         <!-- Dynamically coded menu items -->
         <!-- ---------------------------- -->
-
         <div class="cards" id="cards">
             <!-- Featured menu items will be dynamically added here. -->
             <!-- Items fetched from DB, using js/featuredMenuItems.js -->
-
-            
             <!-- Loading spinner -->
             <div id="loading" class="loading">
                 <img id="loading-image" class="loading-image" src="assets/loading.gif" alt="Loading..." />
             </div>
-
-
+        </div>
+        
         <!-- --------------------- -->
         <!-- Hard coded menu items -->
         <!-- --------------------- -->
@@ -122,8 +98,6 @@
                 <span class="price"><i class="fa-solid fa-dollar-sign"></i>16.99</span>
             </div>
         </div> -->
-
-
     </div>
 
     <div class="customer" id="review">
@@ -251,80 +225,7 @@
                     aria-hidden="true"></i>
             </p>
         </div>
-        <!-- <i class="fa fa-facebook" aria-hidden="true"></i>
-    <i class="fa fa-instagram" aria-hidden="true"></i>
-    <i class="fa fa-snapchat-square" aria-hidden="true"></i>
-    <i class="fa fa-pinterest-square" aria-hidden="true"></i>
-    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-    <i class="fa fa-linkedin-square" aria-hidden="true"></i> -->
     </div>
-
-    <!--loginPage -->
-    <div class="loginPage">
-        <div class="form-content">
-            <header>Log in</header>
-            <form action="#">
-                <div class ="field-input-field">
-                    <input type="email" placeholder="Email" value="" class="input" id="email"><br>
-                </div>
-                <div class ="field-input-field">
-                    <input type="password" placeholder="Enter password" value="" class="password" id="password">
-                    <i class ='bx bx-hide eye-icon'></i>
-                </div>
-                <div class="form-link">
-                    <a href="#" class="forgot-pass">Forgot password?</a>
-                </div>
-                <div class ="field-input-field">
-                    <button id="logBtn">Log in</button>
-                </div>
-                <div class="form-link">
-                    <span>Don't have an account? <a href="#" class="signup-link">Sign up!</a></span>
-                </div>
-            </form>
-        </div>
-        <div class="line"></div>
-        <div class="media-options">
-            <a href="#" class="field google">
-                <i class="bx bxl-google google-icon"></i>
-                <span>Login with Google</span>
-            </a>
-        </div>
-    </div>
-
-    <!--SignupPage -->
-    <div class="loginPage">
-        <div class="form-content">
-            <header>Sign up</header>
-            <form action="#">
-                <div class ="field-input-field">
-                    <input type="email" placeholder="Email" value="" class="input" id="email"><br>
-                </div>
-                <div class ="field-input-field">
-                    <input type="password" placeholder="Create password" value="" class="password" id="password">
-                    <i class ='bx bx-hide eye-icon'></i>
-                </div>
-                <div class ="field-input-field">
-                    <input type="password" placeholder="Confirm password" value="" class="password" id="password">
-                    <i class ='bx bx-hide eye-icon'></i>
-                </div>
-                <div class ="field-input-field">
-                    <button id="logBtn">Sign up</button>
-                </div>
-                <div class="form-link">
-                    <span>Already have an account? <a href="#" class="signup-link">Log in!</a></span>
-                </div>
-            </form>
-        </div>
-        <div class="line"></div>
-        <div class="media-options">
-            <a href="#" class="field google">
-                <i class="bx bxl-google google-icon"></i>
-                <span>Login with Google</span>
-            </a>
-        </div>
-    </div>
-
-    
 
 
     <script type="module" src="js/featuredMenuItems.js"></script>

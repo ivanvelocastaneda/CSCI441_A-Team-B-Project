@@ -11,13 +11,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 30px;
 }
 .form {
+    position: absolute;
     border-radius: 6px;
     background: white;
     padding: 30px;
     max-width: 430px;
     width: 100%;
+}
+.form.signup {
+    opacity: 0;
+    pointer-events: none;
+}
+.forms.show-signup .form.signup {
+    opacity: 1;
+    pointer-events: auto;
+}
+.forms.show-signup .form.login {
+    opacity: 0;
+    pointer-events: auto;
 }
 header {
     font-size: 28px;
@@ -135,5 +149,11 @@ a.google .google-icon{
     top: 50%;
     left: 15px;
     transform: translateY(-50%);
+}
+
+@media screen and (max-width: 400px) {
+    .form {
+        padding: 20px 10px;
+    }
 }
 
