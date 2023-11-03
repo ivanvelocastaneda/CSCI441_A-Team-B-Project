@@ -38,13 +38,36 @@ pwShowHide.forEach((eyeIcon) => {
     });
   });
 });
-// toogle between sign up and login pages
+
+// switch between sign up and login pages
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault(); // preventing form from submitting
     forms.classList.toggle("show-signup");
   });
 });
+
+// Make a reservation
+function makeReservation() {
+  const name = document.getElementById("name").value;
+  const date = document.getElementById("date").value;
+  const phone = document.getElementById("phone").value;
+  const guests = document.getElementById("guests").value;
+
+  const confirmation = document.getElementById("confirmation");
+  confirmation.innerHTML = `Reservation confirmed for ${name} with phone number ${phone} on ${date} and with a party of ${guests}.`;
+}
+
+// Apply Now
+function applyToJob() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const position = document.getElementById("position").value;
+
+  const confirmation = document.getElementById("confirmation");
+  confirmation.innerHTML = `Thank your ${name} for applying to be a ${position}. We will email you at ${email} or call you at ${phone} in the next hours.`;
+}
 
 // let user = document.getElementById("user");
 // let logBtn = document.getElementById("logBtn");

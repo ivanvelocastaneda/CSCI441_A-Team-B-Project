@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm to Table::Login Page</title>
     <link rel="stylesheet" href="../css/customer.css" class="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css" class="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
+    <div class="navbar">
+        <nav>
+            <div class="logo">
+                <h1></h1>
+                <img src="../assets/logo.png" alt="Farm logo">
+            </div>
+            <ul>
+                <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#featured-menu"><i class="fa-solid fa-book"></i> Menu</i></a></li>
+                <li><a href="#featured-menu"><i class="fa solid fa-cutlery"></i> Order</i></a></li>
+            </ul>
+            <div class="icons">
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                    <div class="dropdown-content">
+                        <ul>
+                        <li><a href="#reserve"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
+                        <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
+                        <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                <button id="employee-btn" onclick="window.location.href='views/employeeHomePage.html';"><i class="fa-solid fa-people-group"></i>Employee</button>
+                <button id="user" onclick="window.location.href='views/customerLogin.html';"><i class="fa-solid fa-user"></i>Log In</button>
+            </div>
+        </nav>
+    </div>
 
     <!--loginPage -->
     <section class="container forms">
