@@ -1,5 +1,5 @@
 class Customer {
-    constructor(customerID, username, password, firstName, lastName, street, city, state, zip, rewardPoints, created_at, updated_at) {
+    constructor(customerID, username, password, firstName, lastName, street, city, state, zip, rewardPoints, created_at, updated_at, email) {
         this.customerID = customerID;
         this.username = username;
         this.password = password;
@@ -12,6 +12,7 @@ class Customer {
         this.rewardPoints = rewardPoints;
         this.created_at = created_at;
         this.updated_at = updated_at;
+        this.email = email;
     }
 
     update(data) {
@@ -27,6 +28,7 @@ class Customer {
         this.rewardPoints = data.rewardPoints || this.rewardPoints;
         this.created_at = data.created_at || this.created_at;
         this.updated_at = data.updated_at || this.updated_at;
+        this.email = data.email || this.email;
     }
 
     getFullName() {
