@@ -13,7 +13,8 @@ export class MenuItemController {
             const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage);
             this.view.addMenuItem(menuItem);
         });
-
+        // Loading spinner removed when function is done loading
+        document.getElementById('loading').style.display = 'none';
     }
 
     async addMenuItem(data) {
