@@ -46,3 +46,49 @@ export async function deleteMenuItem(id) {
     }
     return await response.json();
 }
+
+export async function fetchEmployees() {
+    const response = await fetch(`${BASE_URL}/employee`);
+    if (!response.ok) {
+        throw new Error(`Error fetching employees: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function createEmployee(data) {
+    const response = await fetch(`${BASE_URL}/employee/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error creating employee: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function updateEmployee(id, data) {
+    const response = await fetch(`${BASE_URL}/employee/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error updating employee: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function deleteEmployee(id) {
+    const response = await fetch(`${BASE_URL}/employee/${id}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error(`Error deleting employee: ${response.statusText}`);
+    }
+    return await response.json();
+}
