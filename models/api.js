@@ -1,5 +1,8 @@
 const BASE_URL = "https://csci441-teamb.onrender.com";
 
+
+
+// Menu Items calls
 export async function fetchMenuItems() {
     const response = await fetch(`${BASE_URL}/menu_item`);
     if (!response.ok) {
@@ -47,6 +50,8 @@ export async function deleteMenuItem(id) {
     return await response.json();
 }
 
+
+// Employee calls
 export async function fetchEmployees() {
     const response = await fetch(`${BASE_URL}/employee`);
     if (!response.ok) {
@@ -89,6 +94,54 @@ export async function deleteEmployee(id) {
     });
     if (!response.ok) {
         throw new Error(`Error deleting employee: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+
+//Customer calls
+export async function fetchCustomers() {
+    const response = await fetch(`${BASE_URL}/customer`);
+    if (!response.ok) {
+        throw new Error(`Error fetching customers: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function createCustomer(data) {
+    const response = await fetch(`${BASE_URL}/customer/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error creating customer: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function updateCustomer(id, data) {
+    const response = await fetch(`${BASE_URL}/customer/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error updating customer: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function deleteCustomer(id) {
+    const response = await fetch(`${BASE_URL}/customer/${id}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error(`Error deleting customer: ${response.statusText}`);
     }
     return await response.json();
 }
