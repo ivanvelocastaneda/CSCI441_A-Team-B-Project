@@ -1,4 +1,4 @@
-class Employee {
+export class Employee {
     constructor(employeeID, pin, typeID, firstName, lastName, street, city, state, zip, created_at, updated_at) {
         this.employeeID = employeeID;
         this.pin = pin;
