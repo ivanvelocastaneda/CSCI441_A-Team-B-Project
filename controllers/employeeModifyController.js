@@ -25,6 +25,7 @@ export class EmployeeModifyController {
 
     async editEmployee(id, data) {
         const updatedEmployee = await updateEmployee(id, data);
+        console.log(updatedEmployee);
         this.view.updateEmployee(id, updatedEmployee);
     }
 

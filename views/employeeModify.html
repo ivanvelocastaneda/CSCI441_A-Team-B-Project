@@ -6,12 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../css/styles.css"> -->
     <title>Employee Interface</title>
+    <style>
+.details {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details table,
+.details th,
+.details td {
+    border: 1px solid #ddd;
+}
+
+.employee-detail-key {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.employee-detail-value {
+    text-align: left;
+}
+
+
+    </style>
 </head>
 <body>
     <div id="all-employees-list" class="all-items-list">
         <h2>Menu Items</h2>
         <ul id="menu-employees-list"></ul>
-        <!-- Menu items will be added to list here -->
+        <!-- Employees will be added to list here -->
     </div>
     <br>
     <div id="manage-employees" class="manage-items">
@@ -19,25 +49,55 @@
         <label for="employee-dropdown">Select Employee:</label>
         <select id="employee-dropdown">
             <option value="">New Employee</option>
-            <!-- Menu items will be dynamically added here -->
+            <!-- Employees will be dynamically added here -->
         </select>
     </div>
 
     <div>
         <label for="employee-first-name-input">First Name:</label>
-        <input type="text" id="item-name-input" placeholder="Enter first name">
+        <input type="text" id="employee-first-name-input" placeholder="Enter first name">
     </div>
 
     <div>
         <label for="employee-last-name-input">Last Name:</label>
-        <input type="text" id="item-name-input" placeholder="Enter last name">
+        <input type="text" id="employee-last-name-input" placeholder="Enter last name">
     </div>
 
-    
+    <div>
+        <label for="employee-pin-input">PIN:</label>
+        <input type="text" id="employee-pin-input" placeholder="Enter PIN">
+    </div>
+
+    <div>
+        <label for="employee-type-id-input">Type ID:</label>
+        <input type="text" id="employee-type-id-input" placeholder="Enter Type ID">
+    </div>
+
+    <div>
+        <label for="employee-street-input">Street:</label>
+        <input type="text" id="employee-street-input" placeholder="Enter street">
+    </div>
+
+    <div>
+        <label for="employee-city-input">City:</label>
+        <input type="text" id="employee-city-input" placeholder="Enter city">
+    </div>
+
+    <div>
+        <label for="employee-state-input">State:</label>
+        <input type="text" id="employee-state-input" placeholder="Enter state">
+    </div>
+
+    <div>
+        <label for="employee-zip-input">ZIP Code:</label>
+        <input type="text" id="employee-zip-input" placeholder="Enter ZIP code">
+    </div>
+
+    <!-- Buttons for creating or updating an employee -->
     <button id="create-button">Create</button>
     <button id="update-button">Update</button>
 
-    <script type="module" src="../js/employeeModify.js"></script>
+    <script type="module" src="../js/employeeModify.js" defer></script>
 </body>
 
 </html>
