@@ -14,36 +14,66 @@
 <body onload="defaultHide()">
 
   <header>
-    <nav>
-      <!-- <div class="logo">Farm to Table</div> -->
-      <img src="assets/logo.png" alt="Farm to Table Logo">
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Reservations</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="user-options">
-        <button id="login-btn">Log In</button>
-        <button id="employee-btn" href="employee.html">Employee</button>
-      </div>
-    </nav>
+    <div class="navbar">
+      <nav>
+          <div class="logo">
+              <h1></h1>
+              <img src="assets/logo.png" alt="Farm logo">
+          </div>
+          <ul>
+              <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+              <li><a href="#featured-menu"><i class="fa-solid fa-book"></i> Menu</i></a></li>
+              <li><a href="#featured-menu"><i class="fa solid fa-cutlery"></i> Order</i></a></li>
+          </ul>
+          <div class="icons">
+              <div class="dropdown">
+                  <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                  <div class="dropdown-content">
+                      <ul>
+                      <li><a href="#reserve"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
+                      <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
+                      <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
+                      </ul>
+                  </div>
+                  </div>
+              <button id="employee-btn" onclick="window.location.href='views/employeeHomePage.html';"><i class="fa-solid fa-people-group"></i>Employee</button>
+              <button id="user" onclick="window.location.href='views/customerLogin.html';"><i class="fa-solid fa-user"></i>Log In</button>
+          </div>
+      </nav>
+  </div>
   </header>
 
   <main>
     <div>
-      <br><br>
-      <hr>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
-        <div class="col">One of three columns</div>
+      <br><br><br>
+      <div id="columns">
+        <br>
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col emptyTables">
+              <h5>Table Empty</h5>
+            </div>
+            <div class="col WaitingForOrders">
+              <h5>Waiting for Order</h5>
+            </div>
+            <div class="col PrepareMeals">
+              <h5>Preparing Meal</h5>
+            </div>
+            <div class="col readyToServeMeals">
+              <h5>Ready to Serve</h5>
+            </div>
+            <div class="col ServedMeals">
+              <h5>Served Meal</h5>
+            </div>
+            <div class="col DirtyTables">
+              <h5>Table Dirty</h5>
+            </div>
+          </div>
+        </div>
+      </div>
       <hr>
 
-
+      <button type="button" onclick="arrangeTables()">change Layout</button>
 
       <ul class="list-group list-group-flush">
         <li id="Table 1" class="list-group-item">Table 1
@@ -59,255 +89,168 @@
           </ul>
         </li>
         <li id="Table 2" class="list-group-item">Table 2
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Waiting for Order</button>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Waiting for Order</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 2')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 2')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 2')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 2')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 2')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 2')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 2')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 2')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 2')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 2')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 2')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 2')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 3" class="list-group-item">Table 3
-          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Table Empty</button>
+          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 3')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 3')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 3')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 3')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 3')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 3')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 3')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 3')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 3')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 3')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 3')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 3')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 4" class="list-group-item">Table 4
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Ready To Serve</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Ready To Serve</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 4')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 4')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 4')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 4')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 4')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 4')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 4')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 4')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 4')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 4')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 4')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 4')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 5" class="list-group-item">Table 5
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Waiting for Order</button>
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Waiting for Order</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 5')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 5')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 5')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 5')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 5')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 5')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 5')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 5')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 5')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 5')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 5')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 5')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 6" class="list-group-item">Table 6
-          <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Preparing Meal</button>
+          <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Preparing Meal</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 6')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 6')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 6')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 6')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 6')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 6')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 6')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 6')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 6')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 6')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 6')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 6')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 7" class="list-group-item">Table 7
-          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Table Empty</button>
+          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 7')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 7')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 7')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 7')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 7')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 7')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 7')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 7')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 7')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 7')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 7')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 7')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 8" class="list-group-item">Table 8
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Ready To Serve</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Ready To Serve</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 8')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 8')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 8')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 8')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 8')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 8')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 8')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 8')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 8')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 8')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 8')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 8')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 9" class="list-group-item">Table 9
-          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Table Empty</button>
+          <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 9')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 9')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 9')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 9')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 9')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 9')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 9')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 9')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 9')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 9')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 9')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 9')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 10" class="list-group-item">Table 10
-          <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Preparing Meal</button>
+          <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Preparing Meal</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 10')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 10')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 10')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 10')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 10')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 10')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 10')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 10')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 10')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 10')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 10')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 10')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 11" class="list-group-item">Table 11
-          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Served Meal</button>
+          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Served Meal</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 11')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 11')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 11')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 11')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 11')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 11')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 11')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 11')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 11')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 11')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 11')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 11')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 12" class="list-group-item">Table 12
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Table Dirty</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Dirty</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 12')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 12')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 12')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 12')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 12')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 12')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 12')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 12')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 12')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 12')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 12')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 12')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 13" class="list-group-item">Table 13
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Ready To Serve</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Ready To Serve</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 13')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 13')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 13')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 13')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 13')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 13')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 13')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 13')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 13')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 13')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 13')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 13')">Table Dirty</a></li>
           </ul>
         </li>
         <li id="Table 14" class="list-group-item">Table 14
-          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Ready To Serve</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Ready To Serve</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 14')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 14')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 14')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 14')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 14')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 14')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 14')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 14')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 14')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 14')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 14')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 14')">Table Dirty</a></li>
           </ul>
         </li>
-        <li id="Table 14" class="list-group-item">Table 14
-          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
-            aria-expanded="false">Served Meal</button>
+        <li id="Table 15" class="list-group-item">Table 15
+          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Served Meal</button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 14')">Preparing
-                Meal</a></li>
-            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 14')">Ready to
-                Serve</a></li>
-            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 14')">Waiting
-                for Order</a></li>
-            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 14')">Table Empty</a>
-            </li>
-            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 14')">Served Meal</a>
-            </li>
-            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 14')">Table Dirty</a>
-            </li>
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 15')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 15')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 15')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 15')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 15')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 15')">Table Dirty</a></li>
+          </ul>
+        </li>
+        <li id="Table 16" class="list-group-item">Table 16
+          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Served Meal</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('Table 16')">Preparing Meal</a></li>
+            <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('Table 16')">Ready to Serve</a></li>
+            <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('Table 16')">Waiting for Order</a></li>
+            <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('Table 16')">Table Empty</a></li>
+            <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('Table 16')">Served Meal</a></li>
+            <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('Table 16')">Table Dirty</a></li>
           </ul>
         </li>
       </ul>
