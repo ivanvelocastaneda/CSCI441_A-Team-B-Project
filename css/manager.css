@@ -20,14 +20,11 @@ body {
 header {
     background-color: #f4e4bc;
     color: #85090e;
-    padding: 20px 20px;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
+    padding: 0;
 }
-
 header img {
     max-width: 125px;
+    height: auto;
 }
 
 .icons {
@@ -108,7 +105,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin-left: 200px;
+    
     padding: 20px 20px;
     font-size:  18px;
 }
@@ -215,6 +212,9 @@ th, td {
 
 th {
     border-bottom: 2px solid #000; 
+}
+.Options h2{
+      color: #85090e;
 }
 
 

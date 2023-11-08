@@ -7,8 +7,8 @@ const hoursWorkedDisplay = document.getElementById("hours-worked");
 const estimatedEarningsDisplay = document.getElementById("estimated-earnings");
 const shiftWorkedDisplay = document.getElementById("shift-worked");
 
-const correctPIN = "1234"; // Change this to your desired PIN
-const payPerHour = 20; // Change this to your desired pay rate per hour
+const correctPIN = "1234"; 
+const payPerHour = 20; 
 
 let clockedIn = false;
 let onBreak = false;
@@ -54,11 +54,12 @@ clockButton.addEventListener("click", () => {
             (elapsedMinutesRemainder > 0 ? `${elapsedMinutesRemainder} min, ` : "") +
             (elapsedSecondsRemainder > 0 ? `${elapsedSecondsRemainder} sec` : "");
 
-        hoursWorkedDisplay.textContent = `Hours Worked: ${formattedElapsed}`;
+        hoursWorkedDisplay.textContent = `Hours Worked: ${0.0005}`;
         shiftCount++;
+        
         shiftWorkedDisplay.textContent = `Shift Worked: ${shiftCount} shift(s)`;
         
-        const estimatedEarnings = (payPerHour * elapsedSeconds) / 3600;
+        const estimatedEarnings = (payPerHour/ elapsedSeconds* 3600);
         estimatedEarningsDisplay.textContent = `Estimated Earnings: $${estimatedEarnings.toFixed(2)}`;
     }
 });

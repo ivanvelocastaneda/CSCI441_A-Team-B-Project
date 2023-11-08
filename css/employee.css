@@ -145,6 +145,21 @@ nav {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.logo {
+    font-size: 20px;
+}
+.logo img {
+    height: auto;
+    width: auto;
+    max-height: 80px;
+    max-width: 250px;
+    position: static;
+    position:fixed; 
+    top:0; 
+    left:0;
+    opacity: 0.5;
+}
+
 
 #clock-button {
     background-color: #b36b5c;
