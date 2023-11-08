@@ -33,8 +33,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin-left: 200px;
+    padding: 20px;
+    font-size:  18px;
 }
 
 .nav-links {
@@ -193,3 +194,27 @@ nav {
     color: #fff;
 }
 
+#user {
+    background-color: #b36b5c;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: #f4e4bc;
+}
+
+#user i {
+    margin-inline: 11px;
+    background-color: #b36b5c;
+    padding: 6px;
+    font-size: 20px;
+    border-radius:  m4px;
+    color: #f4e4bc;
+}
+
+#user:hover {
+    background-color: #b36b5c; 
+}
