@@ -130,7 +130,7 @@ document.getElementById('employee-dropdown').addEventListener('change', (event) 
 document.getElementById('create-button').addEventListener('click', async () => {
     // Get current time
     var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-0'+today.getDate();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
 
@@ -143,7 +143,8 @@ document.getElementById('create-button').addEventListener('click', async () => {
         city: document.getElementById('employee-city-input').value,
         state: document.getElementById('employee-state-input').value,
         zip: document.getElementById('employee-zip-input').value,
-        created_at: dateTime
+        created_at: dateTime,
+        updated_at: dateTime
     };
     await controller.addEmployee(data); // Assume this is the correct method
     window.location.reload();
@@ -153,9 +154,9 @@ document.getElementById('create-button').addEventListener('click', async () => {
 document.getElementById('update-button').addEventListener('click', async () => {
     // Get current time
     var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-0'+today.getDate();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date+'T'+time+'.000Z';
+    var dateTime = date+' '+time+'';
 
     const id = selectedItem.employeeID; // Assume this is how you get the selected employee's ID
     const data = {
