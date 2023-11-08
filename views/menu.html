@@ -10,18 +10,27 @@
 </head>
 <body>
     <header>
+        <div class="logo">
+            <h1></h1>
+            <img src="../assets/logo.png" alt="Farm logo">
+        </div>
+    
+
         <nav>
-            <img src="../assets/logo.png" alt="Farm to Table Logo">
+            
             <ul class="nav-links">
     <li><a href="managerHome.html">Home</a></li>
     <li><a href="menu.html">Menu</a></li>
     <li><a href="employeeManagement.html">Employee</a></li>
-    
-    
+    <li><a href="financial.html">Finance</a></li>
+
 </ul>
-        
-    
-    </header>
+</nav>
+
+<button id="user" onclick="window.location.href='index.html';"><i class="fa-solid fa-user"></i>Log Out</button>
+
+
+</header>
 
     <section class="menu-management">
         <h2>Menu Management</h2>
@@ -38,6 +47,7 @@
                     <th>Item</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,8 +55,8 @@
                     <td class="name">Grilled Salmon</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$18.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
+                    
                 </tr>
 
 
@@ -54,48 +64,41 @@
                     <td class="name">Filet Mignon</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$24.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
                 </tr>
 
                 <tr>
                     <td class="name">Caprese Salad</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$12.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
                 </tr>
 
                 <tr>
                     <td class="name">Spaghetti Bolognese</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$13.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
                 </tr>
 
                 <tr>
                     <td class="name">Vegetable Stir-Fry</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$15.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
                 </tr>
 
                 <tr>
                     <td class="name">Tiramisu</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$7.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
-                </tr>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
 
                 <tr>
                     <td class="name">Chicken Alfredo</td>
                     <td class="description">Freshly grilled salmon served with a side of vegetables.</td>
                     <td class="price">$16.99</td>
-                    <td><button class="edit-button">Edit</button></td>
-                    <td><button class="remove-button">Remove</button></td>
+                    <td><button class="edit-button">Edit <button class="remove-button">Remove</button></td>
                 </tr>
 
             </tbody>
@@ -104,3 +107,5 @@
         </table>
     </section>
 
+</body>
+</html>

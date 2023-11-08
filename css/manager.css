@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     
-    background-image: url('welcome.png');
+    background-image: url('../assets/welcome.png');
     opacity: 0.8;
 } 
 
@@ -20,57 +20,97 @@ body {
 header {
     background-color: #f4e4bc;
     color: #85090e;
-    padding: 10px 0;
+    padding: 20px 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
 }
 
 header img {
     max-width: 125px;
-    height: auto;
 }
 
-.\logout-button {
-    text-decoration: none;
-    background-color: #85090e;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 30px; 
 }
 
-.logout-button:hover {
+.icons a {
+    display: flex;
+    align-items: center;
     background-color: #b36b5c;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: #f4e4bc;
+    text-decoration: none;
 }
 
+.icons a:hover {
+    background-color: #85090e;
+}
+
+.icons i {
+    margin-inline: 11px;
+    background-color: #b36b5c;
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 4px;
+    color: #f4e4bc;
+}
+
+
+.logo {
+    font-size: 20px;
+}
+.logo img {
+    height: auto;
+    width: auto;
+    max-height: 80px;
+    max-width: 250px;
+    position: static;
+    position:fixed; 
+    top:0; 
+    left:0;
+    opacity: 0.5;
+}
 
 .welcome-section h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.Options h2 {
-    font-size: 32px; /* You can adjust the size as needed */
+ h2 {
+    font-size: 32px; 
     margin-top: 30px; 
     font-weight:bolt;
+    color:#85090e;
+    margin-left:100px;
 }
 
 img#welcome-image{
     margin-top:10px;
     width: 800px;
-    height:400px /* Adjust the width as needed */
+    height:400px 
+
 }
 
-/* Navigation styles */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 200px;
     padding: 0 20px;
+    font-size:  18px;
 }
 
 .nav-links {
@@ -93,21 +133,19 @@ nav {
     color: #b36b5c;
 }
 
-/* Add this CSS to style the navigation bar */
+
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Display list items horizontally */
+    display: flex; 
 }
-
-
 
 
 .nav-container {
     display: flex;
-    justify-content: center; /* Center the child element horizontally */
-    margin-top: 50px; /* Add space between the image and the navigation bar */
+    justify-content: center; 
+    margin-top: 50px; 
 }
 
 ul.home-page-ul {
@@ -135,7 +173,7 @@ ul.home-page-ul li a {
 
 
 ul.home-page-ul li a i {
-    font-size: 36px !important; /* Increase the font size to make the icons bigger */
+    font-size: 36px !important; 
 }
 
 ul.home-page-ul li a:hover {
@@ -147,7 +185,7 @@ div.user-options button:hover {
     background-color: #85090e;
 }
 
-/* Menu Management styles */
+
 .menu-management {
     background-color: #85090e;
     color: white;
@@ -160,24 +198,25 @@ div.user-options button:hover {
     font-size: 24px;
 }
 
+
 table {
-    width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%;
 }
 
-table th {
-    background-color: #b36b5c;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
+table, th, td {
+    border: 1px solid #000; }
+
+th, td {
+    padding: 8px;
     text-align: left;
 }
 
-table td {
-    padding: 10px;
-    border-bottom: 1px solid #b36b5c;
+
+th {
+    border-bottom: 2px solid #000; 
 }
+
 
 /* Employee Management styles */
 .employee-management {
@@ -185,25 +224,29 @@ table td {
     color: white;
     padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 0;
 }
 
 .employee-management h2 {
-    font-size: 24px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+
 }
 
 .employee-management table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .employee-management table th {
     background-color: #b36b5c;
     color: white;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .employee-management table td {
@@ -211,9 +254,8 @@ table td {
     border-bottom: 1px solid #b36b5c;
 }
 
-/* Additional styles for various elements can be added here as needed */
 
-/* Add this style for the search bar */
+
 .search-bar {
     text-align: right;
     padding: 10px;
@@ -240,3 +282,54 @@ table td {
 .edit-icon:hover, .remove-icon:hover {
     color: #b36b5c;
 }
+.add-employee {
+    margin-top: 20px; 
+}
+
+#add-employee-btn {
+    background-color: #b36b5c; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 100px;
+}
+
+#add-employee-btn:hover {
+    background-color: #85090e; 
+}
+
+#user {
+    background-color: #b36b5c;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: #f4e4bc;
+}
+
+#user i {
+    margin-inline: 11px;
+    background-color: #b36b5c;
+    padding: 6px;
+    font-size: 20px;
+    border-radius:  m4px;
+    color: #f4e4bc;
+}
+
+#user:hover {
+    background-color: #b36b5c; 
+}
+
+
+
+
+
+

@@ -14,13 +14,13 @@
             <img src="../assets/logo.png" alt="Farm to Table Logo">
             <ul class="nav-links">
                 <li><a href='../index.html'>Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Reservations</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Manager Interface </a></li>
+                <li><a href="#">Chef Interface</a></li>
+                <li><a href="#">Server Interface</a></li>
+                
             </ul>
-            <div class="user-options">
-                <button id="Log out">Log out</button>
-            </div>
+            <button id="user" onclick="window.location.href='index.html';"><i class="fa-solid fa-user"></i>Log Out</button>
+
         </nav>
     </header>
 
@@ -35,7 +35,11 @@
                 
                 <div id="pin-table-container">
                     <table class="pin-entry-table">
-                        <input type="text" id="pin-input" class="pin-input" maxlength="4">
+                        <div class="pin-input-container">
+                            <input type="password" id="pin-input" class="pin-input" maxlength="4">
+                            <i class="fas fa-eye-slash" id="pin-toggle"></i>
+                        </div>
+                        
                         <div class="pin-table">
                             <div class="pin-cell" data-value="1">1</div>
                             <div class="pin-cell" data-value="2">2</div>
