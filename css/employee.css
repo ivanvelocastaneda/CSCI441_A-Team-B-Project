@@ -11,7 +11,20 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #85090e;
-    
+}
+#test{
+    text-align: left;
+    background-color: #85090e;
+    font-family: Arial, sans-serif;
+
+}
+.list-group-item{
+    background-color: #85090e;
+    color: white;
+}
+
+.btn{
+    width: 150px;
 }
 
 /* Header styles */
