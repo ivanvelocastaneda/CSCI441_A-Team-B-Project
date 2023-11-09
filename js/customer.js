@@ -87,7 +87,7 @@ function applyToJob() {
 //   }
 // });
 
-// let bar = document.getElementById("bar");
-// bar.addEventListener("click", function () {
-//   document.querySelector("ul").classList.toggle("showData");
-// });
+let bar = document.getElementById("bar");
+bar.addEventListener("click", function () {
+  document.querySelector("ul").classList.toggle("showData");
+});
