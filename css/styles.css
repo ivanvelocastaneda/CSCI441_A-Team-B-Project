@@ -30,14 +30,14 @@ nav {
 .navbar ul li a {
     text-decoration: none;
     margin-inline: 20px;
-    font-size: 20px;
+    font-size: 18px;
     color: #85090e;
 }
 .navbar ul li a:hover {
     color: red;
     border-bottom: 2px solid red;
 }
-.dropdown {
+/* .dropdown {
     position: relative;
     display: inline-block;
 }
@@ -72,7 +72,7 @@ nav {
 }
 .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 .icons {
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ nav {
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #f4e4bc;
 }
 .icons button:hover {
@@ -121,6 +121,9 @@ nav {
     background-color: #85090e;
     color: #fff;
     margin-top: 80px;
+    background-image: url('../assets/preparation.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .mainText {
     margin-top: 97px;
@@ -346,19 +349,45 @@ nav {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+  
+  /* For small devices (phones) */
+    @media screen and (max-width: 400px) {
+        .mainText h1 {
+            font-size: 33px;
+        }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 900px) {
-    .main {
-     display: block;
-     text-align: center;
+        .mainText h3 {
+            font-size: 23px;
+        }
+        .icons {
+            margin-right: 11px;
+        }
+    } 
+  
+    @media only screen and (max-width: 600px) {
+        /* Adjust the navigation bar */
+        .navbar ul {
+            flex-direction: column; /* Stack the navigation links vertically */
+            align-items: center;
+        }
+        .navbar ul li {
+            margin-bottom: 10px; /* Add space between each navigation link */
+        }
+        .icons {
+            flex-direction: column; /* Stack the buttons vertically */
+            align-items: center;
+        }
+        .crd img {
+            height: 80px;
+        }
+        .form-group {
+            width: 50%;
+        }
     }
-    .reviews {
-        width: 90%;
-    }
-  }
 
-@media screen and (max-width: 720px) {
+/* For medium-sized devices (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Modify layout or font sizes if needed */
     ul {
         display: none;
     }
@@ -366,7 +395,7 @@ nav {
         display: block;
        }
     
-    /* .showData {
+    .showData {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -377,46 +406,17 @@ nav {
         top: 75px;
         width: 100%;
         gap: 22px;
-    } */
-  }
-
-  @media screen and (max-width: 600px) {
-    .main img {
-        width: 90%;
     }
-    .crd img {
-        height: 80px;
-    }
-    .form-group {
-        width: 90%;
-    }
-    .dropdown-content {
-        /* Adjust the positioning or layout for smaller screens */
-        position: relative; /* Change to relative or static */
-        top: 0; /* Reset the top value */
-        left: 0; /* Reset the left value */
-        width: 100%; /* Adjust width as needed */
-        text-align: center; /* Center the links */
-    }
-    .dropdown-content a {
+    .main {
         display: block;
-        margin: 10px 0;
-        /* Add any additional styling for links in smaller screens */
-      }
+        text-align: center;
+       }
+       .reviews {
+           width: 90%;
+       }
+}
 
-    
-  }
-
-  
-  @media screen and (max-width: 400px) {
-    .mainText h1 {
-        font-size: 33px;
-    }
-
-    .mainText h3 {
-        font-size: 23px;
-    }
-    .icons {
-        margin-right: 11px;
-    }
-  }
+/* For larger devices (desktops) */
+@media only screen and (min-width: 1025px) {
+    /* Keep your default styles or make any necessary adjustments */
+}
