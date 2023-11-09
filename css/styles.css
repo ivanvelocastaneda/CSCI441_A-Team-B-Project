@@ -1,6 +1,6 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -11,10 +11,11 @@ nav {
     justify-content: space-around;
     background-color: #f4e4bc;
     color: #85090e;
-    padding: 22px;
+    padding: 12px;
     position: fixed;
     top: 0%;
     width: 100%;
+    z-index: 100;
 
 }
 .navbar ul {
@@ -103,6 +104,7 @@ nav {
 
 .logo {
     font-size: 20px;
+
 }
 .logo img {
     height: auto;
@@ -110,10 +112,8 @@ nav {
     max-height: 80px;
     max-width: 250px;
     position: static;
-    position:fixed; 
     top:0; 
-    left:0;
-    opacity: 0.5;
+    left: 0;
 }
 .main {
     display: flex;
@@ -196,7 +196,7 @@ nav {
 
 .head {
     text-align: center;
-    padding: 77px;
+    padding: 55px;
     color: #85090e;
 }
 .reviews{
@@ -205,12 +205,13 @@ nav {
     position: relative;
     margin: auto;
     overflow: hidden;
+    margin-top: 50px;
 }
 .crd {
     width:100%;
-    height: 100%;
-    position: absolute;
+    height: 250px;
     background-color: #fff;
+    position: relative;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
@@ -223,40 +224,32 @@ nav {
     width: 22%;
     height: 150px;
     border-radius: 50%;
-    margin-top: 11px;
-}
-.info-section {
-    width:800px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    padding: 0%;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #85090e;
+    margin-top: 120px;
 }
 
-.form-group {
-    width:800px;
+.my-form {
+    z-index: 50;
+    width: 800px;
     position: relative;
-    margin: auto;
-    overflow: hidden;
-    padding: 0%;
+    margin:  auto;
+    /* overflow: hidden; */
+    margin-top: 50px;
+    padding: 3%;
     font-size: 18px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #85090e;
+    color: white;
+    background-color: #85090e;
 }
-  .form-group label {
+  .my-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #85090e;
+    color: white;
   }
-  .form-group input, .form-group textarea {
+  .my-form input, .my-form textarea {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -264,29 +257,42 @@ nav {
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #85090e;
+    margin-bottom: 15px;
   }
-  .form-group button {
+  .my-form button {
     font-size: 20px;
     width: 140px;
     height: 38px;
     background-color: #b36b5c;
     color: #f4e4bc;
     border: 2px solid #b36b5c;
-    margin-top: 22px;
+    margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-  .form-group button:hover {
-    background-color: #85090e;
+  .my-form button:hover {
+    background-color: #f4e4bc;
+    color: #85090e; 
   }
-  
-  .footer {
-    /* width:800px;
+
+  .form-group {
+    z-index: 50;
+    width: 800px;
     position: relative;
-    margin: auto;
-    overflow: hidden;
-    padding: 0%; */
+    margin:  auto;
+    /* overflow: hidden; */
+    margin-top: 50px;
+    padding: 3%;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-color: #85090e;
+}
+  
+
+  .footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -337,8 +343,6 @@ nav {
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   } 
-
-
   .line::before {
     content: 'Or';
   }
@@ -406,6 +410,9 @@ nav {
     }
     .crd img {
         height: 80px;
+    }
+    .form-group {
+        width: 90%;
     }
     
   }
