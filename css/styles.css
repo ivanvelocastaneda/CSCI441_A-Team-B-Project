@@ -207,6 +207,7 @@ nav {
     overflow: hidden;
     margin-top: 50px;
 }
+
 .crd {
     width:100%;
     height: 250px;
@@ -219,12 +220,12 @@ nav {
     color: black;
     font-style: italic;
     transition: all 1s ease;
+    z-index: 50;
 }
 .crd img {
     width: 22%;
     height: 150px;
     border-radius: 50%;
-    margin-top: 120px;
 }
 
 .my-form {
@@ -275,22 +276,6 @@ nav {
     background-color: #f4e4bc;
     color: #85090e; 
   }
-
-  .form-group {
-    z-index: 50;
-    width: 800px;
-    position: relative;
-    margin:  auto;
-    /* overflow: hidden; */
-    margin-top: 50px;
-    padding: 3%;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    background-color: #85090e;
-}
-  
 
   .footer {
     display: flex;
