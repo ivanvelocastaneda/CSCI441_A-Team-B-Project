@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #fff;
 }
 nav {
@@ -48,7 +48,6 @@ nav {
     margin-left: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     color: #f4e4bc;
 }
@@ -152,7 +151,6 @@ nav {
     margin-top: 22px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .mainText button:hover{
     background-color: #f4e4bc;
@@ -190,7 +188,6 @@ nav {
     border: none;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #b36b5c;
 }
 
@@ -216,11 +213,9 @@ nav {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     font-style: italic;
     transition: all 1s ease;
-    z-index: 50;
 }
 .crd img {
     width: 22%;
@@ -233,14 +228,15 @@ nav {
     width: 800px;
     position: relative;
     margin:  auto;
-    /* overflow: hidden; */
+    overflow: hidden;
     margin-top: 50px;
     padding: 3%;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
     background-color: #85090e;
+}
+.my-form p {
+    color: white;
 }
   .my-form label {
     display: block;
@@ -256,8 +252,6 @@ nav {
     box-sizing: border-box;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #85090e;
     margin-bottom: 15px;
   }
   .my-form button {
@@ -270,13 +264,11 @@ nav {
     margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .my-form button:hover {
     background-color: #f4e4bc;
     color: #85090e; 
   }
-
   .footer {
     display: flex;
     flex-wrap: wrap;
@@ -287,7 +279,6 @@ nav {
     margin-top: 44px;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .loginPage {
     display: none;
@@ -303,7 +294,6 @@ nav {
     top: 12%;
     right: 2%;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
   }
 
@@ -314,7 +304,6 @@ nav {
     border: 1px solid black;
     font-size: 16px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
   .active1 button {
@@ -326,7 +315,6 @@ nav {
     border: none;
     margin-top: 22px;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   } 
   .line::before {
     content: 'Or';
