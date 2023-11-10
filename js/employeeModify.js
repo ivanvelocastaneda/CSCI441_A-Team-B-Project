@@ -1,7 +1,9 @@
 import { EmployeeModifyController } from '../controllers/employeeModifyController.js';
 import { Employee } from '../models/employee.js';
 
-class View {
+class View {    
+    employeeTypes = {}
+
     addEmployee(employee) {
         const ul = document.getElementById('menu-employees-list');
         const li = document.createElement('li');
@@ -55,10 +57,12 @@ class View {
                 cellKey.className = 'employee-detail-key';
                 cellValue.className = 'employee-detail-value';
             };
+            console.log(this.employeeTypes);
+            const typeName = this.employeeTypes[employee.typeID] || 'Unknown Type';
     
             // Insert rows into the table
             insertDetailRow(detailsTable, 'PIN', employee.pin);
-            insertDetailRow(detailsTable, 'TypeID', employee.typeID);
+            insertDetailRow(detailsTable, 'Type', typeName);
             insertDetailRow(detailsTable, 'Address', employee.getAddress());
             insertDetailRow(detailsTable, 'Created At', employee.created_at);
             insertDetailRow(detailsTable, 'Updated At', employee.updated_at);
@@ -72,7 +76,6 @@ class View {
         detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'block' : 'none';
     }
     
-
     updateEmployee(id, updatedEmployee) {
         const li = document.getElementById(`employee-${id}`);
         if (li) {
@@ -104,7 +107,7 @@ class View {
         document.getElementById('employee-first-name-input').value = employee.firstName || '';
         document.getElementById('employee-last-name-input').value = employee.lastName || '';
         document.getElementById('employee-pin-input').value = employee.pin || '';
-        document.getElementById('employee-type-id-input').value = employee.typeID || '';
+        document.getElementById('employee-type-dropdown').value = employee.typeID || '';
         document.getElementById('employee-street-input').value = employee.street || '';
         document.getElementById('employee-city-input').value = employee.city || '';
         document.getElementById('employee-state-input').value = employee.state || '';
@@ -138,7 +141,7 @@ document.getElementById('create-button').addEventListener('click', async () => {
         firstName: document.getElementById('employee-first-name-input').value,
         lastName: document.getElementById('employee-last-name-input').value,
         pin: document.getElementById('employee-pin-input').value,
-        typeID: document.getElementById('employee-type-id-input').value,
+        typeID: document.getElementById('employee-type-dropdown').value,
         street: document.getElementById('employee-street-input').value,
         city: document.getElementById('employee-city-input').value,
         state: document.getElementById('employee-state-input').value,
@@ -164,7 +167,7 @@ document.getElementById('update-button').addEventListener('click', async () => {
         firstName: document.getElementById('employee-first-name-input').value,
         lastName: document.getElementById('employee-last-name-input').value,
         pin: document.getElementById('employee-pin-input').value,
-        typeID: document.getElementById('employee-type-id-input').value,
+        typeID: document.getElementById('employee-type-dropdown').value,
         street: document.getElementById('employee-street-input').value,
         city: document.getElementById('employee-city-input').value,
         state: document.getElementById('employee-state-input').value,

@@ -42,6 +42,10 @@
         <h2>Menu Items</h2>
         <ul id="menu-employees-list"></ul>
         <!-- Employees will be added to list here -->
+        <!-- Loading spinner -->
+        <div id="loading" class="loading">
+            <img id="loading-image" class="loading-image" src="../assets/loading.gif" alt="Loading..." />
+        </div>
     </div>
     <br>
     <div id="manage-employees" class="manage-items">
@@ -68,10 +72,18 @@
         <input type="text" id="employee-pin-input" placeholder="Enter PIN">
     </div>
 
-    <div>
+    <!-- <div>
         <label for="employee-type-id-input">Type ID:</label>
         <input type="text" id="employee-type-id-input" placeholder="Enter Type ID">
+    </div> -->
+    <div>
+        <label for="employee-type-dropdown">Type:</label>
+        <select id="employee-type-dropdown">
+            <option value="">Select Type</option>
+            <!-- Employee types will be dynamically added here -->
+        </select>
     </div>
+    
 
     <div>
         <label for="employee-street-input">Street:</label>
