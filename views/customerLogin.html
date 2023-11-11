@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,52 +11,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <script src="https://kit.fontawesome.com/064cee087c.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-
-    <div class="navbar">
-        <nav>
-            <div class="logo">
-                <h1></h1>
-                <img src="../assets/logo.png" alt="Farm logo">
-            </div>
-            <ul>
-                <li><a href="../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#featured-menu"><i class="fa-solid fa-book"></i> Menu</i></a></li>
-                <li><a href="#featured-menu"><i class="fa solid fa-cutlery"></i> Order</i></a></li>
-            </ul>
-            <div class="icons">
-                <div class="dropdown">
-                    <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-                    <div class="dropdown-content">
-                        <ul>
-                        <li><a href="#reserve"><i class="fa-solid fa-calendar-days"></i> Reservations</a></li>
-                        <li><a href="#review"><i class="fa-solid fa-pen"></i> Reviews</a></li>
-                        <li><a href="#apply"><i class="fa-solid fa-phone"></i> Apply</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                <button id="user" onclick="window.location.href='views/customerLogin.html';"><i class="fa-solid fa-user"></i>Log In</button>
-            </div>
-        </nav>
-    </div>
-
     <!--loginPage -->
     <section class="container forms">
         <div class="form login">
             <div class="form-content">
                 <header>Log in</header>
                 <form action="#">
-                    <div class ="field input-field">
+                    <div class="field input-field">
                         <input type="email" placeholder="Email" value="" class="input" id="email"><br>
                     </div>
-                    <div class ="field input-field">
+                    <div class="field input-field">
                         <input type="password" placeholder="Enter password" value="" class="password" id="password">
-                        <i class ='bx bx-hide eye-icon'></i>
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
                     <div class="form-link">
                         <a href="#" class="forgot-pass">Forgot password?</a>
                     </div>
-                    <div class ="field button-field">
+                    <div class="form-link">
+                        <a href="../index.html" class="forgot-pass">Return to Home</a>
+                    </div>
+                    <div class="field button-field">
                         <button>Login</button>
                     </div>
                     <div class="form-link">
@@ -70,31 +47,35 @@
                     <span>Login with Google</span>
                 </a>
                 <a href="#" class="field employee">
-                    <span onclick="window.location.href='employeeHomePage.html';"><i class="fa-solid fa-people-group"></i> Access Employee Page</span>
+                    <span onclick="window.location.href='employeeHomePage.html';"><i
+                            class="fa-solid fa-people-group"></i> Access Employee Page</span>
                 </a>
             </div>
         </div>
-         <!--SignupPage -->
-         <div class="form signup">
+        <!--SignupPage -->
+        <div class="form signup">
             <div class="form-content">
                 <header>Sign up</header>
                 <form action="#">
-                    <div class ="field input-field">
+                    <div class="field input-field">
                         <input type="email" placeholder="Email" value="" class="input" id="email"><br>
                     </div>
-                    <div class ="field input-field">
+                    <div class="field input-field">
                         <input type="password" placeholder="Create password" value="" class="password" id="password">
-                        <i class ='bx bx-hide eye-icon'></i>
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
-                    <div class ="field input-field">
+                    <div class="field input-field">
                         <input type="password" placeholder="Confirm password" value="" class="password" id="password">
-                        <i class ='bx bx-hide eye-icon'></i>
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
-                    <div class ="field button-field">
+                    <div class="field button-field">
                         <button>Signup</button>
                     </div>
                     <div class="form-link">
                         <span>Already have an account? <a href="#" class="link login-link">Log in!</a></span>
+                    </div>
+                    <div class="form-link">
+                        <a href="../index.html" class="forgot-pass">Return to Home</a>
                     </div>
                 </form>
             </div>
@@ -105,11 +86,13 @@
                     <span>Login with Google</span>
                 </a>
                 <a href="#" class="field employee">
-                    <span onclick="window.location.href='employeeHomePage.html';"><i class="fa-solid fa-people-group"></i> Access Employee Page</span>
+                    <span onclick="window.location.href='employeeHomePage.html';"><i
+                            class="fa-solid fa-people-group"></i> Access Employee Page</span>
                 </a>
             </div>
         </div>
     </section>
     <script src="../js/customer.js"></script>
 </body>
+
 </html>

@@ -278,7 +278,7 @@ nav {
   .footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
     background-color: #f4e4bc;
     color: #85090e;
     padding: 66px;
