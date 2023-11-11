@@ -3,6 +3,14 @@ Logo: https://ibb.co/2kvVrf6
 
 
 // Menu Items
-Grilled Salmon: https://ibb.co/TrNb960 https://i.ibb.co/DLj80hM/grilled-Salmon.webp
-Herb-Crusted Chicken: https://ibb.co/9cjr8Gv
-Seasonal Salad: https://ibb.co/Fzc9KXC https://i.ibb.co/vkfbHhR/seasonal-Salad.webp
+Grilled Salmon:         https://ibb.co/TrNb960 ---img: https://i.ibb.co/DLj80hM/grilled-Salmon.webp
+Herb-Crusted Chicken:   https://ibb.co/9cjr8Gv ---img: https://i.ibb.co/q7wryxn/herb-Chicken.webp
+Seasonal Salad:         https://ibb.co/Fzc9KXC ---img: https://i.ibb.co/vkfbHhR/seasonal-Salad.webp
+Beet Salad:             https://ibb.co/HnDsSyz ---img: https://i.ibb.co/bzgZ0VB/beet-Salad.webp
+Cheese Board:           https://ibb.co/r6P6f9Z ---img: https://i.ibb.co/yyTyB28/cheese-Board.webp
+Farmhouse Burger:       https://ibb.co/d6VJkDn ---img: https://i.ibb.co/DkvgwQ3/farmhouse-Burger.webp
+Mushroom Risotto:       https://ibb.co/mtY6gTK ---img: https://i.ibb.co/zbLGDxg/mushroom-Risotto.webp
+Quinoa & Veg bowl:      https://ibb.co/QCCnVvg ---img: https://i.ibb.co/X33pPxQ/quinoa-Vegetable-Bowl.webp
+Short Ribs:             https://ibb.co/RPSD92C ---img: https://i.ibb.co/hHMmysK/short-Ribs.webp
+Vegetable Soup:         https://ibb.co/p03qfH4 ---img: https://i.ibb.co/7YGhn3r/Vegetable-Soup.webp
+
