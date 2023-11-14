@@ -64,6 +64,7 @@ class View {
             insertDetailRow(detailsTable, 'PIN', employee.pin);
             insertDetailRow(detailsTable, 'Type', typeName);
             insertDetailRow(detailsTable, 'Address', employee.getAddress());
+            insertDetailRow(detailsTable, 'Hourly Rate', employee.hourlyRate);
             insertDetailRow(detailsTable, 'Created At', employee.created_at);
             insertDetailRow(detailsTable, 'Updated At', employee.updated_at);
     
@@ -112,6 +113,9 @@ class View {
         document.getElementById('employee-city-input').value = employee.city || '';
         document.getElementById('employee-state-input').value = employee.state || '';
         document.getElementById('employee-zip-input').value = employee.zip || '';
+        const clockedState = employee.clockedIn === 1 ? 'In' : 'Out';
+        document.getElementById('employee-clocked-dropdown').value = clockedState;
+        document.getElementById('employee-hourly-rate').value = employee.hourlyRate || '';
     }
     
 }
@@ -146,10 +150,12 @@ document.getElementById('create-button').addEventListener('click', async () => {
         city: document.getElementById('employee-city-input').value,
         state: document.getElementById('employee-state-input').value,
         zip: document.getElementById('employee-zip-input').value,
+        clockedIn: document.getElementById('employee-clocked-dropdown').value,
+        hourlyRate: document.getElementById('employee-hourly-rate').value,
         created_at: dateTime,
         updated_at: dateTime
     };
-    await controller.addEmployee(data); // Assume this is the correct method
+    await controller.addEmployee(data);
     window.location.reload();
 });
 
@@ -161,7 +167,11 @@ document.getElementById('update-button').addEventListener('click', async () => {
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time+'';
 
-    const id = selectedItem.employeeID; // Assume this is how you get the selected employee's ID
+    // Clock in state
+    const clockedDropdownValue = document.getElementById('employee-clocked-dropdown').value;
+    const clockedInValue = clockedDropdownValue === 'In' ? 1 : 0;
+
+    const id = selectedItem.employeeID;
     const data = {
         employeeID: selectedItem.employeeID,
         firstName: document.getElementById('employee-first-name-input').value,
@@ -172,16 +182,17 @@ document.getElementById('update-button').addEventListener('click', async () => {
         city: document.getElementById('employee-city-input').value,
         state: document.getElementById('employee-state-input').value,
         zip: document.getElementById('employee-zip-input').value,
+        clockedIn: clockedInValue,
+        hourlyRate: document.getElementById('employee-hourly-rate').value,
         created_at: selectedItem.created_at,
         updated_at: dateTime
     };
     console.log(id, data);
-    await controller.editEmployee(id, data); // Wait for the update to complete
+    await controller.editEmployee(id, data);
     window.location.reload();
 });
 
 
-// Assuming you still want the delete functionality
 document.getElementById('delete-button').addEventListener('click', async () => {
     const id = document.getElementById('employee-dropdown').value;
     await controller.removeEmployee(id);

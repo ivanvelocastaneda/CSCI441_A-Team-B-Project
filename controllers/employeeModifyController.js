@@ -12,7 +12,7 @@ export class EmployeeModifyController {
         try {
             const data = await fetchEmployees();
             data.forEach(employee => {
-                const employeeData = new this.model(employee.employeeID, employee.pin, employee.typeID, employee.firstName, employee.lastName, employee.street, employee.city, employee.state, employee.zip, employee.created_at, employee.updated_at);
+                const employeeData = new this.model(employee.employeeID, employee.pin, employee.typeID, employee.firstName, employee.lastName, employee.street, employee.city, employee.state, employee.zip, employee.clockedIn, employee.hourlyRate, employee.created_at, employee.updated_at);
                 this.view.addEmployee(employeeData);
             });
         } catch (error) {
@@ -41,7 +41,7 @@ export class EmployeeModifyController {
 
     async addEmployee(data) {
         const newEmployee = await createEmployee(data);
-        const employee = new this.model(newEmployee.employeeID, newEmployee.pin, newEmployee.typeID, newEmployee.firstName, newEmployee.lastName, newEmployee.street, newEmployee.city, newEmployee.state, newEmployee.zip, newEmployee.created_at, newEmployee.updated_at);
+        const employee = new this.model(newEmployee.employeeID, newEmployee.pin, newEmployee.typeID, newEmployee.firstName, newEmployee.lastName, newEmployee.street, newEmployee.city, newEmployee.state, newEmployee.zip, newEmployee.clockedIn, newEmployee.hourlyRate, newEmployee.created_at, newEmployee.updated_at);
         this.view.addEmployee(employee);
     }
 
