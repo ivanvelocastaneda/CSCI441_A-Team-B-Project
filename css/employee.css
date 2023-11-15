@@ -37,6 +37,10 @@ nav {
     padding: 0 20px;
 }
 
+.btn{
+    width: 150px;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
