@@ -18,6 +18,10 @@ nav {
     z-index: 100;
 
 }
+.container {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
 
 .navbar ul {
     display: flex;
@@ -38,43 +42,8 @@ nav {
     color: red;
     border-bottom: 2px solid red;
 }
-/* .dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown .dropbtn {
-    background-color: #b36b5c;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 20px;
-    color: #f4e4bc;
-}
-.dropbtn:hover {
-    background-color: #85090e;
-}
 
-.dropdown-content {
-    float:none;
-    text-decoration: none;
-    margin-inline: 10px;
-    font-size: 10px;
-    color: #85090e;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 10px 12px;
-    z-index: 1;
-    text-align: left;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-} */
-.icons {
+ .icons {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -100,7 +69,7 @@ nav {
     font-size: 20px;
     border-radius: 4px;
     color: #f4e4bc;
-}
+} 
 
 .logo {
     font-size: 20px;
@@ -121,7 +90,7 @@ nav {
     padding: 44px;
     background-color: #85090e;
     color: #fff;
-    margin-top: 80px;
+    margin-top: 0;
     background-image: url('../assets/preparation.gif');
     background-repeat: no-repeat;
     background-size: cover;
@@ -276,6 +245,7 @@ nav {
     background-color: #f4e4bc;
     color: #85090e; 
   }
+  
   .footer {
     display: flex;
     flex-wrap: wrap;
@@ -289,42 +259,6 @@ nav {
   }
   .loginPage {
     display: none;
-  }
-
-  .active1 {
-    display: block;
-    width: 300px;
-    padding: 11px;
-    border-radius: 4px;
-    background-color: #fff;
-    position: fixed;
-    top: 12%;
-    right: 2%;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .active1 input {
-    margin-top: 11px;
-    width: 280px;
-    padding: 6px;
-    border: 1px solid black;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .active1 button {
-    width: 80px;
-    height: 28px;
-    background-color: #b36b5c;
-    color: white;
-    font-size: 16px;
-    border: none;
-    margin-top: 22px;
-    font-weight: bold;
-  } 
-  .line::before {
-    content: 'Or';
   }
   .spinner {
     border: 16px solid #f3f3f3;
@@ -350,7 +284,7 @@ nav {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-  
+
   /* For small devices (phones) */
     @media screen and (max-width: 400px) {
         .mainText h1 {
@@ -361,64 +295,59 @@ nav {
             font-size: 23px;
         }
         .icons {
-            margin-right: 11px;
-        }
+            margin-right: 20px;
+        } 
     } 
   
     @media only screen and (max-width: 600px) {
-        /* Adjust the navigation bar */
+        
         .navbar ul {
-            flex-direction: column; /* Stack the navigation links vertically */
+         
             align-items: center;
-        }
-        .navbar ul li {
-            margin-bottom: 10px; /* Add space between each navigation link */
         }
         .icons {
-            flex-direction: column; /* Stack the buttons vertically */
+            flex-direction: column; 
             align-items: center;
-        }
+        } 
         .crd img {
             height: 80px;
         }
-        .form-group {
-            width: 50%;
+        .my-form {
+            width: 90%;
+        } 
+        .reviews {
+            width: 90%;
         }
-    }
+    } 
 
 /* For medium-sized devices (tablets) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    /* Modify layout or font sizes if needed */
     ul {
         display: none;
-    }
-    #bar {
-        display: block;
-       }
-    
-    .showData {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        position: absolute;
-        background-color: #f4e4bc;
-        top: 75px;
-        width: 100%;
-        gap: 22px;
     }
     .main {
         display: block;
         text-align: center;
-       }
-       .reviews {
-           width: 90%;
-       }
-}
+    }
+    .reviews {
+        width: 90%;
+    }
+    .card img {
+        height: 11em;
+    }
+} 
 
-/* For larger devices (desktops) */
+ /* For larger devices (desktops) */
 @media only screen and (min-width: 1025px) {
-    /* Keep your default styles or make any necessary adjustments */
+    .card img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .card {
+        margin: 0 0.5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+        border-radius: 0;
+      } 
 }
 
