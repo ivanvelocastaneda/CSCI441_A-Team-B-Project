@@ -8,29 +8,46 @@ export class MenuItemController {
     }
 
     async init() {
-        const data = await fetchMenuItems();
-        data.forEach(item => {
-            const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage);
-            this.view.addMenuItem(menuItem);
-        });
-        // Loading spinner removed when function is done loading
-        document.getElementById('loading').style.display = 'none';
+        try {
+            const data = await fetchMenuItems();
+            data.forEach(item => {
+                const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage, item.category, item.isDeleted, item.calories);
+                this.view.addMenuItem(menuItem);
+            });
+        } catch (error) {
+            console.error("Error fetching menu items:", error);
+        } finally {
+            document.getElementById('loading').style.display = 'none';
+        }
     }
 
     async addMenuItem(data) {
-        const newItem = await createMenuItem(data);
-        const menuItem = new this.model(newItem.itemID, newItem.itemName, newItem.description, newItem.price, newItem.itemImage);
-        this.view.addMenuItem(menuItem);
+        try {
+            const newItem = await createMenuItem(data);
+            const menuItem = new this.model(newItem.itemID, newItem.itemName, newItem.description, newItem.price, newItem.itemImage, newItem.category, newItem.isDeleted, newItem.calories);
+            this.view.addMenuItem(menuItem);
+        } catch (error) {
+            console.error("Error adding a menu item:", error);
+        }
     }
 
 
     async editMenuItem(id, data) {
-        const updatedItem = await updateMenuItem(id, data);
-        this.view.updateMenuItem(id, updatedItem);
+        // console.log(data);
+        try {
+            const updatedItem = await updateMenuItem(id, data);
+            this.view.updateMenuItem(id, updatedItem);
+        } catch (error) {
+            console.error(`Error updating menu item with id ${id}:`, error);
+        }
     }
 
     async removeMenuItem(id) {
-        await deleteMenuItem(id);
-        this.view.removeMenuItem(id);
+        try {
+            await deleteMenuItem(id);
+            this.view.removeMenuItem(id);
+        } catch (error) {
+            console.error(`Error removing menu item with id ${id}:`, error);
+        }
     }
 }
