@@ -106,7 +106,6 @@ document.getElementById('update-button').addEventListener('click', async () => {
         isDeleted: 0,
         calories: document.getElementById('calories-input').value
     };
-    console.log(selectedItem);
     await controller.editMenuItem(id, data);
     window.location.reload();
 });

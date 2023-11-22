@@ -20,12 +20,12 @@ class View {
         li.appendChild(empText);
 
         // Add delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.addEventListener('click', () => {
-            controller.removeEmployee(employee.employeeID);
-        });
-        li.appendChild(deleteButton);
+        // const deleteButton = document.createElement('button');
+        // deleteButton.textContent = 'Delete';
+        // deleteButton.addEventListener('click', () => {
+        //     controller.removeEmployee(employee.employeeID);
+        // });
+        // li.appendChild(deleteButton);
         
         ul.appendChild(li);
 
@@ -57,7 +57,6 @@ class View {
                 cellKey.className = 'employee-detail-key';
                 cellValue.className = 'employee-detail-value';
             };
-            console.log(this.employeeTypes);
             const typeName = this.employeeTypes[employee.typeID] || 'Unknown Type';
     
             // Insert rows into the table
@@ -113,8 +112,9 @@ class View {
         document.getElementById('employee-city-input').value = employee.city || '';
         document.getElementById('employee-state-input').value = employee.state || '';
         document.getElementById('employee-zip-input').value = employee.zip || '';
-        const clockedState = employee.clockedIn === 1 ? 'In' : 'Out';
-        document.getElementById('employee-clocked-dropdown').value = clockedState;
+        // const clockedState = employee.clockedIn === 1 ? 'In' : 'Out';
+        // document.getElementById('employee-clocked-dropdown').value = clockedState;
+        document.getElementById('employee-clocked-dropdown').value = employee.clockedIn.toString();
         document.getElementById('employee-hourly-rate').value = employee.hourlyRate || '';
     }
     
@@ -129,7 +129,6 @@ document.getElementById('employee-dropdown').addEventListener('change', (event) 
     const li = document.getElementById(`employee-${selectedItemID}`);
     if (li) {
         selectedItem = JSON.parse(li.dataset.employee);
-        console.log(selectedItem);
         view.populateInputs(selectedItem);
     }
 });
@@ -153,7 +152,8 @@ document.getElementById('create-button').addEventListener('click', async () => {
         clockedIn: document.getElementById('employee-clocked-dropdown').value,
         hourlyRate: document.getElementById('employee-hourly-rate').value,
         created_at: dateTime,
-        updated_at: dateTime
+        updated_at: dateTime,
+        isDeleted: 0
     };
     await controller.addEmployee(data);
     window.location.reload();
@@ -168,8 +168,10 @@ document.getElementById('update-button').addEventListener('click', async () => {
     var dateTime = date+' '+time+'';
 
     // Clock in state
-    const clockedDropdownValue = document.getElementById('employee-clocked-dropdown').value;
-    const clockedInValue = clockedDropdownValue === 'In' ? 1 : 0;
+    // const clockedDropdownValue = document.getElementById('employee-clocked-dropdown').value;
+    // const clockedInValue = clockedDropdownValue === 'In' ? 1 : 0;
+    const clockedInValue = document.getElementById('employee-clocked-dropdown').value;
+
 
     const id = selectedItem.employeeID;
     const data = {
@@ -185,16 +187,51 @@ document.getElementById('update-button').addEventListener('click', async () => {
         clockedIn: clockedInValue,
         hourlyRate: document.getElementById('employee-hourly-rate').value,
         created_at: selectedItem.created_at,
-        updated_at: dateTime
+        updated_at: dateTime,
+        isDeleted: 0
     };
-    console.log(id, data);
+    await controller.editEmployee(id, data);
+    window.location.reload();
+});
+
+document.getElementById('delete-button').addEventListener('click', async () => {
+    // Get current time
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time+'';
+
+    // Clock in state
+    // const clockedDropdownValue = document.getElementById('employee-clocked-dropdown').value;
+    // const clockedInValue = clockedDropdownValue === 'In' ? 1 : 0;
+    const clockedInValue = document.getElementById('employee-clocked-dropdown').value;
+
+
+    const id = selectedItem.employeeID;
+    const data = {
+        employeeID: selectedItem.employeeID,
+        firstName: document.getElementById('employee-first-name-input').value,
+        lastName: document.getElementById('employee-last-name-input').value,
+        pin: document.getElementById('employee-pin-input').value,
+        typeID: document.getElementById('employee-type-dropdown').value,
+        street: document.getElementById('employee-street-input').value,
+        city: document.getElementById('employee-city-input').value,
+        state: document.getElementById('employee-state-input').value,
+        zip: document.getElementById('employee-zip-input').value,
+        clockedIn: clockedInValue,
+        hourlyRate: document.getElementById('employee-hourly-rate').value,
+        created_at: selectedItem.created_at,
+        updated_at: dateTime,
+        isDeleted: 1
+    };
+    console.log(data);
     await controller.editEmployee(id, data);
     window.location.reload();
 });
 
 
-document.getElementById('delete-button').addEventListener('click', async () => {
-    const id = document.getElementById('employee-dropdown').value;
-    await controller.removeEmployee(id);
-    window.location.reload();
-});
+// document.getElementById('delete-button').addEventListener('click', async () => {
+//     const id = document.getElementById('employee-dropdown').value;
+//     await controller.removeEmployee(id);
+//     window.location.reload();
+// });

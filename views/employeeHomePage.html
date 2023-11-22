@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Homepage - Farm to Table Restaurant</title>
     <link rel="stylesheet" href="../css/employee.css">
-    <script src="../js/employee.js" defer></script>
+    <!-- <script src="../js/employee.js" defer></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -14,7 +14,6 @@
             <img src="../assets/logo.png" alt="Farm to Table Logo">
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href='../index.html'>Customer</a></li>
                 <li><a href="managerHome.html">Manager </a></li>
                 <li><a href="#">Chef</a></li>
                 <li><a href="serverinterface2.html">Server</a></li>
@@ -52,7 +51,8 @@
                             <div class="pin-cell" data-value="0">0</div>
                             <div class="pin-cell" id="clear-button">Clear</div>
                         </div>
-                        <button id="clock-button">Clock In</button>
+                        <button id="clock-button">Clock In/Out</button>
+                        <button id="continue-button">Continue</button>
                         <br></br>
                         <p id="clock-in-time">Clock In Time: --:--:--</p>
                         <p id="elapsed-time">Elapsed Time: --:--:--</p>
@@ -98,6 +98,7 @@
 
     <br> </br>
 
-   
+    <script type="module" src="../js/employeeLogin.js" defer></script>
+
 </body>
 </html>

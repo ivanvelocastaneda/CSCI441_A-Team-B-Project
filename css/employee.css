@@ -136,7 +136,7 @@ nav {
 }
 
 
-#clock-button {
+#clock-button, #continue-button {
     background-color: #b36b5c;
     color: white;
 

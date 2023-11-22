@@ -39,7 +39,7 @@
 </head>
 <body>
     <div id="all-employees-list" class="all-items-list">
-        <h2>Menu Items</h2>
+        <h2>Employees</h2>
         <ul id="menu-employees-list"></ul>
         <!-- Employees will be added to list here -->
         <!-- Loading spinner -->
@@ -108,8 +108,9 @@
     <div>
         <label for="employee-clocked-dropdown">Clocked State:</label>
         <select id="employee-clocked-dropdown">
-            <option value="">Select State</option>
-            <!-- Clocked in and Clocked out states will be added here -->
+            <!-- <option value="">Select State</option> -->
+            <option value="0">Out</option>
+            <option value="1">In</option>
         </select>        
     </div>
 
@@ -121,6 +122,7 @@
     <!-- Buttons for creating or updating an employee -->
     <button id="create-button">Create</button>
     <button id="update-button">Update</button>
+    <button id="delete-button">Delete</button>
 
     <script type="module" src="../js/employeeModify.js" defer></script>
 </body>
