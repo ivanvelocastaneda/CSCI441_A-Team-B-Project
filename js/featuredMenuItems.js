@@ -30,7 +30,6 @@ class View {
         foodcard.appendChild(p);
         foodcard.appendChild(span);
         cards.appendChild(foodcard);
-        console.log(menuItem);
     }
 
     showSpinner() {
