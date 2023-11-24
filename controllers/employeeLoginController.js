@@ -1,17 +1,19 @@
-import { fetchEmployees } from '../models/api.js';
+import { fetchEmployees, updateEmployee } from '../models/api.js';
 
 export class EmployeeLoginController {
+    // constructor(view, model) {
+    //     this.view = view;
+    //     this.model = model;
+    //     this.init();
+    // }
+
     async findEmployeesWithMatchingPIN(searchPIN) {
         try {
             const employees = await fetchEmployees();
             const matchingEmployee = employees.find(employee => employee.pin === searchPIN);
 
             if (matchingEmployee) {
-                return {
-                    id: matchingEmployee.employeeID,
-                    name: matchingEmployee.firstName + ' ' + matchingEmployee.lastName,
-                    pin: matchingEmployee.pin
-                };
+                return matchingEmployee;
             } else {
                 return null;
             }
@@ -20,4 +22,13 @@ export class EmployeeLoginController {
             return null;
         }
     }
+
+    async editEmployee(id, data) {
+        try {
+            updateEmployee(id, data);
+        } catch (error) {
+            console.error(`Error updating clock state for employee ${id}:`, error);
+        }
+    }
+
 }

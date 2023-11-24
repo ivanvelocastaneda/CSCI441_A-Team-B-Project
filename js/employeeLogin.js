@@ -5,7 +5,6 @@ const employeeController = new EmployeeLoginController();
 document.addEventListener('DOMContentLoaded', () => {
     // let clockedIn = false;
     let clockInTime;
-    let timerInterval;
     
     const pinInput = document.getElementById('pin-input');
     const clockButton = document.getElementById('clock-button');
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pinCells = document.querySelectorAll('.pin-cell');
     const clearButton = document.getElementById('clear-button');
     const clockInTimeDisplay = document.getElementById('clock-in-time');
-    const elapsedTimeDisplay = document.getElementById('elapsed-time');
+    // const elapsedTimeDisplay = document.getElementById('elapsed-time');
     const hoursWorkedDisplay = document.getElementById('hours-worked');
     const continueButton = document.getElementById('continue-button');
 
@@ -45,6 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 10000);
     }
 
+    async function setEmployeeState(employee, clockState) {
+        // Get current time
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time+'';
+    
+        const id = employee.employeeID;
+        const data = {
+            firstName: employee.firstName,
+            lastName: employee.lastName,
+            pin: employee.pin,
+            typeID: employee.typeID,
+            street: employee.street,
+            city: employee.city,
+            state: employee.state,
+            zip: employee.zip,
+            clockedIn: clockState,
+            hourlyRate: employee.hourlyRate,
+            created_at: employee.created_at,
+            updated_at: dateTime,
+            isDeleted: employee.isDeleted
+        };
+        await employeeController.editEmployee(id, data);
+    };
+
     clearButton.addEventListener('click', () => {
         pinInput.value = '';
     });
@@ -53,11 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const pin = pinInput.value;
         const matchingEmployees = await employeeController.findEmployeesWithMatchingPIN(pin);
         const clockedIn = matchingEmployees.clockedIn;
+        clockInTime = new Date();
         
         if (matchingEmployees) {
             // Successful login
-            console.log('Login successful:', matchingEmployees);
-            displayMessage(`Welcome ${matchingEmployees.name}`);
+            console.log('Employee found:', matchingEmployees);
         } else {
             // Failed Login
             console.log('No employee found with this PIN.');
@@ -68,25 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!clockedIn) {
             // Clock in
-            clockInTime = new Date();
             clockInTimeDisplay.textContent = `Clock In Time: ${clockInTime.toLocaleTimeString()}`;
-            // clockButton.textContent = 'Clock Out';
+            setEmployeeState(matchingEmployees, 1);
 
-            // Start the elapsed time timer
-            timerInterval = setInterval(() => {
-                const now = new Date();
-                const elapsed = new Date(now - clockInTime);
-                elapsedTimeDisplay.textContent = `Elapsed Time: ${elapsed.getUTCHours()}:${elapsed.getUTCMinutes()}:${elapsed.getUTCSeconds()}`;
-            }, 1000);
-
-            // Need to update the "My Week" section here
-
-
-            clockedIn = true;
+            displayMessage(`Welcome ${matchingEmployees.firstName}`);
+            console.log('Clock in successful!');
         } else {
             // Clock out
-            clearInterval(timerInterval);
-            clockButton.textContent = 'Clock In';
 
             // Calculate total hours worked and update display
             const clockOutTime = new Date();
@@ -98,16 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
             hoursWorkedDisplay.textContent = currentHours.toFixed(2); // Assuming two decimal places for hours
 
             // Update earnings
-            // Need to fetch this from database
-            const hourlyRate = 15;
+            const hourlyRate = matchingEmployees.hourlyRate;
             const earnings = currentHours * hourlyRate;
             document.getElementById('estimated-earnings').textContent = `$${earnings.toFixed(2)}`;
 
-            // Reset the clock-in time and elapsed time displays
-            clockInTimeDisplay.textContent = 'Clock In Time: --:--:--';
-            elapsedTimeDisplay.textContent = 'Elapsed Time: --:--:--';
 
-            clockedIn = false;
+            setEmployeeState(matchingEmployees, 0);
+            clockInTimeDisplay.textContent = `Clock Out Time: ${clockInTime.toLocaleTimeString()}`;
+
+            displayMessage(`Bye ${matchingEmployees.firstName}`);
+            console.log('Clock out successful!');
         }
     });
 
