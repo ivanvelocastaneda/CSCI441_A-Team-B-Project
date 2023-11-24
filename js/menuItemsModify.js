@@ -9,13 +9,6 @@ class View {
         li.id = `item-${menuItem.itemID}`;
         li.textContent = `${menuItem.itemID}: ${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
         li.dataset.menuItem = JSON.stringify(menuItem);
-        // console.log(menuItem);
-
-        // Add delete button
-        // const deleteButton = document.createElement('button');
-        // deleteButton.classList.add('delete-button');
-        // deleteButton.textContent = 'Delete';
-        // li.appendChild(deleteButton);
         
         ul.appendChild(li);
 
@@ -106,7 +99,6 @@ document.getElementById('update-button').addEventListener('click', async () => {
         isDeleted: 0,
         calories: document.getElementById('calories-input').value
     };
-    console.log(selectedItem);
     await controller.editMenuItem(id, data);
     window.location.reload();
 });
@@ -127,23 +119,3 @@ document.getElementById('delete-button').addEventListener('click', async () => {
     await controller.editMenuItem(id, data);
     window.location.reload();
 });
-
-
-// document.getElementById('menu-items-list').addEventListener('click', (event) => {
-//     if (event.target.classList.contains('delete-button')) {
-//         const li = event.target.closest('li');
-//         const menuItem = JSON.parse(li.dataset.menuItem);
-//         const data = {
-//             itemName: 'Pizza',
-//             description: 'Cheese and tomato pizza',
-//             price: 12.99,
-//             itemImage: '',
-//             category: 'entree',
-//             isDeleted: 1,
-//             calories: 650
-//         };
-//         console.log(selectedItem);
-//         controller.editMenuItem(menuItem.itemID, data);
-//         window.location.reload();
-//     }
-// });

@@ -40,20 +40,32 @@ export class EmployeeModifyController {
     }
 
     async addEmployee(data) {
-        const newEmployee = await createEmployee(data);
-        const employee = new this.model(newEmployee.employeeID, newEmployee.pin, newEmployee.typeID, newEmployee.firstName, newEmployee.lastName, newEmployee.street, newEmployee.city, newEmployee.state, newEmployee.zip, newEmployee.clockedIn, newEmployee.hourlyRate, newEmployee.created_at, newEmployee.updated_at);
-        this.view.addEmployee(employee);
+        try {
+            const newEmployee = await createEmployee(data);
+            const employee = new this.model(newEmployee.employeeID, newEmployee.pin, newEmployee.typeID, newEmployee.firstName, newEmployee.lastName, newEmployee.street, newEmployee.city, newEmployee.state, newEmployee.zip, newEmployee.clockedIn, newEmployee.hourlyRate, newEmployee.created_at, newEmployee.updated_at);
+            this.view.addEmployee(employee);
+        } catch (error) {
+            console.error("Error adding an employee:", error);
+        }
     }
 
 
     async editEmployee(id, data) {
-        const updatedEmployee = await updateEmployee(id, data);
-        console.log(updatedEmployee);
-        this.view.updateEmployee(id, updatedEmployee);
+        try {
+            const updatedEmployee = await updateEmployee(id, data);
+            console.log(updatedEmployee);
+            this.view.updateEmployee(id, updatedEmployee);
+        } catch (error) {
+            console.error(`Error updating employee with id ${id}:`, error);
+        }
     }
 
     async removeEmployee(id) {
-        await deleteEmployee(id);
-        this.view.removeEmployee(id);
+        try {
+            await deleteEmployee(id);
+            this.view.removeEmployee(id);
+        } catch (error) {
+            console.error(`Error removing employee with id ${id}:`, error);
+        }
     }
 }
