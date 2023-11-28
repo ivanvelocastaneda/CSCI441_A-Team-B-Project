@@ -238,7 +238,7 @@ export async function deleteCustomer(id) {
 // Employee Type calls
 //////////////////////////////
 export async function fetchEmployeeType(id) {
-    const response = await fetch(`${BASE_URL}/employeeType/${id}`);
+    const response = await fetch(`${BASE_URL}/employee_type/${id}`);
     if (!response.ok) {
         throw new Error(`Error fetching employee type: ${response.statusText}`);
     }
@@ -246,7 +246,7 @@ export async function fetchEmployeeType(id) {
 }
 
 export async function fetchEmployeeTypes() {
-    const response = await fetch(`${BASE_URL}/employeeType`);
+    const response = await fetch(`${BASE_URL}/employee_type`);
     if (!response.ok) {
         throw new Error(`Error fetching employee types: ${response.statusText}`);
     }
@@ -254,7 +254,7 @@ export async function fetchEmployeeTypes() {
 }
 
 export async function createEmployeeType(data) {
-    const response = await fetch(`${BASE_URL}/employeeType/`, {
+    const response = await fetch(`${BASE_URL}/employee_type/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ export async function createEmployeeType(data) {
 }
 
 export async function updateEmployeeType(id, data) {
-    const response = await fetch(`${BASE_URL}/employeeType/${id}`, {
+    const response = await fetch(`${BASE_URL}/employee_type/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -282,7 +282,7 @@ export async function updateEmployeeType(id, data) {
 }
 
 export async function deleteEmployeeType(id) {
-    const response = await fetch(`${BASE_URL}/employeeType/${id}`, {
+    const response = await fetch(`${BASE_URL}/employee_type/${id}`, {
         method: 'DELETE'
     });
     if (!response.ok) {
