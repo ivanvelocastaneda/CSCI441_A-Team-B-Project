@@ -81,7 +81,7 @@ document.getElementById('create-button').addEventListener('click', async () => {
         itemImage: document.getElementById('image-input').value,
         category: document.getElementById('category-input').value,
         isDeleted: 0,
-        calories: document.getElementById('calories-input').value
+        calories: parseInt(document.getElementById('calories-input').value)
     };
     await controller.addMenuItem(data);
     window.location.reload();

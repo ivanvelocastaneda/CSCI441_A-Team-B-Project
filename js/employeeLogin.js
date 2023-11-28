@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayMessage(message) {
         const messageElement = document.createElement('div');
-        const header = document.querySelector('header');
-        // messageElement.style.position = 'fixed';
         messageElement.style.top = '0';
         messageElement.style.width = '100%';
         messageElement.style.textAlign = 'center';
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         messageElement.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
         messageElement.innerText = message;
 
-        header.after(messageElement);
+        document.header.after(messageElement);
     
         setTimeout(() => {
             document.body.removeChild(messageElement);
@@ -130,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (matchingEmployees) {
             // Successful login, redirect to serverInterface2.html
+            console.log('SUCCESS: Redirecting to employee interface...')
             window.location.href = './serverInterface2.html';
         } else {
             // Failed Login

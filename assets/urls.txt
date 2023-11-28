@@ -14,3 +14,6 @@ Quinoa & Veg bowl:      https://ibb.co/QCCnVvg ---img: https://i.ibb.co/X33pPxQ/
 Short Ribs:             https://ibb.co/RPSD92C ---img: https://i.ibb.co/hHMmysK/short-Ribs.webp
 Vegetable Soup:         https://ibb.co/p03qfH4 ---img: https://i.ibb.co/7YGhn3r/Vegetable-Soup.webp
 
+// Drinks
+Coke:                   https://ibb.co/dg8F9Rd ---img: https://i.ibb.co/Hd56vjW/cola.webp
+Sprite:                 https://ibb.co/f801WWh ---img: https://i.ibb.co/mvzDKKL/sprite.webp

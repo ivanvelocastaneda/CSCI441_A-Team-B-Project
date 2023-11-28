@@ -33,7 +33,6 @@ export class MenuItemController {
 
 
     async editMenuItem(id, data) {
-        // console.log(data);
         try {
             const updatedItem = await updateMenuItem(id, data);
             this.view.updateMenuItem(id, updatedItem);
