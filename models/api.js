@@ -409,6 +409,82 @@ export async function deleteOrder(id) {
 
 
 //////////////////////////////
+// Order Item calls
+//////////////////////////////
+export async function fetchAllOrderItems(orderID) {
+    const response = await fetch(`${BASE_URL}/order_item/${orderID}`);
+    if (!response.ok) {
+        throw new Error(`Error fetching order: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function fetchOrderItem(orderID, itemID) {
+    const response = await fetch(`${BASE_URL}/order_item/${orderID}/${itemID}`);
+    if (!response.ok) {
+        throw new Error(`Error fetching order: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function fetchAllOrderItems() {
+    const response = await fetch(`${BASE_URL}/order_item`);
+    if (!response.ok) {
+        throw new Error(`Error fetching orders: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function createOrderItem(data) {
+    const response = await fetch(`${BASE_URL}/order_item/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error creating order item: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function updateOrderItem(orderID, itemID, data) {
+    const response = await fetch(`${BASE_URL}/order_item/${orderID}/${itemID}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error(`Error updating order: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function deleteAllOrderItems(orderID) {
+    const response = await fetch(`${BASE_URL}/order_item/${orderID}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error(`Error deleting order item: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function deleteOrderItem(orderID, itemID) {
+    const response = await fetch(`${BASE_URL}/order_item/${orderID}/${itemID}`, {
+        method: 'DELETE'
+    });
+    if (!response.ok) {
+        throw new Error(`Error deleting order item: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+
+//////////////////////////////
 // Reservation calls
 //////////////////////////////
 export async function fetchReservation(id) {
