@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         messageElement.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
         messageElement.innerText = message;
 
-        document.header.after(messageElement);
+        document.body.append(messageElement);
     
         setTimeout(() => {
             document.body.removeChild(messageElement);
