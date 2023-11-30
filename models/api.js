@@ -427,7 +427,7 @@ export async function fetchOrderItem(orderID, itemID) {
     return await response.json();
 }
 
-export async function fetchAllOrderItems() {
+export async function fetchAllItemsOrdered() {
     const response = await fetch(`${BASE_URL}/order_item`);
     if (!response.ok) {
         throw new Error(`Error fetching orders: ${response.statusText}`);
