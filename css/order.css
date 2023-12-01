@@ -1,0 +1,78 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    color: rgb(16, 15, 15);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: #85090e;  
+}
+
+/* Header styles */
+
+header {
+    background-color: #f4e4bc; 
+    color: #85090e; 
+    padding:  0; 
+}
+
+header img {
+    max-width: 115px;
+    height: auto;
+    
+} 
+
+.orders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.order {
+    background-color: #f4e4bc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(41, 39, 39);
+    width: 200px;
+    text-align: center;
+}
+
+.order h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.order p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.show-details {
+    background-color: #85090e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.show-details:hover {
+    background-color: #0056b3;
+}
+
+/* CSS class to hide details */
+.hidden {
+    display: none;
+}
+
+.order-details {
+    display: none; /* Initially hide order details */
+}
+
+.order .show-details .order-details {
+    display: block; /* Show order details when .show-details class is present */
+}
