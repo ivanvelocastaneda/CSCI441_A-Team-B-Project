@@ -1,4 +1,4 @@
-class Orders {
+export class Orders {
     constructor(orderID, orderStatus, created_at, updated_at, restaurantTable) {
         this.orderID = orderID;
         this.orderStatus = orderStatus;
