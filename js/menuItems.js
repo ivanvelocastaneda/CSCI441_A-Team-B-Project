@@ -2,19 +2,15 @@ import { MenuItemController } from "../controllers/menuItemController.js";
 import { MenuItem } from "../models/menuItem.js";
 
 class View {
-  addItem(menuItem) {
+  addMenuItem(menuItem) {
     const cards = document.getElementById("col-sm-4");
     const foodcard = document.createElement("card");
-    foodcard.id = `featured-item-${menuItem.itemID}`;
+    foodcard.id = `menu-item-${menuItem.itemID}`;
     foodcard.className = "card";
 
     const img = document.createElement("card-img-top");
     img.alt = menuItem.itemName;
     img.src = menuItem.itemImage;
-
-    const h3 = document.createElement("h3");
-    h3.className = "category";
-    h3.textContent = menuItem.category;
 
     const h5 = document.createElement("h5");
     h5.className = "card-title";
@@ -32,7 +28,6 @@ class View {
     span.className = "price";
     span.textContent = `$${menuItem.price}`;
 
-    foodcard.appendChild(h3);
     foodcard.appendChild(img);
     foodcard.appendChild(h5);
     foodcard.appendChild(p);
@@ -51,6 +46,9 @@ class View {
     spinner.style.display = "none";
   }
 }
+
+// Call the function to display beverages when the page loads
+displayBeveragesFromDatabase();
 
 const view = new View();
 const controller = new MenuItemController(view, MenuItem);
