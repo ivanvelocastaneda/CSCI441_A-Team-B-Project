@@ -174,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Clear input value after button click
         pinInput.value = '';
-        window.location.reload();
     });
 
     // Event listener to toggle pin visibility
