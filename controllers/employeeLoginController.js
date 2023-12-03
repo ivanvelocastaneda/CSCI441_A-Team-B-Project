@@ -1,11 +1,28 @@
 import { fetchEmployees, updateEmployee } from '../models/api.js';
 
 export class EmployeeLoginController {
-    // constructor(view, model) {
-    //     this.view = view;
-    //     this.model = model;
-    //     this.init();
-    // }
+    constructor(view, model, employees) {
+        this.view = view;
+        this.model = model;
+        this.employees = employees;
+        this.init();
+    }
+
+    async init() {
+        try {
+            this.employees = await fetchEmployees();
+
+            this.employees.forEach(employee => {
+                if(employee.clockedIn === 1) {
+                    this.view.clockedInEmployees(employee);
+                }
+            });
+            // this.view.clockedInEmployees(this.employees);
+        } catch (error) {
+            console.log('Not able to fetch clocked in employees: ', error);
+        }
+
+    }
 
     async findEmployeesWithMatchingPIN(searchPIN) {
         try {

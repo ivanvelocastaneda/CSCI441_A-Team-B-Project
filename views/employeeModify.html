@@ -4,40 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+    <link rel="stylesheet" href="../css/employee.css">
     <title>Employee Interface</title>
-    <style>
-.details {
-    padding: 5px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    display: none;
-}
-
-.details table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.details table,
-.details th,
-.details td {
-    border: 1px solid #ddd;
-}
-
-.employee-detail-key {
-    font-weight: bold;
-    background-color: #f2f2f2;
-}
-
-.employee-detail-value {
-    text-align: left;
-}
-
-
-    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <img src="../assets/logo.png" alt="Farm to Table Logo" onclick="window.location.href='employeeHomePage.html';">
+            <ul class="nav-links">
+                <li><a href="employeeHomePage.html">Home</a></li>
+                <li><a href="managerHome.html">Functions</a></li>
+                <li><a href="orderChecks.html">Orders</a></li>
+                <li><a href="viewMenu2.html">Menu</a></li>
+                <li><a href="serverinterface2.html">Server</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div id="all-employees-list" class="all-items-list">
         <h2>Employees</h2>
         <ul id="menu-employees-list"></ul>
