@@ -49,9 +49,19 @@
   </nav>
 
   <div class="container">
+    <!-- Loading spinner -->
+    <div id="loading" class="loading">
+      <img id="loading-image" class="loading-image" src="../assets/loading.gif" alt="Loading..." />
+    </div>
+    
     <div class="row">
-       <h3 class="category" id="breakfast">Beverages</h3>
-      <div class="col-sm-4">
+      <h3 class="category" id="beverages">Beverages</h3>
+        
+        <div id="display-beverage">
+          <!-- Menu items added dynamically here -->
+        </div>
+
+      <!-- <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
           <div class="card-body">
@@ -89,12 +99,16 @@
             <q class="card-description">Savor the effervescent delight of coke, diet coke, sprite, fanta, or fresca </q>
             <span class="price"><i class="fa-solid fa-dollar-sign"></i>2.99</span>
           </div>
-        </div>
-      </div>
+        </div> -->
+    </div>
      
     <div class="row">
       <h3 class="category" id="breakfast">Breakfast</h3>
-      <div class="col-sm-4">
+      <div id="display-breakfast">
+        <!-- Menu items added dynamically here -->
+      </div>
+
+      <!-- <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
           <div class="card-body">
@@ -132,12 +146,16 @@
             <q class="card-description">Egg white omelette filled with diced bell peppers, mushrooms, and spinach, served with a side of sliced avocado and a small fruit salad.</q>
           </div>
         </div>
-      </div>
+      </div> -->
       </div>
 
     <div class="row">
       <h3 class="category" id="appetizers">Appetizers</h3>
-      <div class="col-sm-4">
+      <div id="display-appetizer">
+        <!-- Menu items added dynamically here -->
+      </div>
+
+      <!-- <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
           <div class="card-body">
@@ -175,12 +193,16 @@
             <q class="card-description">A selection of local cheeses, served with fresh fruit, nuts, and honeycomb.</q>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="row">
         <h3 class="category" id="burgers">Burgers</h3>
-        <div class="col-sm-4">
+        <div id="display-burger">
+          <!-- Menu items added dynamically here -->
+        </div>
+
+        <!-- <div class="col-sm-4">
             <div class="card">
               <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
               <div class="card-body">
@@ -219,13 +241,16 @@
               <q class="card-description">Spicy beef or plant-based burger patty with pepper jack cheese, salsa, guacamole, and jalapeños on a bun, served with hand-cut fries.</q>
             </div>
           </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="row">
       <h3 class="category" id="salad">Soups/Salads</h3>
+      <div id="display-salad">
+        <!-- Menu items added dynamically here -->
+      </div>
 
-      <div class="col-sm-4">
+      <!-- <div class="col-sm-4">
           <div class="card">
             <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
             <div class="card-body">
@@ -238,7 +263,6 @@
             </div>
           </div>
       </div>
-
       <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -252,7 +276,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -266,7 +289,6 @@
           </div>
         </div>
       </div> 
-
     <div class="col-sm-4">
       <div class="card">
         <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -279,14 +301,16 @@
           <q class="card-description">A nutritious blend of quinoa, roasted seasonal vegetables, and a light lemon dressing.</q>
         </div>
       </div>
-    </div>  
-
+    </div>   -->
   </div>
 
     <div class="row">
       <h3 class="category" id="entrees">Entrees</h3>
+      <div id="display-entree">
+        <!-- Menu items added dynamically here -->
+      </div>
 
-      <div class="col-sm-4">
+      <!-- <div class="col-sm-4">
           <div class="card">
             <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
             <div class="card-body">
@@ -299,7 +323,6 @@
             </div>
           </div>
       </div>
-
       <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -313,7 +336,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-sm-4">
         <div class="card">
           <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -328,7 +350,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-sm-4">
       <div class="card">
         <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
@@ -341,12 +362,15 @@
           <q class="card-description">Tender short ribs, braised in a red wine reduction, served with garlic mashed potatoes.</q>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
     <div class="row">
       <h3 class="category" id="kids">Kids Menu</h3>
-      <div class="col-sm-4">
+      <div id="display-kids">
+        <!-- Menu items added dynamically here -->
+      </div>
+      <!-- <div class="col-sm-4">
           <div class="card">
             <img class="card-img-top" src="https://source.unsplash.com/collection/190727/1600x900" alt="Card image cap">
             <div class="card-body">
@@ -385,7 +409,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- <div class="footer">
@@ -401,5 +425,5 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/064cee087c.js" crossorigin="anonymous"></script>
-<script type="module" src="js/menuItems.js"></script>
+<script type="module" src="../js/menuItems.js"></script>
 </html>

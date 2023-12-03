@@ -351,3 +351,13 @@ nav {
       } 
 }
 
+.card {
+    /* Other existing styles */
+    height: 100%; /* Ensure all cards have the same height */
+  }
+  
+  .card .card-img-top {
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+  }
+
