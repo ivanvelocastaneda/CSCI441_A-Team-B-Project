@@ -168,6 +168,39 @@ nav {
     background-color: #85090e;
 }
 
+.details {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details table,
+.details th,
+.details td {
+    border: 1px solid #ddd;
+}
+
+.list-detail-key {
+    font-weight: bold;
+}
+
+.list-detail-value {
+    text-align: left;
+}
+
+.all-items-list {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+}
+
 
 
 /* PIN entry styles */

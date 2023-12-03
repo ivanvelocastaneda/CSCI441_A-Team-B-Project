@@ -7,9 +7,15 @@ class View {
         const ul = document.getElementById('menu-items-list');
         const li = document.createElement('li');
         li.id = `item-${menuItem.itemID}`;
-        li.textContent = `${menuItem.itemID}: ${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
+        // li.textContent = `${menuItem.itemID}: ${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
         li.dataset.menuItem = JSON.stringify(menuItem);
-        
+
+        const itemDetails = document.createElement('span');
+        itemDetails.textContent = `${menuItem.itemID}: ${menuItem.itemName}`;
+        itemDetails.style.cursor = 'pointer';
+        itemDetails.addEventListener('click', () => this.toggleItemDetails(menuItem, li));
+
+        li.appendChild(itemDetails);
         ul.appendChild(li);
 
         // Add to dropdown
@@ -18,6 +24,41 @@ class View {
         option.value = menuItem.itemID;
         option.textContent = menuItem.itemName;
         dropdown.appendChild(option);
+    }
+
+    toggleItemDetails(menuItem, listItem) {
+        let detailsDiv = listItem.querySelector('.details');
+        if (!detailsDiv) {
+            // Create details div if it doesn't exist
+            detailsDiv = document.createElement('div');
+            detailsDiv.className = 'details';
+    
+            // Create a table element
+            const detailsTable = document.createElement('table');
+            
+            // Helper function to insert rows in the table
+            const insertDetailRow = (table, key, value) => {
+                let row = table.insertRow();
+                let cellKey = row.insertCell(0);
+                let cellValue = row.insertCell(1);
+                cellKey.textContent = key;
+                cellValue.textContent = value;
+                cellKey.className = 'list-detail-key';
+                cellValue.className = 'list-detail-value';
+            };
+    
+            // Insert rows into the table
+            insertDetailRow(detailsTable, 'Description', menuItem.description);
+            insertDetailRow(detailsTable, 'Category', menuItem.category);
+            insertDetailRow(detailsTable, 'Price', menuItem.price);
+    
+            detailsDiv.appendChild(detailsTable);
+            detailsDiv.style.display = 'none';
+            listItem.appendChild(detailsDiv);
+        }
+        
+        // Toggle the visibility of the details div
+        detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'block' : 'none';
     }
 
     updateMenuItem(id, updatedItem) {

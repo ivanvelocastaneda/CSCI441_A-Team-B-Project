@@ -43,8 +43,8 @@ class View {
                 let cellValue = row.insertCell(1);
                 cellKey.textContent = key;
                 cellValue.textContent = value;
-                cellKey.className = 'employee-detail-key';
-                cellValue.className = 'employee-detail-value';
+                cellKey.className = 'list-detail-key';
+                cellValue.className = 'list-detail-value';
             };
             const typeName = this.employeeTypes[employee.typeID] || 'Unknown Type';
     
