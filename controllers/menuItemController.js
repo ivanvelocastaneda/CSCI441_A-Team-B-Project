@@ -10,6 +10,7 @@ export class MenuItemController {
     async init() {
         try {
             const data = await fetchMenuItems();
+            console.log(data);
             data.forEach(item => {
                 // const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage, item.category, item.isDeleted, item.calories);
                 this.view.addMenuItem(item);
