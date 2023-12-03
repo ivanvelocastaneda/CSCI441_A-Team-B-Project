@@ -1,6 +1,36 @@
 import { EmployeeLoginController } from '../controllers/employeeLoginController.js';
+import { Employee } from '../models/employee.js';
 
-const employeeController = new EmployeeLoginController();
+class View {
+
+    clockedInEmployees(employee) {
+        const div = document.getElementById('clocked-in-employees');
+        const li = document.createElement('li');
+        li.id = `employee-${employee.employeeID}`;
+        li.textContent = employee.firstName;
+
+        div.appendChild(li);
+    }
+
+    // addClockedIn(employee) {
+    //     const div = document.getElementById('clocked-in-employees');
+    //     const li = document.createElement('li');
+    //     li.id = `employee-${employee.employeeID}`;
+    //     li.textContent = employee.firstName;
+
+    //     div.appendChild(li);
+    // }
+
+    removeClockedIn(id) {
+        const li = document.getElementById(`employee-${id}`);
+        if (li) {
+            li.remove();
+        }
+    }
+}
+
+const view = new View();
+const employeeController = new EmployeeLoginController(view, Employee);
 
 document.addEventListener('DOMContentLoaded', () => {
     // let clockedIn = false;
@@ -13,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearButton = document.getElementById('clear-button');
     const clockInTimeDisplay = document.getElementById('clock-in-time');
     // const elapsedTimeDisplay = document.getElementById('elapsed-time');
-    const hoursWorkedDisplay = document.getElementById('hours-worked');
+    // const hoursWorkedDisplay = document.getElementById('hours-worked');
     const continueButton = document.getElementById('continue-button');
 
 
@@ -40,32 +70,36 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             document.body.removeChild(messageElement);
         }, 10000);
-    }
+    } 
 
     async function setEmployeeState(employee, clockState) {
-        // Get current time
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var dateTime = date+' '+time+'';
-    
-        const id = employee.employeeID;
-        const data = {
-            firstName: employee.firstName,
-            lastName: employee.lastName,
-            pin: employee.pin,
-            typeID: employee.typeID,
-            street: employee.street,
-            city: employee.city,
-            state: employee.state,
-            zip: employee.zip,
-            clockedIn: clockState,
-            hourlyRate: employee.hourlyRate,
-            created_at: employee.created_at,
-            updated_at: dateTime,
-            isDeleted: employee.isDeleted
-        };
-        await employeeController.editEmployee(id, data);
+        try {
+            // Get current time
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date+' '+time+'';
+        
+            const id = employee.employeeID;
+            const data = {
+                firstName: employee.firstName,
+                lastName: employee.lastName,
+                pin: employee.pin,
+                typeID: employee.typeID,
+                street: employee.street,
+                city: employee.city,
+                state: employee.state,
+                zip: employee.zip,
+                clockedIn: clockState,
+                hourlyRate: employee.hourlyRate,
+                created_at: employee.created_at,
+                updated_at: dateTime,
+                isDeleted: employee.isDeleted
+            };
+            await employeeController.editEmployee(id, data);
+        } catch (error) {
+            console.log(`Clock in for employee ${employee.employeeID}: `, error);
+        }
     };
 
     clearButton.addEventListener('click', () => {
@@ -95,31 +129,34 @@ document.addEventListener('DOMContentLoaded', () => {
             setEmployeeState(matchingEmployees, 1);
 
             displayMessage(`Welcome ${matchingEmployees.firstName}`);
+            view.clockedInEmployees(matchingEmployees);
             console.log('Clock in successful!');
         } else {
             // Clock out
 
-            // Calculate total hours worked and update display
-            const clockOutTime = new Date();
-            const workedHours = (clockOutTime - clockInTime) / 3600000; // Convert milliseconds to hours
+            // // Calculate total hours worked and update display
+            // const clockOutTime = new Date();
+            // const workedHours = (clockOutTime - clockInTime) / 3600000; // Convert milliseconds to hours
 
-            // Update hours worked
-            let currentHours = parseFloat(hoursWorkedDisplay.textContent);
-            currentHours += workedHours;
-            hoursWorkedDisplay.textContent = currentHours.toFixed(2); // Assuming two decimal places for hours
+            // // Update hours worked
+            // let currentHours = parseFloat(hoursWorkedDisplay.textContent);
+            // currentHours += workedHours;
+            // hoursWorkedDisplay.textContent = currentHours.toFixed(2); // Assuming two decimal places for hours
 
-            // Update earnings
-            const hourlyRate = matchingEmployees.hourlyRate;
-            const earnings = currentHours * hourlyRate;
-            document.getElementById('estimated-earnings').textContent = `$${earnings.toFixed(2)}`;
+            // // Update earnings
+            // const hourlyRate = matchingEmployees.hourlyRate;
+            // const earnings = currentHours * hourlyRate;
+            // document.getElementById('estimated-earnings').textContent = `$${earnings.toFixed(2)}`;
 
 
             setEmployeeState(matchingEmployees, 0);
             clockInTimeDisplay.textContent = `Clock Out Time: ${clockInTime.toLocaleTimeString()}`;
 
             displayMessage(`Bye ${matchingEmployees.firstName}`);
+            view.removeClockedIn(matchingEmployees.employeeID);
             console.log('Clock out successful!');
         }
+
     });
 
     continueButton.addEventListener('click', async () => {
@@ -137,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Clear input value after button click
         pinInput.value = '';
+        window.location.reload();
     });
 
     // Event listener to toggle pin visibility
