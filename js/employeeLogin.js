@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matchingEmployees) {
             // Successful login, redirect to serverInterface2.html
             console.log('SUCCESS: Redirecting to employee interface...')
-            window.location.href = './serverInterface2.html';
+            window.location.href = './serverInterface.html';
         } else {
             // Failed Login
             console.log('No employee found with this PIN.');
