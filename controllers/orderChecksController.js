@@ -1,6 +1,5 @@
 
 import { deleteOrder, fetchOrders, updateOrder } from "../models/api.js";
-import { View } from '/orderChecksController.js';
 
 export class OrdersController {
     constructor(view) {
@@ -17,7 +16,8 @@ export class OrdersController {
         } catch (error) {
             console.log("Not able to fetch orders: ", error);
         } finally {
-        
+            // Loading spinner removed when function is done loading
+            document.getElementById('loading').style.display = 'none';
         }
     }
 
@@ -45,12 +45,12 @@ export class OrdersController {
 // Inside orderChecksController
 
 // Fetch orders and sort them
-fetchOrders().then((orders) => {
-    // Assuming 'created_at' is a timestamp
-    orders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+// fetchOrders().then((orders) => {
+//     // Assuming 'created_at' is a timestamp
+//     orders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
-    // Pass sorted orders to the view
-    const view = new View();
-    orders.forEach(order => view.createListItem(order));
-});
+//     // Pass sorted orders to the view
+//     const view = new View();
+//     orders.forEach(order => view.createListItem(order));
+// });
 

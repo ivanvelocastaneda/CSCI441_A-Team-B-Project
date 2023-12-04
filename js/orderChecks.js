@@ -1,4 +1,3 @@
-import { createOrder, createOrderItem } from "../controllers/placeOrderController.js";
 import { OrdersController } from "../controllers/orderChecksController.js";
 import { Orders } from "../models/orders.js";
 
@@ -6,38 +5,82 @@ class View {
     createListItem(order) {
         const ordersContainer = document.getElementById('orders');
         const orderElement = document.createElement('div');
-        orderElement.classList.add('order');
-        orderElement.setAttribute('data-order-id', order.orderID); 
+        orderElement.id = `order-${order.orderID}`;
+        orderElement.className = 'order';
+        // orderElement.classList.add('order');
+        // orderElement.setAttribute('data-order-id', order.orderID); 
 
         const orderTitle = document.createElement('h2');
-        orderTitle.textContent = `Table #${order.tableNumber}`;
+        orderTitle.className = 'order-title';
+        orderTitle.textContent = `Table #${order.restaurantTable}`;
         orderElement.appendChild(orderTitle);
 
-        const totalItems = document.createElement('p');
-        totalItems.textContent = `Total Items: ${order.totalItems}`;
-        orderElement.appendChild(totalItems);
+        const orderStatus = document.createElement('p');
+        orderStatus.className = 'order-status';
+        orderStatus.textContent = `Order Status: ${order.orderStatus}`;
+        orderElement.appendChild(orderStatus);
 
         const showDetailsButton = document.createElement('button');
-        showDetailsButton.classList.add('show-details');
+        // showDetailsButton.classList.add('show-details');
+        showDetailsButton.className = 'show-order-details';
         showDetailsButton.textContent = 'Show Details';
+        showDetailsButton.style.cursor = 'pointer';
+
+        showDetailsButton.addEventListener('click', () => this.toggleOrderDetails(order, orderElement));
+        
         orderElement.appendChild(showDetailsButton);
 
-        const details = document.createElement('div');
-        details.classList.add('details', 'hidden');
+        // const details = document.createElement('div');
+        // details.className = 'order-details';
+        // details.classList.add('details', 'hidden');
 
-        const detailsContent = document.createElement('p');
-        detailsContent.innerHTML = `<strong>Details:</strong><br>`;
-        order.details.forEach((item) => {
-            detailsContent.innerHTML += `Item: ${item.itemName} (Quantity: ${item.quantity})<br>`;
-        });
-        detailsContent.innerHTML += `Special Request: ${order.specialRequest}<br>`;
-        detailsContent.innerHTML += `Order Time: ${order.orderTime}<br>`;
-        detailsContent.innerHTML += `Order Total: $${order.orderTotal.toFixed(2)}`;
-        details.appendChild(detailsContent);
+        // const detailsContent = document.createElement('p');
+        // detailsContent.innerHTML = `<strong>Details:</strong><br>`;
+        // order.details.forEach((item) => {
+        //     detailsContent.innerHTML += `Item: ${item.itemName} (Quantity: ${item.quantity})<br>`;
+        // });
+        // detailsContent.innerHTML += `Special Request: ${order.specialRequest}<br>`;
+        // detailsContent.innerHTML += `Order Time: ${order.orderTime}<br>`;
+        // detailsContent.innerHTML += `Order Total: $${order.orderTotal.toFixed(2)}`;
+        // details.appendChild(detailsContent);
 
-        orderElement.appendChild(details);
+        // orderElement.appendChild(details);
 
         ordersContainer.appendChild(orderElement);
+    }
+
+    toggleOrderDetails(order, listItem) {
+        let detailsDiv = listItem.querySelector('.details');
+        if (!detailsDiv) {
+            // Create details div if it doesn't exist
+            detailsDiv = document.createElement('div');
+            detailsDiv.className = 'details';
+    
+            // Create a table element
+            const detailsTable = document.createElement('table');
+            
+            // Helper function to insert rows in the table
+            const insertDetailRow = (table, key, value) => {
+                let row = table.insertRow();
+                let cellKey = row.insertCell(0);
+                let cellValue = row.insertCell(1);
+                cellKey.textContent = key;
+                cellValue.textContent = value;
+                cellKey.className = 'list-detail-key';
+                cellValue.className = 'list-detail-value';
+            };
+    
+            // Insert rows into the table
+            insertDetailRow(detailsTable, 'Created At', order.created_at);
+            insertDetailRow(detailsTable, 'Updated At', order.updated_at);
+    
+            detailsDiv.appendChild(detailsTable);
+            detailsDiv.style.display = 'none';
+            listItem.appendChild(detailsDiv);
+        }
+        
+        // Toggle the visibility of the details div
+        detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'block' : 'none';
     }
 
     // This function is called when an order is updated on a click, update button.
@@ -71,6 +114,9 @@ class View {
     }
 }
 
+const view = new View();
+const controller = new OrdersController(view, Orders);
+
 // This looks good!
 document.addEventListener("DOMContentLoaded", function () {
     const showDetailsButtons = document.querySelectorAll(".show-details");
@@ -86,21 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // There is a variable on the order data called created_at that you can implement somewhere in the code to sort.
     // I'm not sure right now where would be the best place to implement it but you might have some ideas.
-    class OrdersController {
-        constructor(view, orders) {
-            this.view = view;
-            this.orders = orders;
-        }
-    
-        initialize() {
-            // Sort the orders by 'created_at' in descending order (newest first)
-            this.orders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-    
-            this.orders.forEach((order) => {
-                this.view.createListItem(order);
-            });
-        }
-    }
 
 
 });
