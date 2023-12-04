@@ -74,7 +74,10 @@ function changetoDirtyTable(parentId) {
   button.outerHTML = '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Dirty</button>'
   hidePrepareMealOption(parent, 'DirtyTable')
   changeIndividual(parent, "DirtyTables")
+}
 
+function changetoPlaceOrder(parentId){
+  alert("works")
 }
 
 // hide some scrolldown options
@@ -94,6 +97,7 @@ function resetHiddenButtonsOnClcik(parentDiv) {
 
 function defaultHide() {
   //hide default button. Run onload
+  addDropDowns()
   hideColumns()
   var tables = document.getElementsByClassName('list-group-item')
   var parent
@@ -201,6 +205,27 @@ function hideColumns(){
   var columns = document.getElementById("columns")
   console.log(columns)
   columns.style.display = 'none'
+}
+
+function addDropDowns(){
+  allTables = document.getElementsByClassName('list-group-item')
+  for (var i = 0; i < allTables.length; i++) {
+    placeHolderDiv = allTables[i].getElementsByClassName('placeHolder')[0];
+    ID = allTables[i].id
+    dropdowns(placeHolderDiv, ID)
+  }
+}
+function dropdowns(dropdown, tableID){
+  dropdown.outerHTML = `<ul class="dropdown-menu">
+  <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('${tableID}')">Preparing Meal</a></li>
+  <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('${tableID}')">Ready to Serve</a></li>
+  <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
+  <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('${tableID}')">Table Empty</a></li>
+  <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('${tableID}')">Served Meal</a></li>
+  <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('${tableID}')">Table Dirty</a></li>
+  <li><a class="dropdown-item PlaceOrder" href="#" onclick="changetoPlaceOrder('${tableID}')">Place Order</a></li>
+</ul>
+`
 }
 
 let globalVariable = 0
