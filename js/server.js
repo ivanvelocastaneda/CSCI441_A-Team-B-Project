@@ -228,4 +228,28 @@ function dropdowns(dropdown, tableID){
 `
 }
 
+function createButton(name, buttonToCreate){
+  switch(name){
+    case 'Preparing Meal':
+      color = 'warning'
+      break;
+    case 'Waiting for Order':
+      color = 'primary'
+      break;
+    case 'Table Empty':
+      color = 'light'
+      break;
+    case 'Table Dirty':
+      color = 'secondary'
+      break;
+    case 'Ready To Serve':
+      color = 'success'
+      break;
+    case 'Served Meal':
+      color = 'info'
+      break;
+  }
+  buttonToCreate.outerHTML = `<button type="button" class="btn btn-${color} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">${name}</button>`
+}
+
 let globalVariable = 0
