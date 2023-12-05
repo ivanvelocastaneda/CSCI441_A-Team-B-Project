@@ -177,64 +177,6 @@ export async function deleteItemIngredient(id) {
 
 
 //////////////////////////////
-// Customer calls
-//////////////////////////////
-export async function fetchCustomer(id) {
-    const response = await fetch(`${BASE_URL}/customer/${id}`);
-    if (!response.ok) {
-        throw new Error(`Error fetching customer: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function fetchCustomers() {
-    const response = await fetch(`${BASE_URL}/customer`);
-    if (!response.ok) {
-        throw new Error(`Error fetching customers: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function createCustomer(data) {
-    const response = await fetch(`${BASE_URL}/customer/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-    if (!response.ok) {
-        throw new Error(`Error creating customer: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function updateCustomer(id, data) {
-    const response = await fetch(`${BASE_URL}/customer/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-    if (!response.ok) {
-        throw new Error(`Error updating customer: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function deleteCustomer(id) {
-    const response = await fetch(`${BASE_URL}/customer/${id}`, {
-        method: 'DELETE'
-    });
-    if (!response.ok) {
-        throw new Error(`Error deleting customer: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-
-//////////////////////////////
 // Employee Type calls
 //////////////////////////////
 export async function fetchEmployeeType(id) {
@@ -407,6 +349,14 @@ export async function deleteOrder(id) {
     return await response.json();
 }
 
+export async function fetchFullOrder(orderID) {
+    const response = await fetch(`${BASE_URL}/orders/fullorder/${orderID}`);
+    if (!response.ok) {
+        throw new Error(`Error fetching order: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
 
 //////////////////////////////
 // Order Item calls
@@ -479,64 +429,6 @@ export async function deleteOrderItem(orderID, itemID) {
     });
     if (!response.ok) {
         throw new Error(`Error deleting order item: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-
-//////////////////////////////
-// Reservation calls
-//////////////////////////////
-export async function fetchReservation(id) {
-    const response = await fetch(`${BASE_URL}/reservation/${id}`);
-    if (!response.ok) {
-        throw new Error(`Error fetching reservation: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function fetchReservations() {
-    const response = await fetch(`${BASE_URL}/reservation`);
-    if (!response.ok) {
-        throw new Error(`Error fetching reservations: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function createReservation(data) {
-    const response = await fetch(`${BASE_URL}/reservation/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-    if (!response.ok) {
-        throw new Error(`Error creating reservation: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function updateReservation(id, data) {
-    const response = await fetch(`${BASE_URL}/reservation/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-    if (!response.ok) {
-        throw new Error(`Error updating reservation: ${response.statusText}`);
-    }
-    return await response.json();
-}
-
-export async function deleteReservation(id) {
-    const response = await fetch(`${BASE_URL}/reservation/${id}`, {
-        method: 'DELETE'
-    });
-    if (!response.ok) {
-        throw new Error(`Error deleting reservation: ${response.statusText}`);
     }
     return await response.json();
 }
