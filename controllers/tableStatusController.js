@@ -1,4 +1,4 @@
-import { fetchOrders } from "../models/api";
+import { fetchOrders } from "../models/api.js";
 
 
 export class TableOrderController {

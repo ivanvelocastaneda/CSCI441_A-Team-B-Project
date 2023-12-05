@@ -37,18 +37,18 @@ function changetoWaitingforOrder(parentId) {
   changeIndividual(parent, "WaitingForOrders")
 }
 
-function changetoEmptyTable(parentId) {
-  // not sure if outer html replaces everything or just the tag itself . try that
-  var parent = document.getElementById(parentId)
+// function changetoEmptyTable(parentId) {
+//   // not sure if outer html replaces everything or just the tag itself . try that
+//   var parent = document.getElementById(parentId)
 
-  resetHiddenButtonsOnClcik(parent)
+//   resetHiddenButtonsOnClcik(parent)
 
-  var button = parent.firstElementChild
-  button.click();
-  button.outerHTML = '<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>'
-  hidePrepareMealOption(parent, 'EmptyTable')
-  changeIndividual(parent, "emptyTables")
-}
+//   var button = parent.firstElementChild
+//   button.click();
+//   button.outerHTML = '<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>'
+//   hidePrepareMealOption(parent, 'EmptyTable')
+//   changeIndividual(parent, "emptyTables")
+// }
 
 function changetoServedMeal(parentId) {
   // not sure if outer html replaces everything or just the tag itself . try that
@@ -63,18 +63,18 @@ function changetoServedMeal(parentId) {
   changeIndividual(parent, "ServedMeals")
 }
 
-function changetoDirtyTable(parentId) {
-  // not sure if outer html replaces everything or just the tag itself . try that
-  var parent = document.getElementById(parentId)
+// function changetoDirtyTable(parentId) {
+//   // not sure if outer html replaces everything or just the tag itself . try that
+//   var parent = document.getElementById(parentId)
 
-  resetHiddenButtonsOnClcik(parent)
+//   resetHiddenButtonsOnClcik(parent)
 
-  var button = parent.firstElementChild
-  button.click();
-  button.outerHTML = '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Dirty</button>'
-  hidePrepareMealOption(parent, 'DirtyTable')
-  changeIndividual(parent, "DirtyTables")
-}
+//   var button = parent.firstElementChild
+//   button.click();
+//   button.outerHTML = '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Dirty</button>'
+//   hidePrepareMealOption(parent, 'DirtyTable')
+//   changeIndividual(parent, "DirtyTables")
+// }
 
 function changetoPlaceOrder(parentId){
   alert("works")
@@ -113,10 +113,10 @@ function defaultHide() {
       scrolldownOptionToHide = parent.getElementsByClassName('WaitingForOrder')[0]
       scrolldownOptionToHide.style.display = 'none'
     }
-    else if (button.classList.contains('btn-light')) {
-      scrolldownOptionToHide = parent.getElementsByClassName('EmptyTable')[0]
-      scrolldownOptionToHide.style.display = 'none'
-    }
+    // else if (button.classList.contains('btn-light')) {
+    //   scrolldownOptionToHide = parent.getElementsByClassName('EmptyTable')[0]
+    //   scrolldownOptionToHide.style.display = 'none'
+    // }
     else if (button.classList.contains('btn-success')) {
       scrolldownOptionToHide = parent.getElementsByClassName('readyToServe')[0]
       scrolldownOptionToHide.style.display = 'none'
@@ -129,25 +129,24 @@ function defaultHide() {
       scrolldownOptionToHide = parent.getElementsByClassName('ServedMeal')[0]
       scrolldownOptionToHide.style.display = 'none'
     }
-    else if (button.classList.contains('btn-secondary')) {
-      scrolldownOptionToHide = parent.getElementsByClassName('DirtyTable')[0]
-      scrolldownOptionToHide.style.display = 'none'
-    }
+    // else if (button.classList.contains('btn-secondary')) {
+    //   scrolldownOptionToHide = parent.getElementsByClassName('DirtyTable')[0]
+    //   scrolldownOptionToHide.style.display = 'none'
+    // }
     else {
-      alert('error')
+      // alert('error')
     }
   }
 }
 
 function arrangeTables(){
-  var emptyTableArray = []
+  // var emptyTableArray = []
   var waitingForOrderArray = []
   var preparingMealArray = []
   var readyToServeArray = []
   var servedMealArray = []
-  var dirtyTableArray = []
-  var allArrays = [emptyTableArray, waitingForOrderArray, preparingMealArray, readyToServeArray, servedMealArray, dirtyTableArray]
-  var names = ["emptyTables", "WaitingForOrders", "PrepareMeals", "readyToServeMeals", "ServedMeals", "DirtyTables"]
+  var allArrays = [waitingForOrderArray, preparingMealArray, readyToServeArray, servedMealArray]
+  var names = ["WaitingForOrders", "PrepareMeals", "readyToServeMeals", "ServedMeals"]
   var tables = document.getElementsByClassName('list-group-item')
   for (var i = 0; i < tables.length; i++) {
     button = tables[i].firstElementChild
@@ -155,9 +154,9 @@ function arrangeTables(){
       case "btn btn-primary dropdown-toggle":
         waitingForOrderArray.push(tables[i])
         break;
-      case "btn btn-light dropdown-toggle":
-        emptyTableArray.push(tables[i])
-        break;
+      // case "btn btn-light dropdown-toggle":
+      //   emptyTableArray.push(tables[i])
+      //   break;
       case "btn btn-success dropdown-toggle":
         readyToServeArray.push(tables[i])
         break;
@@ -167,14 +166,14 @@ function arrangeTables(){
       case "btn btn-info dropdown-toggle":
         servedMealArray.push(tables[i])
         break;
-      case "btn btn-secondary dropdown-toggle":
-        dirtyTableArray.push(tables[i])
-        break;
+      // case "btn btn-secondary dropdown-toggle":
+      //   dirtyTableArray.push(tables[i])
+      //   break;
     }
   };
-  console.log('emptyTableArray')
-  console.log(emptyTableArray)
-  console.log(allArrays)
+  // console.log('emptyTableArray')
+  // console.log(emptyTableArray)
+  // console.log(allArrays)
   fillOutAllCulumns(allArrays, names)
 }
 
@@ -183,7 +182,7 @@ function fillOutAllCulumns(data, names){
     fillOutColumn(data[i], names[i])
   }
   var columns = document.getElementById("columns")
-  console.log(columns)
+  // console.log(columns)
   columns.style.display = 'block'
 }
 
@@ -203,7 +202,7 @@ function changeIndividual(element, columnName){
 
 function hideColumns(){
   var columns = document.getElementById("columns")
-  console.log(columns)
+  // console.log(columns)
   columns.style.display = 'none'
 }
 
@@ -220,36 +219,11 @@ function dropdowns(dropdown, tableID){
   <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('${tableID}')">Preparing Meal</a></li>
   <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('${tableID}')">Ready to Serve</a></li>
   <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
-  <li><a class="dropdown-item EmptyTable" href="#" onclick="changetoEmptyTable('${tableID}')">Table Empty</a></li>
   <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('${tableID}')">Served Meal</a></li>
-  <li><a class="dropdown-item DirtyTable" href="#" onclick="changetoDirtyTable('${tableID}')">Table Dirty</a></li>
   <li><a class="dropdown-item PlaceOrder" href="#" onclick="changetoPlaceOrder('${tableID}')">Place Order</a></li>
 </ul>
 `
 }
 
-function createButton(name, buttonToCreate){
-  switch(name){
-    case 'Preparing Meal':
-      color = 'warning'
-      break;
-    case 'Waiting for Order':
-      color = 'primary'
-      break;
-    case 'Table Empty':
-      color = 'light'
-      break;
-    case 'Table Dirty':
-      color = 'secondary'
-      break;
-    case 'Ready To Serve':
-      color = 'success'
-      break;
-    case 'Served Meal':
-      color = 'info'
-      break;
-  }
-  buttonToCreate.outerHTML = `<button type="button" class="btn btn-${color} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">${name}</button>`
-}
 
 let globalVariable = 0
