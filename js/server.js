@@ -216,9 +216,9 @@ function addDropDowns(){
 }
 function dropdowns(dropdown, tableID){
   dropdown.outerHTML = `<ul class="dropdown-menu">
+  <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
   <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('${tableID}')">Preparing Meal</a></li>
   <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('${tableID}')">Ready to Serve</a></li>
-  <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
   <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('${tableID}')">Served Meal</a></li>
   <li><a class="dropdown-item PlaceOrder" href="#" onclick="changetoPlaceOrder('${tableID}')">Place Order</a></li>
 </ul>
