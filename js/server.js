@@ -1,3 +1,4 @@
+
 function changetoPrepareMeal(parentId) {
   // change to prepare meal button on click
   var parent = document.getElementById(parentId)
@@ -77,7 +78,46 @@ function changetoServedMeal(parentId) {
 // }
 
 function changetoPlaceOrder(parentId){
-  alert("works")
+  var parent = document.getElementById(parentId)
+  var para = document.createElement("div");
+  parent.appendChild(para)
+  para.outerHTML = `
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Place Order</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="categories">
+            <button id="breakfast">Breakfast</button>
+            <button id="appetizer">Appetizers</button>
+            <button id="entree">Entrees</button>
+            <button id="burger">Burgers</button>
+            <button id="salad">Soups/Salad</button>
+            <button id="beverage">Beverages</button>
+            <button id="kids">Kids Menu</button>
+        </div>
+
+        <div id="menuItems" class="grid-view"></div>
+
+        <div id="order">
+            <h3>Selected Items</h3>
+            <ul id="selectedItems"></ul>
+            <button id="placeOrderButton">Place Order</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>`
+  modalbutton = document.getElementById("modalButton");
+  modalbutton.click()
+  changetoPrepareMeal(parentId)
 }
 
 // hide some scrolldown options
@@ -226,4 +266,101 @@ function dropdowns(dropdown, tableID){
 }
 
 
-let globalVariable = 0
+
+import { getMenuItemsByCategory, createNewOrder, addItemsToOrder } from '../controllers/placeOrderController.js';
+
+let selectedItems = [];
+let orderItems = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('categories').addEventListener('click', event => {
+        if (event.target.tagName === 'BUTTON') {
+            updateMenu(event.target.id);
+        }
+    });
+
+    document.getElementById('placeOrderButton').addEventListener('click', placeOrder);
+});
+
+async function updateMenu(category) {
+    const menuItems = document.getElementById('menuItems');
+    menuItems.textContent = 'Loading...';
+
+    try {
+        const items = await getMenuItemsByCategory(category);
+        menuItems.textContent = '';
+        items.forEach(item => {
+            const div = document.createElement('div');
+            div.textContent = item.itemName + ' - ' + item.itemID;
+            div.addEventListener('click', () => addItem(item));
+            menuItems.appendChild(div);
+        });
+    } catch (error) {
+        menuItems.textContent = 'Failed to load items';
+        console.error('Error updating menu:', error);
+    }
+}
+
+function addItem(item) {
+    selectedItems.push(item.itemName);
+    orderItems.push(item.itemID);
+    updateOrderView();
+}
+
+function updateOrderView() {
+    const orderList = document.getElementById('selectedItems');
+    orderList.textContent = '';
+    selectedItems.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => removeItem(index));
+
+        li.appendChild(deleteButton);
+        orderList.appendChild(li);
+    });
+}
+
+function removeItem(index) {
+    selectedItems.splice(index, 1);
+    orderItems.splice(index, 1);
+    updateOrderView();
+}
+
+async function orderItemCleanup(orderID, orderItems) {
+    const itemCounts = orderItems.reduce((acc, itemID) => {
+        acc[itemID] = (acc[itemID] || 0) + 1;
+        return acc;
+    }, {});
+
+    const jsonOutput = Object.entries(itemCounts).map(([itemID, itemQuantity]) => ({
+        orderID,
+        itemID: parseInt(itemID),
+        itemQuantity
+    }));
+
+    return jsonOutput;
+}
+
+async function placeOrder() {
+    const data = {
+        orderStatus: "preparing",
+        menuItems: orderItems,
+        restaurantTable: 420
+    }
+    try {
+        const orderResponse = await createNewOrder(data);
+        const itemData = await orderItemCleanup(orderResponse.insertId, orderItems);
+
+            await addItemsToOrder(itemData);
+            console.log('Order placed successfully');
+
+            selectedItems = [];
+            orderItems = [];
+            updateOrderView();
+    } catch (error) {
+        console.error('Error placing order:', error);
+    }
+}
