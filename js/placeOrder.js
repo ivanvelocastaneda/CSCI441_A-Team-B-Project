@@ -77,9 +77,9 @@ async function orderItemCleanup(orderID, orderItems) {
 
 async function placeOrder() {
     const data = {
-        orderStatus: "preparing",
+        orderStatus: "waitingForOrder",
         menuItems: orderItems,
-        restaurantTable: 420
+        restaurantTable: 5
     }
     try {
         const orderResponse = await createNewOrder(data);

@@ -38,18 +38,6 @@ function changetoWaitingforOrder(parentId) {
   changeIndividual(parent, "WaitingForOrders")
 }
 
-// function changetoEmptyTable(parentId) {
-//   // not sure if outer html replaces everything or just the tag itself . try that
-//   var parent = document.getElementById(parentId)
-
-//   resetHiddenButtonsOnClcik(parent)
-
-//   var button = parent.firstElementChild
-//   button.click();
-//   button.outerHTML = '<button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Empty</button>'
-//   hidePrepareMealOption(parent, 'EmptyTable')
-//   changeIndividual(parent, "emptyTables")
-// }
 
 function changetoServedMeal(parentId) {
   // not sure if outer html replaces everything or just the tag itself . try that
@@ -64,18 +52,7 @@ function changetoServedMeal(parentId) {
   changeIndividual(parent, "ServedMeals")
 }
 
-// function changetoDirtyTable(parentId) {
-//   // not sure if outer html replaces everything or just the tag itself . try that
-//   var parent = document.getElementById(parentId)
 
-//   resetHiddenButtonsOnClcik(parent)
-
-//   var button = parent.firstElementChild
-//   button.click();
-//   button.outerHTML = '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Table Dirty</button>'
-//   hidePrepareMealOption(parent, 'DirtyTable')
-//   changeIndividual(parent, "DirtyTables")
-// }
 
 function changetoPlaceOrder(parentId){
   var parent = document.getElementById(parentId)
@@ -128,7 +105,7 @@ function hidePrepareMealOption(parentDiv, removeButtonClassName) {
 
 function resetHiddenButtonsOnClcik(parentDiv) {
   // show all hidden buttons on click
-  var buttonsToHide = parentDiv.getElementsByClassName('dropdown-item')
+  var buttonsToHide = parentDiv.getElementsByClassName('dropdown-item');
   for (let i = 0; i < buttonsToHide.length; i++) {
     if (buttonsToHide[i].style.display == 'none')
       buttonsToHide[i].style.display = 'block';
@@ -153,10 +130,6 @@ function defaultHide() {
       scrolldownOptionToHide = parent.getElementsByClassName('WaitingForOrder')[0]
       scrolldownOptionToHide.style.display = 'none'
     }
-    // else if (button.classList.contains('btn-light')) {
-    //   scrolldownOptionToHide = parent.getElementsByClassName('EmptyTable')[0]
-    //   scrolldownOptionToHide.style.display = 'none'
-    // }
     else if (button.classList.contains('btn-success')) {
       scrolldownOptionToHide = parent.getElementsByClassName('readyToServe')[0]
       scrolldownOptionToHide.style.display = 'none'
@@ -169,10 +142,6 @@ function defaultHide() {
       scrolldownOptionToHide = parent.getElementsByClassName('ServedMeal')[0]
       scrolldownOptionToHide.style.display = 'none'
     }
-    // else if (button.classList.contains('btn-secondary')) {
-    //   scrolldownOptionToHide = parent.getElementsByClassName('DirtyTable')[0]
-    //   scrolldownOptionToHide.style.display = 'none'
-    // }
     else {
       // alert('error')
     }
@@ -194,9 +163,6 @@ function arrangeTables(){
       case "btn btn-primary dropdown-toggle":
         waitingForOrderArray.push(tables[i])
         break;
-      // case "btn btn-light dropdown-toggle":
-      //   emptyTableArray.push(tables[i])
-      //   break;
       case "btn btn-success dropdown-toggle":
         readyToServeArray.push(tables[i])
         break;
@@ -206,14 +172,8 @@ function arrangeTables(){
       case "btn btn-info dropdown-toggle":
         servedMealArray.push(tables[i])
         break;
-      // case "btn btn-secondary dropdown-toggle":
-      //   dirtyTableArray.push(tables[i])
-      //   break;
     }
   };
-  // console.log('emptyTableArray')
-  // console.log(emptyTableArray)
-  // console.log(allArrays)
   fillOutAllCulumns(allArrays, names)
 }
 
@@ -256,18 +216,18 @@ function addDropDowns(){
 }
 function dropdowns(dropdown, tableID){
   dropdown.outerHTML = `<ul class="dropdown-menu">
-  <li><a class="dropdown-item WaitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
-  <li><a class="dropdown-item PrepareMeal" href="#" onclick="changetoPrepareMeal('${tableID}')">Preparing Meal</a></li>
+  <li><a class="dropdown-item waitingForOrder" href="#" onclick="changetoWaitingforOrder('${tableID}')">Waiting for Order</a></li>
+  <li><a class="dropdown-item prepareMeal" href="#" onclick="changetoPrepareMeal('${tableID}')">Preparing Meal</a></li>
   <li><a class="dropdown-item readyToServe" href="#" onclick="changetoReadyToServe('${tableID}')">Ready to Serve</a></li>
-  <li><a class="dropdown-item ServedMeal" href="#" onclick="changetoServedMeal('${tableID}')">Served Meal</a></li>
-  <li><a class="dropdown-item PlaceOrder" href="#" onclick="changetoPlaceOrder('${tableID}')">Place Order</a></li>
+  <li><a class="dropdown-item servedMeal" href="#" onclick="changetoServedMeal('${tableID}')">Served Meal</a></li>
+  <li><a class="dropdown-item placeOrder" href="#" onclick="changetoPlaceOrder('${tableID}')">Place Order</a></li>
 </ul>
 `
 }
 
 
 
-import { getMenuItemsByCategory, createNewOrder, addItemsToOrder } from '../controllers/placeOrderController.js';
+// import { getMenuItemsByCategory, createNewOrder, addItemsToOrder } from '../controllers/placeOrderController.js';
 
 let selectedItems = [];
 let orderItems = [];
