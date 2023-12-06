@@ -357,6 +357,22 @@ export async function fetchFullOrder(orderID) {
     return await response.json();
 }
 
+export async function fetchLatestOrders() {
+    const response = await fetch(`${BASE_URL}/custom/`);
+    if (!response.ok) {
+        throw new Error(`Error fetching orders: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
+export async function fetchLatestOrder(orderID) {
+    const response = await fetch(`${BASE_URL}/custom/${orderID}`);
+    if (!response.ok) {
+        throw new Error(`Error fetching order: ${response.statusText}`);
+    }
+    return await response.json();
+}
+
 
 //////////////////////////////
 // Order Item calls
