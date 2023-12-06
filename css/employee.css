@@ -28,6 +28,70 @@ header img {
     
 } 
 
+.order-title {
+    color: rgb(16, 15, 15);
+}
+
+.orders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    color: rgb(16, 15, 15);
+
+}
+
+.order {
+    background-color: #f4e4bc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(41, 39, 39);
+    width: 200px;
+    text-align: center;
+}
+
+.order h2 {
+    margin: 0;
+    font-size: 18px;
+    color: rgb(16, 15, 15);
+}
+
+.order p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: rgb(16, 15, 15);
+}
+
+.show-details {
+    background-color: #85090e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* .details tbody {
+    color: rgb(16, 15, 15);
+} */
+
+.show-details:hover {
+    background-color: #0056b3;
+}
+
+/* CSS class to hide details */
+.hidden {
+    display: none;
+}
+
+.order-details {
+    display: none; /* Initially hide order details */
+}
+
+.order .show-details .order-details {
+    display: block; /* Show order details when .show-details class is present */
+}
+
 /* Navigation styles */
 
 nav {

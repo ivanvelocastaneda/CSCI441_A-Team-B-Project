@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Checks</title>
-    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/employee.css">
 </head>
 <body>
     <header>
-        <img src="../assets/logo.png" alt="Farm to Table Logo" onclick="window.location.href='employeeHomePage.html';">
+        <nav>
+            <a href="employeeHomePage.html"><img src="../assets/logo.png" alt="Farm to Table Logo"></a>
+            <ul class="nav-links">
+                <li><a href="employeeHomePage.html">Home</a></li>
+                <li><a href="managerHome.html">Functions</a></li>
+                <li><a href="orderChecks.html">Orders</a></li>
+                <li><a href="viewMenu2.html">Menu</a></li>
+                <li><a href="serverinterface.html">Tables</a></li>
+            </ul>
+        </nav>    
     </header>
-    <h1>Order Checks</h1>
+    <h1 class="order-title">Order Checks</h1>
     <div class="orders" id="orders">
         <!-- Orders will be dynamically generated here -->
 
