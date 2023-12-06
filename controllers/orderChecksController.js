@@ -1,5 +1,5 @@
 
-import { deleteOrder, fetchOrders, updateOrder, fetchAllOrderItems, fetchMenuItem, fetchFullOrder } from "../models/api.js";
+import { deleteOrder, fetchLatestOrders, updateOrder, fetchAllOrderItems, fetchMenuItem, fetchFullOrder } from "../models/api.js";
 
 export class OrdersController {
     constructor(view) {
@@ -9,7 +9,7 @@ export class OrdersController {
 
     async init() {
         try {
-            const data = await fetchOrders();
+            const data = await fetchLatestOrders();
             data.forEach(async (order) => {
                 const items = await fetchFullOrder(order.orderID);
                 this.view.createListItem(order, items);
