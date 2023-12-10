@@ -11,31 +11,33 @@ The Front-End Website is already connected to the same web service hosted on [Re
 
 > Render is a unified cloud to build and run all your apps and websites with free TLS certificates, a global CDN, DDoS protection, private networks, and auto deploys from Git.
 
-So if you want to try the Restaurant Website without having to set up a local development web service skip this step ***Be aware that because this is a free service being used it can take around 20-30 seconds for it start up for the first time once the Restaurant Website has been accessed***
+So if you want to try the Restaurant Website without having to set up a local development web service **skip this step**
 
-### Install Node.js from the following link
+***Be aware that because this is a free service being used it can take around 20-30 seconds for it start up for the first time once the Restaurant Website has been accessed***
+
+### Step 0.1: Install Node.js from the following link
 
 - [Node.js](https://nodejs.org/en/)
 
-### Clone the following github repository into Visual Studio Code
+### Step 0.2: Clone the following github repository into Visual Studio Code
 
 ```
     git clone https://github.com/ivanvelocastaneda/Team-B-Project-Server
 ```
 
-### Change directory
+### Step 0.3: Change directory
 
 ```
     cd Team-B-Project-Server
 ```
 
-### Install required packages
+### Step 0.4: Install required packages
 
 ```
     npm install
 ```
 
-### Start development server:
+### Step 0.5: Start development server:
 
 ```
     node index.js
@@ -43,27 +45,27 @@ So if you want to try the Restaurant Website without having to set up a local de
 
 ## Step 1: Project Setup - Restaurant Website
 
-### Clone the following github repository into Visual Studio Code
+### Step 1.1: Clone the following github repository into Visual Studio Code
 
 ```
     git clone https://github.com/ivanvelocastaneda/CSCI441_A-Team-B-Project
 ```
 
-### Change directory
+### Step 1.2: Change directory
 
 ```
     cd Team-B-Project-Server
 ```
 
-### Change Web Service IP address (Only if you did Step 0)
+### Step 1.3: Change Web Service IP address (Only if you did Step 0)
 
 Navigate to 'models/api.js' and change the 'BASE_URL' variable to your local ip address plus the 3100 port being used to host the server.
 
-### Install Live Server extension for VSCODE from the following link
+### Step 1.4: Install Live Server extension for VSCODE from the following link
 
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-### Run Live Server
+### Step 1.5: Run Live Server
 
 Press F1 or ctrl+shift+P and type Live Server: Open With Live Server to start a server or type Live Server: Stop Live Server to stop a server.
 
