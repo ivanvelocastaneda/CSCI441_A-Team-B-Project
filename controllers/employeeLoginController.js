@@ -17,7 +17,6 @@ export class EmployeeLoginController {
                     this.view.clockedInEmployees(employee);
                 }
             });
-            // this.view.clockedInEmployees(this.employees);
         } catch (error) {
             console.log('Not able to fetch clocked in employees: ', error);
         }

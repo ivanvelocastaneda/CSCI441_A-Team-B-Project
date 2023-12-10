@@ -59,15 +59,3 @@ export class OrdersController {
     }
 }
 
-// Inside orderChecksController
-
-// Fetch orders and sort them
-// fetchOrders().then((orders) => {
-//     // Assuming 'created_at' is a timestamp
-//     orders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
-//     // Pass sorted orders to the view
-//     const view = new View();
-//     orders.forEach(order => view.createListItem(order));
-// });
-

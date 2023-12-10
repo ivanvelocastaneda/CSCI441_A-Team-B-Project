@@ -24,8 +24,8 @@ class View {
     img.className = "card-img-top";
     img.alt = menuItem.itemName;
     img.src = menuItem.itemImage;
-    img.style.width = "100%"; // Set a fixed width to maintain consistency
-    img.style.height = "auto"; // Maintain aspect ratio
+    img.style.width = "100%";
+    img.style.height = "auto";
 
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";

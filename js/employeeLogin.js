@@ -12,15 +12,6 @@ class View {
         div.appendChild(li);
     }
 
-    // addClockedIn(employee) {
-    //     const div = document.getElementById('clocked-in-employees');
-    //     const li = document.createElement('li');
-    //     li.id = `employee-${employee.employeeID}`;
-    //     li.textContent = employee.firstName;
-
-    //     div.appendChild(li);
-    // }
-
     removeClockedIn(id) {
         const li = document.getElementById(`employee-${id}`);
         if (li) {
@@ -33,7 +24,6 @@ const view = new View();
 const employeeController = new EmployeeLoginController(view, Employee);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // let clockedIn = false;
     let clockInTime;
     
     const pinInput = document.getElementById('pin-input');
@@ -42,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pinCells = document.querySelectorAll('.pin-cell');
     const clearButton = document.getElementById('clear-button');
     const clockInTimeDisplay = document.getElementById('clock-in-time');
-    // const elapsedTimeDisplay = document.getElementById('elapsed-time');
-    // const hoursWorkedDisplay = document.getElementById('hours-worked');
     const continueButton = document.getElementById('continue-button');
 
 
@@ -133,22 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Clock in successful!');
         } else {
             // Clock out
-
-            // // Calculate total hours worked and update display
-            // const clockOutTime = new Date();
-            // const workedHours = (clockOutTime - clockInTime) / 3600000; // Convert milliseconds to hours
-
-            // // Update hours worked
-            // let currentHours = parseFloat(hoursWorkedDisplay.textContent);
-            // currentHours += workedHours;
-            // hoursWorkedDisplay.textContent = currentHours.toFixed(2); // Assuming two decimal places for hours
-
-            // // Update earnings
-            // const hourlyRate = matchingEmployees.hourlyRate;
-            // const earnings = currentHours * hourlyRate;
-            // document.getElementById('estimated-earnings').textContent = `$${earnings.toFixed(2)}`;
-
-
             setEmployeeState(matchingEmployees, 0);
             clockInTimeDisplay.textContent = `Clock Out Time: ${clockInTime.toLocaleTimeString()}`;
 

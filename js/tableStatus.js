@@ -1,5 +1,4 @@
 import { TableOrderController } from "../controllers/tableStatusController.js";
-
 import { Orders } from '../models/orders.js';
 
 class View {
@@ -19,10 +18,6 @@ class View {
     }
 
     updateOrderStatus(orderID, updatedOrder) {
-      // const li = document.getElementById(`Table ${updatedOrder.restaurantTable}`);
-      // console.log(li);
-      // const button = li.querySelector('button');
-      // this.createButton(updatedOrder.orderStatus, button);
       location.reload();
     }
 
@@ -65,7 +60,6 @@ class View {
             name = 'Waiting for Order'
             color = 'primary';
         }
-        // buttonToCreate.outerHTML = `<button type="button" class="btn btn-${color} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">${name}</button>`
         buttonToCreate.type = 'button';
         buttonToCreate.className = `btn btn-${color} dropdown-toggle`;
         buttonToCreate.setAttribute('data-bs-toggle','dropdown');

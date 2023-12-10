@@ -24,7 +24,6 @@ class View {
         orderElement.appendChild(createdAt);
 
         const showDetailsButton = document.createElement('button');
-        // showDetailsButton.classList.add('show-details');
         showDetailsButton.className = 'show-order-details';
         showDetailsButton.textContent = 'Show Details';
         showDetailsButton.style.cursor = 'pointer';

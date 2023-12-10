@@ -7,7 +7,6 @@ class View {
         const ul = document.getElementById('menu-items-list');
         const li = document.createElement('li');
         li.id = `item-${menuItem.itemID}`;
-        // li.textContent = `${menuItem.itemID}: ${menuItem.itemName} - ${menuItem.description} - $${menuItem.price}`;
         li.dataset.menuItem = JSON.stringify(menuItem);
 
         const itemDetails = document.createElement('span');
@@ -79,15 +78,19 @@ class View {
     }
 
     removeMenuItem(id) {
-        const li = document.getElementById(`item-${id}`);
-        if (li) {
-            li.remove();
-        }
+        try {
+            const li = document.getElementById(`item-${id}`);
+            if (li) {
+                li.remove();
+            }
 
-        // Remove from dropdown
-        const option = document.querySelector(`#menu-item-dropdown option[value="${id}"]`);
-        if (option) {
-            option.remove();
+            // Remove from dropdown
+            const option = document.querySelector(`#menu-item-dropdown option[value="${id}"]`);
+            if (option) {
+                option.remove();
+            }
+        } catch(error) {
+            console.log('Removing item error: ', error);
         }
     }
 

@@ -1,4 +1,4 @@
-import { fetchMenuItems, createMenuItem } from '../models/api.js';
+import { fetchMenuItems } from '../models/api.js';
 
 export class FeaturedMenuItemController {
     constructor(view, model) {
@@ -8,16 +8,21 @@ export class FeaturedMenuItemController {
     }
 
     async init() {
-        const data = await fetchMenuItems();
-        data.forEach(item => {
-            // Temporary featured items selector
-            if (item.itemID === 6 || item.itemID === 7 || item.itemID === 10) {
-                const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage);
-                this.view.addFeaturedItem(menuItem);
-            }
-        });
-        // Loading spinner removed when function is done loading
-        document.getElementById('loading').style.display = 'none';
+        try {
+            const data = await fetchMenuItems();
+            data.forEach(item => {
+                // Temporary featured items selector
+                if (item.itemID === 6 || item.itemID === 7 || item.itemID === 10) {
+                    const menuItem = new this.model(item.itemID, item.itemName, item.description, item.price, item.itemImage);
+                    this.view.addFeaturedItem(menuItem);
+                }
+            });
+        } catch (error) {
+            console.log('Failed to fetch featured menu items: ', error);
+        } finally {
+            // Loading spinner removed when function is done loading
+            document.getElementById('loading').style.display = 'none';
+        }
 
     }
 

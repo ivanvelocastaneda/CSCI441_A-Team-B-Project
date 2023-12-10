@@ -71,10 +71,6 @@ header img {
     cursor: pointer;
 }
 
-/* .details tbody {
-    color: rgb(16, 15, 15);
-} */
-
 .show-details:hover {
     background-color: #0056b3;
 }

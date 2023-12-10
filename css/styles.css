@@ -7,6 +7,7 @@
 body {
     background-color: #fff;
 }
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -17,7 +18,6 @@ nav {
     top: 0%;
     width: 100%;
     z-index: 100;
-
 }
 
 .display-category {
@@ -34,26 +34,30 @@ nav {
     align-items: center;
     
 }
+
 .navbar ul li {
     list-style: none;
 
 }
+
 .navbar ul li a {
     text-decoration: none;
     margin-inline: 20px;
     font-size: 16px;
     color: #85090e;
 }
+
 .navbar ul li a:hover {
     color: red;
     border-bottom: 2px solid red;
 }
 
- .icons {
+.icons {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+
 .icons button {
     background-color: #b36b5c;
     border: none;
@@ -65,9 +69,11 @@ nav {
     font-size: 16px;
     color: #f4e4bc;
 }
+
 .icons button:hover {
     background-color: #85090e;
 }
+
 .icons i{
     margin-inline: 11px;
     background-color: #b36b5c;
@@ -81,6 +87,7 @@ nav {
     font-size: 20px;
 
 }
+
 .logo img {
     height: auto;
     width: auto;
@@ -90,6 +97,7 @@ nav {
     top:0; 
     left: 0;
 }
+
 .main {
     display: flex;
     justify-content: space-around;
@@ -101,25 +109,32 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .mainText {
     margin-top: 97px;
 }
+
 .mainText h1{
     font-size: 55px;
 }
+
 .mainText h1 span{
     color: #b36b5c;
 }
+
 .mainText h3{
     font-size: 33px;
     margin-top: 15px;
 }
+
 .mainText h3 span{
     color: #b36b5c;
 }
+
 .mainText p{
     margin-top: 15px;
 }
+
 .mainText button{
     font-size: 20px;
     width: 140px;
@@ -131,9 +146,11 @@ nav {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .mainText button:hover{
     background-color: #f4e4bc;
 }
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -142,23 +159,28 @@ nav {
     justify-content: center;
     margin-top: 22px;
 }
+
 .foodcard {
     height: 360px;
     margin-inline: 11px;
     background-color: #fff;
 }
+
 .foodcard img{
     width: 100%;
     height: 200px;
 }
+
 .foodcard h3 {
     margin-left: 11px;
     margin-top: 11px;
 }
+
 .foodcard p {
     margin-left: 11px;
     margin-top: 11px;
 }
+
 .foodcard span {
     margin-left: 11px;
     margin-top: 11px;
@@ -217,26 +239,30 @@ nav {
     font-weight: bold;
     background-color: #85090e;
 }
+
 .my-form p {
     color: white;
 }
-  .my-form label {
+
+.my-form label {
     display: block;
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
-  }
-  .my-form input, .my-form textarea {
+}
+
+.my-form input, .my-form textarea {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
-  }
-  .my-form button {
+}
+
+.my-form button {
     font-size: 20px;
     width: 140px;
     height: 38px;
@@ -246,13 +272,14 @@ nav {
     margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  .my-form button:hover {
-    background-color: #f4e4bc;
-    color: #85090e; 
-  }
-  
-  .footer {
+}
+
+.my-form button:hover {
+background-color: #f4e4bc;
+color: #85090e; 
+}
+
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -262,11 +289,13 @@ nav {
     margin-top: 44px;
     font-size: 18px;
     font-weight: bold;
-  }
-  .loginPage {
-    display: none;
-  }
-  .spinner {
+}
+
+.loginPage {
+    display : none;
+}
+
+.spinner {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;
     border-radius: 50%;
@@ -276,7 +305,7 @@ nav {
     display: none; /* Hide by default */
 }
 
-  .loading {
+.loading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,40 +320,40 @@ nav {
     100% { transform: rotate(360deg); }
 }
 
-  /* For small devices (phones) */
-    @media screen and (max-width: 400px) {
-        .mainText h1 {
-            font-size: 33px;
-        }
+/* For small devices (phones) */
+@media screen and (max-width: 400px) {
+    .mainText h1 {
+        font-size: 33px;
+    }
 
-        .mainText h3 {
-            font-size: 23px;
-        }
-        .icons {
-            margin-right: 20px;
-        } 
+    .mainText h3 {
+        font-size: 23px;
+    }
+    .icons {
+        margin-right: 20px;
     } 
-  
-    @media only screen and (max-width: 600px) {
+} 
+
+@media only screen and (max-width: 600px) {
+    
+    .navbar ul {
         
-        .navbar ul {
-         
-            align-items: center;
-        }
-        .icons {
-            flex-direction: column; 
-            align-items: center;
-        } 
-        .crd img {
-            height: 80px;
-        }
-        .my-form {
-            width: 90%;
-        } 
-        .reviews {
-            width: 90%;
-        }
+        align-items: center;
+    }
+    .icons {
+        flex-direction: column; 
+        align-items: center;
     } 
+    .crd img {
+        height: 80px;
+    }
+    .my-form {
+        width: 90%;
+    } 
+    .reviews {
+        width: 90%;
+    }
+} 
 
 /* For medium-sized devices (tablets) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -361,10 +390,10 @@ nav {
 .card {
     /* Other existing styles */
     height: 100%; /* Ensure all cards have the same height */
-  }
-  
-  .card .card-img-top {
+}
+
+.card .card-img-top {
     height: 200px; /* Set a fixed height for the images */
     object-fit: cover; /* Maintain aspect ratio and cover the space */
-  }
+}
 

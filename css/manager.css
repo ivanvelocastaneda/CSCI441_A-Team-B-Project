@@ -1,4 +1,4 @@
-/* Reset default margin, padding, and text color */
+
 body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
@@ -11,17 +11,10 @@ body {
     text-align: center;
     
     background-image: url('../assets/welcome.png');
-    /* opacity: 0.8; */
 } 
 
 /* Header styles */
 header {
-    /* background-color: #f4e4bc;
-    color: #85090e;
-    padding: 20px 20px;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; */
     background-color: #f4e4bc; 
     color: #85090e; 
     padding: 10px 0; 
@@ -93,7 +86,6 @@ header img {
  h2 {
     font-size: 32px; 
     margin-top: 30px; 
-    /* font-weight:bolt; */
     color:#85090e;
     margin-left:100px;
 }
@@ -102,7 +94,6 @@ img#welcome-image{
     margin-top:10px;
     width: 800px;
     height:400px 
-
 }
 
 nav {
@@ -134,36 +125,6 @@ nav {
     color: red;
     border-bottom: 2px solid red;
 }
-/* nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin-left: 100px;
-    padding: 0 20px;
-    font-size:  18px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #85090e;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #b36b5c;
-} */
-
 
 ul {
     list-style: none;
@@ -202,7 +163,6 @@ ul.home-page-ul li a {
     font-size: 28px;
 }
 
-
 ul.home-page-ul li a i {
     font-size: 36px !important; 
 }
@@ -211,11 +171,9 @@ ul.home-page-ul li a:hover {
     background-color: #85090e;
 }
 
-
 div.user-options button:hover {
     background-color: #85090e;
 }
-
 
 .menu-management {
     background-color: #85090e;
@@ -228,7 +186,6 @@ div.user-options button:hover {
 .menu-management h2 {
     font-size: 24px;
 }
-
 
 table {
     border-collapse: collapse;
@@ -248,7 +205,6 @@ th {
     border-bottom: 2px solid #000; 
 }
 
-
 /* Employee Management styles */
 .employee-management {
     background-color: #85090e;
@@ -262,7 +218,6 @@ th {
     font-size: 30px;
     color: white;
     font-weight: bold;
-
 }
 
 .employee-management table {
@@ -284,8 +239,6 @@ th {
     padding: 10px;
     border-bottom: 1px solid #b36b5c;
 }
-
-
 
 .search-bar {
     text-align: right;
