@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class OrderItem {
     constructor(orderID, itemID, itemQuantity) {
         this.orderID = orderID;

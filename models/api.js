@@ -1,5 +1,6 @@
-const BASE_URL = "https://csci441-teamb.onrender.com";
+  // written by: Bjarni Jonsson
 
+const BASE_URL = "https://csci441-teamb.onrender.com";
 
 //////////////////////////////
 // Menu Items calls

@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class TransactionItem {
     constructor(transactionID, itemID) {
         this.transactionID = transactionID;

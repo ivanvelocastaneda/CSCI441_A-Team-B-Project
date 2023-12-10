@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 export class Employee {
     constructor(employeeID, pin, typeID, firstName, lastName, street, city, state, zip, clockedIn, hourlyRate, created_at, updated_at) {
         this.employeeID = employeeID;

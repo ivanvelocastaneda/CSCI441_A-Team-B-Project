@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 import { fetchMenuItems } from '../models/api.js';
 
 export class FeaturedMenuItemController {

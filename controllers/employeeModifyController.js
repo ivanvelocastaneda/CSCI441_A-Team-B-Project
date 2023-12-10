@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 import { fetchEmployees, createEmployee, updateEmployee, deleteEmployee, fetchEmployeeTypes } from '../models/api.js';
 
 export class EmployeeModifyController {

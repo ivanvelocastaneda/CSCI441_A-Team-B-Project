@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class Reservation {
     constructor(reservationID, name, customerID, dateTime, numPeople, tableSelection, created_at, updated_at) {
         this.reservationID = reservationID;

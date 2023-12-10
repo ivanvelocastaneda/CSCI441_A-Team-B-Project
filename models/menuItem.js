@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 export class MenuItem {
     constructor(itemID, itemName, description, price, itemImage, category, isDeleted, calories) {
         this.itemID = itemID;

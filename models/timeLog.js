@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class TimeLog {
   constructor(id, employeeID, timeClockedIn, timeClockedOut) {
     this.id = id;

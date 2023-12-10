@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class Ingredient {
     constructor(ingredientID, ingredientName) {
         this.ingredientID = ingredientID;

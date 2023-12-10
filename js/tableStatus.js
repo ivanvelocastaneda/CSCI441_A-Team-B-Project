@@ -1,3 +1,6 @@
+// written by: Cheikh Faye, Bjarni Jonsson
+// tested & debugged by: Bjarni Jonsson
+
 import { TableOrderController } from "../controllers/tableStatusController.js";
 import { Orders } from '../models/orders.js';
 

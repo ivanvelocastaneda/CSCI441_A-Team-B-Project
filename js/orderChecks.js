@@ -1,3 +1,6 @@
+// written by: Sokhna Khady
+// debugged by: Bjarni Jonsson
+
 import { OrdersController } from "../controllers/orderChecksController.js";
 import { Orders } from "../models/orders.js";
 

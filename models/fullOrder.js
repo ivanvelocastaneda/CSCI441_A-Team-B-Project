@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 export class FullOrder {
     constructor(itemName, description, calories, category, itemQuantity, price, orderStatus, restaurantTable, created_at, updated_at) {
         this.itemName = itemName;

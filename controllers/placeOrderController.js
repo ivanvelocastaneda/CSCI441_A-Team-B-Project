@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 import { fetchMenuItems, createOrder, createOrderItem } from '../models/api.js';
 
 export async function getMenuItemsByCategory(category) {
@@ -19,7 +21,6 @@ export async function createNewOrder(orderData) {
 
 export async function addItemsToOrder(data) {
     try {
-        // const orderItemsData = itemIDs.map(itemID => ({ orderID, itemID }));
         return await createOrderItem(data);
     } catch (error) {
         console.error('Error adding items to order:', error);

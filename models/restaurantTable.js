@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class RestaurantTable {
     constructor(tableID, tableStatus, orderID) {
         this.tableID = tableID;

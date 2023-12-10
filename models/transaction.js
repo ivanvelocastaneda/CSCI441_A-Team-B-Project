@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class Transaction {
     constructor(transactionID, customerID, employeeID, orderID, methodOfPayment, timeStamp, subtotal, tax, tip, transTotal) {
         this.transactionID = transactionID;

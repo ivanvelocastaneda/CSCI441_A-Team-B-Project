@@ -1,3 +1,5 @@
+// written by: Bjarni Jonsson
+
 import { EmployeeLoginController } from '../controllers/employeeLoginController.js';
 import { Employee } from '../models/employee.js';
 

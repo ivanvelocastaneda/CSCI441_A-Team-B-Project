@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 import { fetchEmployees, updateEmployee } from '../models/api.js';
 
 export class EmployeeLoginController {

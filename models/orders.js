@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 export class Orders {
     constructor(orderID, orderStatus, created_at, updated_at, restaurantTable) {
         this.orderID = orderID;

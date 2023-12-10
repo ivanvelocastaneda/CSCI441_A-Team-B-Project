@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class EmployeeType {
     constructor(typeID, typeName) {
         this.typeID = typeID;

@@ -1,5 +1,6 @@
-import { fetchLatestOrders, updateOrder, fetchMenuItems, createOrder, createOrderItem } from "../models/api.js";
+  // written by: Bjarni Jonsson
 
+import { fetchLatestOrders, updateOrder, fetchMenuItems, createOrder, createOrderItem } from "../models/api.js";
 
 export class TableOrderController {
     constructor(view, model) {

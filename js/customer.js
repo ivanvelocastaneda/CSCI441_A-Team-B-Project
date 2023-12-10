@@ -1,3 +1,5 @@
+// written by: Ivan Velo
+
 // Reviews section slides js
 let slides = document.querySelectorAll(".crd");
 let count = 0;

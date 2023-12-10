@@ -1,3 +1,5 @@
+// written by: Bjarni Jonsson
+
 import { FeaturedMenuItemController } from '../controllers/featuredItemsController.js';
 import { MenuItem } from '../models/menuItem.js';
 

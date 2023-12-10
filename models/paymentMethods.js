@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class PaymentMethods {
     constructor(paymentMethodID, methodName) {
         this.paymentMethodID = paymentMethodID;

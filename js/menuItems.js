@@ -1,3 +1,5 @@
+// written by: Ivan Velo, Bjarni Jonsson
+
 import { MenuItemController } from "../controllers/menuItemController.js";
 import { MenuItem } from "../models/menuItem.js";
 

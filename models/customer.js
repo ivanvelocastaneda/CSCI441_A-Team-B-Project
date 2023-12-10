@@ -1,3 +1,5 @@
+  // written by: Bjarni Jonsson
+
 class Customer {
     constructor(customerID, username, password, firstName, lastName, street, city, state, zip, rewardPoints, created_at, updated_at, email) {
         this.customerID = customerID;
