@@ -8,6 +8,7 @@
 
 This step is only necessary if user wants to use a web service server hosted on a local computer to acces the database.
 The Restaurant Website is already connected to the same web service hosted on [Render](https://render.com/).
+
 The database itself is hosted on [db4free](https://db4free.net/) which is a free database development service.
 
 > Render is a unified cloud to build and run all your apps and websites with free TLS certificates, a global CDN, DDoS protection, private networks, and auto deploys from Git.
