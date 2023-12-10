@@ -13,9 +13,9 @@ The Restaurant Website is already connected to the same web service hosted on [R
 
 The database itself is hosted on [db4free](https://db4free.net/) which is a free database development service.
 
-So if you want to try the Restaurant Website without having to set up a local development web service **skip this step**
+So if you want to try the Restaurant Website without having to set up a local development web service **skip this step.**
 
-***Be aware that because this is a free service being used it can take around 20-30 seconds for it start up for the first time once the Restaurant Website has been accessed***
+***Be aware that because this is a free service being used it can take around 20-30 seconds for it start up for the first time once the Restaurant Website has been accessed.***
 
 ### Step 0.1: Install Node.js from the following link
 
