@@ -99,12 +99,28 @@ document.addEventListener('DOMContentLoaded', () => {
     clockButton.addEventListener('click', async () => {
         const pin = pinInput.value;
         const matchingEmployees = await employeeController.findEmployeesWithMatchingPIN(pin);
-        const clockedIn = matchingEmployees.clockedIn;
-        clockInTime = new Date();
         
         if (matchingEmployees) {
             // Successful login
-            console.log('Employee found:', matchingEmployees);
+            const clockedIn = matchingEmployees.clockedIn;
+            clockInTime = new Date();
+            if (!clockedIn) {
+                // Clock in
+                clockInTimeDisplay.textContent = `Clock In Time: ${clockInTime.toLocaleTimeString()}`;
+                setEmployeeState(matchingEmployees, 1);
+    
+                displayMessage(`Welcome ${matchingEmployees.firstName}`);
+                view.clockedInEmployees(matchingEmployees);
+                console.log('Clock in successful!');
+            } else {
+                // Clock out
+                setEmployeeState(matchingEmployees, 0);
+                clockInTimeDisplay.textContent = `Clock Out Time: ${clockInTime.toLocaleTimeString()}`;
+    
+                displayMessage(`Bye ${matchingEmployees.firstName}`);
+                view.removeClockedIn(matchingEmployees.employeeID);
+                console.log('Clock out successful!');
+            }
         } else {
             // Failed Login
             console.log('No employee found with this PIN.');
@@ -112,25 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // Clear input value after button click
         pinInput.value = '';
-
-        if (!clockedIn) {
-            // Clock in
-            clockInTimeDisplay.textContent = `Clock In Time: ${clockInTime.toLocaleTimeString()}`;
-            setEmployeeState(matchingEmployees, 1);
-
-            displayMessage(`Welcome ${matchingEmployees.firstName}`);
-            view.clockedInEmployees(matchingEmployees);
-            console.log('Clock in successful!');
-        } else {
-            // Clock out
-            setEmployeeState(matchingEmployees, 0);
-            clockInTimeDisplay.textContent = `Clock Out Time: ${clockInTime.toLocaleTimeString()}`;
-
-            displayMessage(`Bye ${matchingEmployees.firstName}`);
-            view.removeClockedIn(matchingEmployees.employeeID);
-            console.log('Clock out successful!');
-        }
-
     });
 
     continueButton.addEventListener('click', async () => {
